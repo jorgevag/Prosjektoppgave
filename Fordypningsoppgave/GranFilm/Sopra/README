@@ -1,0 +1,12 @@
+This is the SOPRA Dielectric DataBase.
+
+The tool SOPRA is used to get dielectric values from the database.
+To do so it is most convenient to set the enviornment variable SOPRA_ROOT.
+
+Eg.  under bash this is :
+
+    localhost => export SOPRA_ROOT=$HOME?usr/local/SOPRA/DataBase/
+
+Ingve Simonsen, Paris, Jan 2007.
+
+  

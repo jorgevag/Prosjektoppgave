@@ -1,0 +1,142 @@
+This is what I have checked
+
+
+* For t_r=0 and No interaction the old and new code gives consistent
+  results for the surface susceptibilities
+  
+  - Delta_R_over_ is still not the same....
+  - there seems to be an issue when the tr/=0.
+
+
+* Have checked the Fresnel coefficients....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------
+
+
+
+
+Parameter file that works : SPHERE.sif
+
+
+&Global
+  Title          =  "Skal vi ha dette med...? Strengt tatt ikke noedvendig...."
+  SOPRA_ROOT     =   '/home/ingves/usr/local/SOPRA/DataBase/'	
+/
+ 
+
+&Source  
+  Theta0        =     45           !(deg)
+  Phi0          =     0            !(deg) 
+  Polarization  =     'p'          !(s,p)
+  Energy_Range  =     1.5, 5.      !(eV) 
+  !  Wavelength_Range  = [300,700]     !(nm) 
+/ 
+
+  
+&Geometry
+  Radius            =    8.                             ! [nm]
+  Truncation_Ratio  =    0.0
+  Interfaces        =    "1"                            ! In units of Radius
+  Media             =    "Air, MgO, Silver, MgO" 
+/    		      
+
+
+&Interaction
+  Arrangement       =  'Lattice'           ! Default.....
+  Lattice_Type      =  'Square'            ! (square, hexagonal, MFT, RPT)
+  Lattice_Constant  =   20.	           ! (nm)
+  !Coverage          =   0.5                ! Island coverage
+  Island_Island_Interaction   = 'None'  ! (none, dipole, quadropole, size)
+/
+
+
+&Numerics
+  Multipole_Order             =  16   ! All these could have default values....
+  Multipole_Position          =  0    ! so that they have not to be given....
+  No_Energy_Points            =  1024 !     
+/
+
+
+
+!-----------------
+
+
+
+
+&Air
+  Material = "air"
+/  
+
+
+&MgO
+  Material = "mgo"
+/  
+
+&Al2O3
+  Material = "al2o3"
+/  
+
+
+&Silver
+  Material = "ag"
+/  
+
+
+
+
+
+
+
+
+
+
+! ==================== NOT YET USED ===========================
+
+
+
+
+
+&Finite_Size_Correction
+  Material                   =  'ag'         ! Or Au or other materials form the built in data base...
+! Plasma_Frequency          =   
+!  Fermi_Velocity            =   6.9149227
+! Inverse_Relaxation_Time   = 
+! A_Parameter               =
+!
+
+/
+
+
+&Temperature_Correction
+  Material      =  'ag'         ! Or Au or other materials form the built in data base...
+  Temperature   =  300        ! Substrate Temperature....
+!-8.9e-5                    ! Dependance of plasma frequency with temperature (ev/K)
+/
+
+
+&Surface_Correction
+  Material      =  'ag'         ! Or Au or other materials form the built in data base...
+!-1.126                     ! Surface corrections
+/
+
+
+
+
+

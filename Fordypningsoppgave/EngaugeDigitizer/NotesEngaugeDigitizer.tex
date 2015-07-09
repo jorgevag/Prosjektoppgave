@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[norsk]{article} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+% Added by Joergen %---------------------------------------------------------------------
+%\usepackage{cleveref}
+
+% Added by Haavard %---------------------------------------------------------------------
+\usepackage[utf8]{inputenc} % Norwegian letters
+\usepackage{fullpage}
+\usepackage{subcaption}
+\usepackage[font={small, it}]{caption} % captions on figures and tables
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref} % Use \autoref{ and \nameref{
+\hypersetup{backref,
+  colorlinks=true,
+  breaklinks=true,
+  %hidelinks, %uncomment to make links black
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+\usepackage[all]{hypcap} % Makes hyperref jup to top of pictures and tables
+% --------------------------------------------------------------------------------------
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{NTNU 2015} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Notes \\ Engauge Digitizer \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Jørgen Vågan} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+
+\begin{document}
+
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	Text Body:
+%----------------------------------------------------------------------------------------
+
+%\listoftodos{}
+
+\abstract{These notes are mainly taken from:\\
+http://digitizer.sourceforge.net/usermanual/index.html\\
+\\
+Engauge Digitizer is a software to digitize graphed data from text books and 
+published papers, which means that it extracts data from graphs/images. \\
+Just import an image, define three coordinate points and their scales,
+pick off the points and export the digitized data to a file.\\
+\\
+Key features:
+\begin{itemize}
+\item The definition of 3 axes allows the software to correct for rotation or uniform 
+skrew in the graph.
+\item You can specify whether the data is in linear or log scales.
+\item You can define multiple ''curves'' to help segregate data.
+\end{itemize}
+}
+
+\newpage
+\section{Installation}
+Command line: \\
+\texttt{ sudo apt-get install engauge-digitizer} \\
+
+\section{General Steps}
+\textbf{Typical Steps:}
+\begin{enumerate}
+   \item Obtain image file (bmp, jpeg or other) showing one or more curves and both axes;
+   \item Import image file using either:
+      \begin{itemize}
+         \item File/Import menu option;
+         \item Copy-Paste;
+         \item Drag and drop;
+      \end{itemize}
+   \item If important parts of the image is missing (e.g. parts of- or entire curves) or 
+      curves are too thick (difficult to separate them),
+      then go to \texttt{Settings/Discretize} and experiment with the discretization options
+      until all curves are there and looking as nice as possible.
+   \item Click on \texttt{Axes Point} button. 
+   \item Click on click on one of the axes and enter graph coordinates.\\
+         Repeat until you've added all axes;
+
+
+      \item Digitize graph according to subsections below.
+
+
+   \item Click on the \texttt{Curve Points} button to manually enter curve points by 
+      clicking on the curve. Repeat until the curve is covered with a sufficient number of curve points.
+   \item Export curve points by using either: 
+      \begin{itemize}
+         \item File/Export menu option to save selected curves into a tabular text file, or
+         \item copy-pase / drag-drop points in the current curve from mthe \texttt{curve geometry window}
+               to another application.
+         \item Copy-Paste;
+         \item Drag and drop;
+      \end{itemize}
+\end{enumerate}
+
+\subsection{Digitize Line Graphs}
+\begin{enumerate}
+   \item Click on the \texttt{Segment Fill} button to automatically digitize entire curve
+         segments at a time. Click on a segment underneath the cursor to fill that segment with a set
+      of curve points. Repeat until the segment have been digitized.
+\end{enumerate}
+
+\subsection{Digitize Point Graphs}
+\begin{enumerate}
+   \item Click on the \texttt{Point Match} button to automatically digitize many curve points.
+   \item Click on a sample point and use the arrow keys to accept or reject points that match
+      the sample point.
+      
+
+\end{enumerate}
+
+\section{Optional Steps}
+To clean up image for better eprformance of Segment Fill and Point Match:
+\begin{enumerate}
+   \item Show processed image rather than original image, by selecting the 
+      \texttt{View}/\texttt{Processed Image} menu option
+   \item Use \texttt{Settings/Discretize} menu option to adjust 
+      and remove unwanted parts of image.
+   \item Remove grid lines using \texttt{Settings/Grid Removal} menu option.
+\end{enumerate}
+For logarithmic or polar graph:
+\begin{enumerate}
+   \item Select \texttt{Settings/Coords} menu option to bring up the \textit{coordinates window}
+      and select the appropriate coordinate settings.
+\end{enumerate}
+For a graph with several curves
+\begin{enumerate}
+   \item Select \texttt{Settings/Curves} menu option to bring up the \textit{coordinates window}.
+   \item Click on the \texttt{New} button to create a new curve and enter its name.
+   \item Reapeat until all curve nemes have been entered.
+   \item In the main window, use the Curves combobox to select a curve. While selected, all
+      new curve points will be assigned to that curve.
+\end{enumerate}
+
+      
+\section{Miscellaneous}
+For \textbf{Measuring Angles, Distances and Areas} you need to bring up the curve and measure geometry window.
+You can bring it up through the \texttt{View/Cuvrve Geometry Info} menu option.\\ 
+\\
+\textbf{Better Accuracy}. The points are only as accurate as the pixel size (you can see that
+accuracy in the sattus bar). If the distance in graph units from one piel to the next is
+$D$, then theoretically the best possible accuracy is also $D$.\\
+It is not possible to define points that are ''between'' pixels, even by zooming in closer.
+That is a constraint imposed by the graphcs library that is used in \textit{Engauge Digitizer}.\\
+\\
+Fortunately, there are some tricks to improve the accuracy. Here, in order of increasing difficulty:
+\begin{enumerate}
+   \item If the axis points are not correctly defined then fix them.
+   \item Turn on the grid lines by selecting \texttt{View/Gridlines Display} and compare them to
+      grid lines in the original image, to see if the axis points can be slightly adjusted so
+      the grid lines better match each other.
+   \item Use a graphics application like Microsoft Paint(windows) or GIMP (Linux) to scale up the 
+      original in size, such that each pixel is smaller, giving better accurary. The larger 
+      image is them imported (can be perfomred using the command line and the powerful ImageMagick tool).
+\end{enumerate}
+
+
+%
+\end{document}

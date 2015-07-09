@@ -1,0 +1,131 @@
+&Global
+  !Title          =  "Skal vi ha dette med... Strengt tatt ikke noedvendig...."
+  SOPRA_ROOT     =   '/home/ingves/usr/local/SOPRA/DataBase/'
+  !SOPRA_ROOT     =   '/home/gudrun/ingves/usr/local/SOPRA/DataBase/'	
+/
+ 
+
+!&Source  
+!  Theta0        =     45           !(deg)
+!  Phi0          =     0            !(deg) 
+!  Polarization  =    'p'           !(s,p)
+!  Energy_Range  =     1.5, 5.      !(eV) 
+!/ 
+
+  
+!&Geometry
+!  Radius            =    8.                             ! [nm]
+!  Truncation_Ratio  =    0.1
+!  Radius_Ratios     =    "1"                            ! In units of Radius
+!  Media             =    "Air, MgO, Silver, MgO" 
+!/    		      
+
+
+!&Interaction
+!  Arrangement       =  'Lattice'           ! Default.....
+!  Lattice_Type      =  'Square'            ! (square, hexagonal, MFT, RPT)
+!  Lattice_Constants  =    15.	           ! (nm)
+!  !Coverage          =   0.5                ! Island coverage
+!  Island_Island_Interaction   = 'None'   ! (None, Dipole, Quadropole, Size)
+!/
+
+
+!&Numerics
+!  !Multipole_Order             =  16   ! All these could have default values...!.
+!  !Multipole_Position_Ratio    = -0.0  ! so that they have not to be given....
+!  !No_Energy_Points            =  1024 !     
+!/
+
+
+!&Potential
+!  Points_File = "points_test.txt"
+!  Energy      = 2.2	
+!/
+
+
+
+
+!-----------------
+
+
+
+
+
+
+&Air
+  Material = "air"
+/  
+
+
+&MgO
+  Material = "mgo"
+/  
+
+&Al2O3
+  Material = "al2o3"
+/  
+
+
+&Silver
+  Material = "ag"
+/  
+
+
+&Ag
+ Material = "ag"
+ Epsilon_Scale =  1, 1 
+/  
+
+
+
+
+
+
+&Test
+ Temp = 250.5
+/
+
+
+
+&String
+ str1 = "  kasting av noe annet"
+ str2 = 'tullballe er dette for "nnn" noe' 
+/
+
+
+
+
+
+
+! ==================== NOT YET USED ===========================
+
+
+
+
+
+&Finite_Size_Correction
+  Material                   =  'ag'         ! Or Au or other materials form the built in data base...
+! Plasma_Frequency          =   
+! Fermi_Velocity            =   6.9149227
+! Inverse_Relaxation_Time   = 
+! A_Parameter               =
+!
+
+/
+
+
+&Temperature_Correction
+  Material      =  'ag'         ! Or Au or other materials form the built in data base...
+  Temperature   =  300        ! Substrate Temperature....
+!-8.9e-5                    ! Dependance of plasma frequency with temperature (ev/K)
+/
+
+
+&Surface_Correction
+  Material      =  'ag'         ! Or Au or other materials form the built in data base...
+!-1.126                     ! Surface corrections
+/
+
+
+
+

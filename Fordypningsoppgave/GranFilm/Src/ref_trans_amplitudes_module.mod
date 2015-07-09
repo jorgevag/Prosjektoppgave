@@ -1,0 +1,67 @@
+GFORTRAN module version '10' created from reflection_transmission_amplitudes_module.f90
+MD5:9d583947323bf822b35f34e6f1c87619 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () () () () () () ()
+() () () ())
+
+()
+
+()
+
+()
+
+()
+
+()
+
+(2 'get_amplitude' 'ref_trans_amplitudes_module' '' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 FUNCTION ELEMENTAL PURE
+ALWAYS_EXPLICIT) (COMPLEX 8 0 0 0 COMPLEX ()) 3 0 (4 5) () 6 () () () 0
+0)
+7 'get_fresnel_amplitude' 'ref_trans_amplitudes_module' '' 1 ((
+PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 FUNCTION ELEMENTAL
+PURE ALWAYS_EXPLICIT) (COMPLEX 8 0 0 0 COMPLEX ()) 8 0 (9 10) () 11 () ()
+() 0 0)
+12 'get_reflection_transmission_amplitudes' 'ref_trans_amplitudes_module'
+'' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE)
+(UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+4 'data' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 13 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+5 'polarization' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+6 'res' '' '' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 RESULT ALWAYS_EXPLICIT) (COMPLEX 8 0 0 0 COMPLEX ()) 0 0 () () 0 () ()
+() 0 0)
+9 'data' '' '' 8 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 14 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+10 'polarization' '' '' 8 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+11 'res' '' '' 8 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 RESULT ALWAYS_EXPLICIT) (COMPLEX 8 0 0 0 COMPLEX ()) 0 0 () () 0 ()
+() () 0 0)
+13 'Ref_trans_amp_type' 'derived_type_module' '' 3 ((DERIVED
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 0 0 () () 0 ((15 'p' (COMPLEX 8 0 0 0 COMPLEX ()) () (
+UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ()) (16 's' (COMPLEX 8 0 0 0 COMPLEX ()) () (UNKNOWN-FL
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (17
+'fresnel_p' (COMPLEX 8 0 0 0 COMPLEX ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (18 'fresnel_s' (
+COMPLEX 8 0 0 0 COMPLEX ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0
+71843976)
+14 'Ref_trans_amp_type' 'derived_type_module' '' 8 ((DERIVED
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 0 0 () () 0 ((19 'p' (COMPLEX 8 0 0 0 COMPLEX ()) () (
+UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ()) (20 's' (COMPLEX 8 0 0 0 COMPLEX ()) () (UNKNOWN-FL
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (21
+'fresnel_p' (COMPLEX 8 0 0 0 COMPLEX ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (22 'fresnel_s' (
+COMPLEX 8 0 0 0 COMPLEX ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0
+71843976)
+)
+
+('get_amplitude' 0 2 'get_fresnel_amplitude' 0 7
+'get_reflection_transmission_amplitudes' 0 12)

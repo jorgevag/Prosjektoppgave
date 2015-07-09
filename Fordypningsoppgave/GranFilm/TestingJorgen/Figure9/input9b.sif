@@ -1,0 +1,86 @@
+&Global
+  !Title          =  "Skal vi ha dette med... Strengt tatt ikke noedvendig...."
+  SOPRA_ROOT     =   '/home/jorgevag/Documents/Fordypningsoppgave/GranFilm/Sopra/DataBase/'
+  !SOPRA_ROOT     =   '/home/gudrun/ingves/usr/local/SOPRA/DataBase/'	
+/
+ 
+
+&Source  
+  Theta0        =     45           !(deg)
+  Phi0          =     0            !(deg) 
+  Polarization  =    'p'           !(s,p)
+  Energy_Range  =     1.5, 4.8      !(eV) 
+/ 
+
+  
+&Geometry
+  Radius            =    8.                             ! [nm]
+  Truncation_Ratio  =    0.0
+  Radius_Ratios     =    "1"                            ! In units of Radius
+  Media             =    "Air, ZnO, Silver, ZnO" 
+/    		      
+
+
+&Interaction
+  Arrangement       =  'Lattice'           ! Default.....
+  !Lattice_Type      =  'Square'            ! (square, hexagonal, MFT, RPT)
+  Lattice_Type      =  'Hexagonal'            ! (square, hexagonal, MFT, RPT)
+  !Lattice_Constant  =    20.	           ! (nm)
+  Lattice_Constant  =    21.5	           ! (nm)
+  !Coverage          =   0.5                ! Island coverage
+  Island_Island_Interaction   = 'Dipole'   ! (None, Dipole, Quadropole, Size)
+/
+
+
+&Numerics
+  Multipole_Order             =  16   ! All these could have default values....
+  Multipole_Position_Ratio    = -0.0  ! so that they have not to be given....
+  No_Energy_Points            =  1024 !     
+/
+
+
+!&Potential
+!  Points_File = "points_test.txt"
+!  Energy      = 2.2	
+!/
+
+
+
+
+!-----------------
+
+
+
+
+
+
+&Air
+  Material = "air"
+/  
+
+
+&Al2O3
+  Material = "al2o3"
+/  
+
+
+&Silver
+  Material = "ag"
+/  
+
+
+&TiO2
+  Material = "tio2"
+/  
+
+
+&ZnO
+  Material = "zno"
+/  
+
+
+&Cu
+  Material = "cu"
+/  
+
+

@@ -1,0 +1,57 @@
+broadening_module.o : broadening_module.f90 SFL_Interpolation.o special_functions_module.o error_module.o shared.o 
+check_required_parameter_module.o : check_required_parameter_module.f90 tools_read_input_file_module.o error_module.o SFL_Logical_Units.o shared.o 
+check_parameters_module.o : check_parameters_module.f90 SFL_NR_Util.o error_module.o supported_options_module.o shared.o 
+command_line_handling_module.o : command_line_handling_module.f90 error_module.o f2003_wrapper_mod.o software_info_mod.o supported_commandline_options_module.o shared.o 
+compile_date_time_m.o : compile_date_time_m.F90 
+curvefit.o : curvefit.f90 supported_options_module.o finalize_module.o epsilon_corrections_module.o broadening_module.o susceptibilities_module.o reflection_transmission_amplitudes_module.o polarizabilities_module.o multipole_coefficient_module.o check_parameters_module.o post_process_parameters_module.o SFL_Interpolation.o SFL_Logical_Units.o physical_observables_module.o integrals_module.o initialize_module.o error_module.o shared.o 
+default_parameter_module.o : default_parameter_module.f90 shared.o 
+derived_type_module.o : derived_type_module.f90 working_precision.o 
+eigenmodes_module.o : eigenmodes_module.f90 SFL_Logical_Units.o potential_module.o matrix_system_spheroid_module.o matrix_system_sphere_module.o error_module.o shared.o 
+epsilon_corrections_module.o : epsilon_corrections_module.f90 error_module.o shared.o 
+error_module.o : error_module.f90 SFL_Error_Handling.o 
+f2003_wrapper_mod.o : f2003_wrapper_mod.f90 
+finalize_module.o : finalize_module.f90 SFL_Error_Handling.o SFL_Logical_Units.o SFL_Precision.o shared.o 
+fit_experimental_data_module.o : fit_experimental_data_module.f90 curvefit.o shared.o 
+GranFilm.o : GranFilm.f90 eigenmodes_module.o potential_module.o fit_experimental_data_module.o susceptibilities_module.o reflection_transmission_amplitudes_module.o polarizabilities_module.o physical_observables_module.o multipole_coefficient_module.o integrals_module.o finalize_module.o initialize_module.o error_module.o shared.o 
+initialize_module.o : initialize_module.f90 print_parameters_module.o check_parameters_module.o post_process_parameters_module.o default_parameter_module.o check_required_parameter_module.o read_input_file_module.o command_line_handling_module.o error_module.o physical_constants_module.o shared.o 
+integrals_module.o : integrals_module.f90 derived_type_module.o error_module.o integrals_spheroid_module.o integrals_sphere_module.o shared.o 
+integrals_sphere_module.o : integrals_sphere_module.f90 SFL_Logical_Units.o integrand_module.o quadpack_wrapper_module.o error_module.o derived_type_module.o shared.o 
+integrals_spheroid_module.o : integrals_spheroid_module.f90 SFL_Logical_Units.o integrand_module_spheroid_prolate.o integrand_module_spheroid_oblate.o quadpack_wrapper_module.o derived_type_module.o error_module.o shared.o 
+integrand_module.o : integrand_module.f90 legendre_module.o shared.o 
+integrand_module_spheroid_oblate.o : integrand_module_spheroid_oblate.f90 legendre_module.o SFL_Precision.o error_module.o shared.o 
+integrand_module_spheroid_prolate.o : integrand_module_spheroid_prolate.f90 SFL_Precision.o error_module.o legendre_module.o shared.o 
+interaction_module.o : interaction_module.f90 supported_options_module.o error_module.o shared.o 
+legendre_module.o : legendre_module.f90 error_module.o shared.o 
+linear_algebra_module.o : linear_algebra_module.f90 SFL_Precision.o shared.o 
+matrix_system_sphere_module.o : matrix_system_sphere_module.f90 tools_module.o error_module.o shared.o 
+matrix_system_spheroid_module.o : matrix_system_spheroid_module.f90 tools_module.o error_module.o shared.o 
+minpack.o : minpack.f90 
+multipole_coefficient_module.o : multipole_coefficient_module.f90 SFL_Logical_Units.o error_module.o linear_algebra_module.o matrix_system_spheroid_module.o matrix_system_sphere_module.o shared.o 
+optics_module.o : optics_module.f90 tools_module.o shared.o 
+physical_constants_module.o : physical_constants_module.f90 working_precision.o 
+physical_observables_module.o : physical_observables_module.f90 reflection_transmission_amplitudes_module.o optics_module.o tools_module.o SFL_Logical_Units.o error_module.o shared.o 
+polarizabilities_module.o : polarizabilities_module.f90 broadening_module.o SFL_Logical_Units.o tools_module.o shared.o 
+post_process_parameters_module.o : post_process_parameters_module.f90 SFL_Logical_Units.o supported_options_module.o tools_module.o epsilon_corrections_module.o sopra_dielectric_function_module.o error_module.o SFL_NR_Util.o shared.o 
+potential_module.o : potential_module.f90 SFL_Logical_Units.o integrand_module_spheroid_prolate.o legendre_module.o integrand_module_spheroid_oblate.o tools_module.o linear_algebra_module.o matrix_system_spheroid_module.o matrix_system_sphere_module.o potential_derivatives_module.o error_module.o shared.o 
+potential_derivatives_module.o : potential_derivatives_module.f90 SFL_Logical_Units.o legendre_module.o integrand_module_spheroid_oblate.o integrand_module_spheroid_prolate.o tools_module.o error_module.o shared.o 
+print_parameters_module.o : print_parameters_module.f90 error_module.o SFL_Logical_Units.o shared.o 
+quadpack_wrapper_module.o : quadpack_wrapper_module.f90 SFL_Precision.o shared.o 
+read_input_file_module.o : read_input_file_module.f90 tools_module.o tools_read_input_file_module.o error_module.o SFL_Logical_Units.o shared.o 
+reflection_transmission_amplitudes_module.o : reflection_transmission_amplitudes_module.f90 derived_type_module.o tools_module.o supported_options_module.o error_module.o shared.o 
+shared.o : shared.f90 derived_type_module.o software_info_mod.o physical_constants_module.o working_precision.o 
+SFL_Error_Handling.o : SFL_Error_Handling.f90 SFL_Logical_Units.o 
+SFL_Interpolation.o : SFL_Interpolation.f90 SFL_Precision.o 
+SFL_ISO_Fortran_Env.o : SFL_ISO_Fortran_Env.f90 
+SFL_NR_Util.o : SFL_NR_Util.f90 SFL_Precision.o 
+SFL_Logical_Units.o : SFL_Logical_Units.f90 SFL_ISO_Fortran_Env.o 
+SFL_Precision.o : SFL_Precision.f90 
+SFL_Util.o : SFL_Util.f90 SFL_ISO_Fortran_Env.o SFL_Precision.o SFL_NR_Util.o 
+software_info_mod.o : software_info_mod.f90 .rcs_id SFL_Util.o compile_date_time_m.o 
+sopra_dielectric_function_module.o : sopra_dielectric_function_module.f90 SFL_Interpolation.o error_module.o SFL_Util.o shared.o 
+special_functions_module.o : special_functions_module.f90 shared.o 
+supported_commandline_options_module.o : supported_commandline_options_module.f90 
+supported_options_module.o : supported_options_module.f90 error_module.o shared.o 
+susceptibilities_module.o : susceptibilities_module.f90 interaction_module.o supported_options_module.o SFL_Logical_Units.o error_module.o shared.o 
+tools_module.o : tools_module.f90 shared.o 
+tools_read_input_file_module.o : tools_read_input_file_module.f90 
+working_precision.o : working_precision.f90 SFL_Precision.o 

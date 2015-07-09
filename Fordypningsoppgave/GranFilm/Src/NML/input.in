@@ -1,0 +1,42 @@
+&Test
+  MediaVec = 'Ag', 'Au'
+/
+
+
+
+!--------------------------
+
+&Ag
+  Value = 1.
+  Delta = 1
+  String =  First Test
+/
+
+
+&Au 
+  Value = 2. 
+  Delta = 2 
+  String =  Second Test
+/
+  
+
+
+&VectorFelt
+  Vector = 1.0, 2.0
+/
+
+
+&StringVector
+  str = "test", "it"
+/
+
+
+
+ &Media 
+ Tag  = "MgO"
+ File = "Test.nk"
+ /
+
+
+
+

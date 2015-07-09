@@ -1,0 +1,67 @@
+
+The Most Important:
+
+* Fix the calculation of the Integrals
+   - several of the integrals are not needed
+   - sharing of varibale with the integran not clear enough
+
+* There seems to be a weak dependece on the Multipole_Position_Ratio
+   - is this an error or a numerical artifact?
+   - difference due to a higher order effect?
+     
+
+
+--------------------------------------------------------
+
+* Correct the convertion between wavelength and Energy
+   - currently it is  hardcoded constant
+
+* Clean up the linear_Algebra_Module
+   - in particular the Solve_Linear_System routine
+
+* Clean up the Integral module
+   - it seems to work as it is now, but still needs to be cleaned
+   - Also the Q-integrals are calculated when not neede
+   - Also the m=1 integrals when the upper limit is ONE are not
+   - Cirrently they are calculated...... creating an unneeded overhead   
+
+* Fix the problem in the  List_Supported_Options routine
+   - the call to the error_warning routine seems not to work....
+
+* Set the default output unit to StdOut in SFL_Error_Handling....
+   - this should already have been done in the GranFilm version....
+
+* Should one transfer the Integrals and Results derived type variables
+   - Currently these variables are shaered
+
+* Can we make the code so that the direction of the z-axis can be chosen?
+   - It seems to me that these are the chnages :
+   -      of sign of the suseptebilities
+   -      the limits of integration so that tr_r -> - t_r   
+
+* Check how the angles of incidence are defined. 
+   - it it according to the positive z-direction or not.....
+   - does the this choice matter for the incident field?
+   - in Leif's version there is somthing regarding (theta0_calc)
+   - see def of theta0_calc. in initialize_mod.f90 in the old code!  
+
+* Start using param%Source%iambient etc for the incident medium
+   - Do not hardcode the medium to be 1 and 2 etc.
+
+* What is happening when |x|=1 in finction Legendre_Plm_Diff
+   - there seems to be a singularity....
+   
+* What if Chi is zero, so that the argument of the integran is NaN
+   - this seems to happen when t_r=0.5; z_mp=0, Radius = 8.
+   - fix this!!!!  
+   - Can one use QAGP or QAWS?
+
+* For the itegration, should one try out the new integrators
+   - try  QAWO designed for oscillating interators
+
+* Give equation reference to what is implemented in susceptibility
+   - this applies in particular to the dipole interaction case
+
+   
+* In GUI mode write out the the values of epsilon for all media of the system.
+  Is this the right way to do it?

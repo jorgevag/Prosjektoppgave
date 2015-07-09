@@ -1,0 +1,935 @@
+
+broadening_module.f90,199
+Module Broadening_ModuleBroadening_Module18,363
+  subroutine Broaden_Alpha(Broaden_Alpha38,882
+  Subroutine Gaussian_Convolution(Gaussian_Convolution194,6232
+    Function Gauss(Gauss266,8811
+
+check_required_parameter_module.f90,237
+Module Check_Required_Parameter_ModuleCheck_Required_Parameter_Module24,706
+  Subroutine Check_for_Required_Parameters(Check_for_Required_Parameters52,1248
+    Subroutine Field_in_Namelist_Present(Field_in_Namelist_Present201,4518
+
+check_parameters_module.f90,326
+Module Check_Parameters_ModuleCheck_Parameters_Module20,425
+  Integer, parameter :: ZERO ZERO42,965
+  Integer, parameter :: ONE ONE43,1002
+  Subroutine Checking(Checking55,1112
+  Subroutine Check_Input_Parameters(Check_Input_Parameters83,1743
+  Subroutine Check_Derived_Parameters(Check_Derived_Parameters256,7242
+
+command_line_handling_module.f90,369
+Module Command_Line_Handling_ModuleCommand_Line_Handling_Module21,442
+  Subroutine Read_Command_Line(Read_Command_Line50,964
+    Subroutine Version(Version174,4996
+    Subroutine Usage(Usage196,5974
+    Subroutine Print_CommandLine_Options(Print_CommandLine_Options220,6671
+  Subroutine Get_Needed_CommandLine_Options(Get_Needed_CommandLine_Options242,7308
+
+compile_date_time_m.F90,157
+module compile_date_time_mcompile_date_time_m1,0
+  Function get_compile_time(get_compile_time21,368
+  Function get_compile_date(get_compile_date36,569
+
+curvefit.f90,1947
+Module Curvefit_ModuleCurvefit_Module20,365
+  integer, parameter        :: N_param N_param39,946
+  integer                   :: N_fitN_fit41,1043
+  integer, parameter        :: broadening_params broadening_params42,1080
+  logical, parameter        :: verbose_curvefit verbose_curvefit44,1175
+  real(wp), allocatable     :: R_exp_interp(R_exp_interp48,1379
+  real(wp), allocatable     :: R_exp_interp(:), R_sim(R_sim48,1379
+  real(wp), allocatable     :: R_exp_interp(:), R_sim(:), E(E48,1379
+  real(wp)                  :: xl_constr(xl_constr52,1547
+  real(wp)                  :: xl_constr(N_param), xr_constr(xr_constr52,1547
+  real(wp)                  :: xl_constr(N_param), xr_constr(N_param),&
+A_constr52,1547
+                               A_constr(N_param), b_constrb_constr53,1619
+  real(wp), parameter       :: largeval largeval55,1746
+  Subroutine Curvefit(Curvefit64,1877
+  subroutine fcn(fcn180,6663
+  Subroutine Read_Datafile(Read_Datafile233,8094
+  Subroutine Interpolate_Experimental(Interpolate_Experimental303,10317
+  Subroutine Update_Parameters(Update_Parameters333,11424
+  Subroutine Get_Simulated_Curve(Get_Simulated_Curve373,12685
+  subroutine Curvediff(Curvediff415,14290
+  function infeasibility(infeasibility534,17915
+  subroutine Curvefit_Report(Curvefit_Report577,19128
+  subroutine Set_lmdif_parameters(Set_lmdif_parameters705,24693
+  Subroutine Run_Simulation(Run_Simulation803,28245
+  subroutine Get_Initial_Guess(Get_Initial_Guess838,29718
+  subroutine Get_Constraints(Get_Constraints897,31975
+  subroutine Save_Parameters(Save_Parameters947,33296
+  subroutine Save_Derived_Parameters(Save_Derived_Parameters967,33892
+  subroutine Save_Info(Save_Info990,34719
+  subroutine Save_Covariance(Save_Covariance1018,35522
+  subroutine Get_Covariance_Matrix(Get_Covariance_Matrix1044,36233
+  subroutine Get_Derived_Parameters(Get_Derived_Parameters1095,37400
+
+default_parameter_module.f90,219
+Module Default_Parameter_ModuleDefault_Parameter_Module20,440
+  Subroutine Set_Default_Parameters(Set_Default_Parameters51,1011
+  Subroutine Set_Default_Internal_Parameters(Set_Default_Internal_Parameters211,5497
+
+derived_type_module.f90,10766
+Module Derived_Type_Module Derived_Type_Module4,30
+  Integer,                parameter  :: STR_TINY STR_TINY90,2492
+  Integer,                parameter  :: STR_SHORT STR_SHORT91,2548
+  Integer,                parameter  :: STR_LONG STR_LONG92,2605
+  Integer,                parameter  :: STR_FILE STR_FILE93,2664
+  Integer,                parameter  :: STR_PATH STR_PATH94,2723
+  Character(len=*),       parameter  :: NOT_SET NOT_SET96,2783
+ Type InOut_TypeInOut_Type111,3128
+     Character(len=STR_FILE)   :: Input_File_Name Input_File_Name116,3232
+     Character(len=STR_FILE)   :: Output_Base_Name Output_Base_Name117,3315
+     Character(len=STR_FILE)   :: Output_File_Name Output_File_Name118,3399
+     Character(len=STR_FILE)   :: Experimental_File_NameExperimental_File_Name119,3499
+     Character(len=STR_PATH)   :: Output_Type Output_Type120,3556
+     Logical                   :: Verbose Verbose123,3663
+     Logical                   :: Print_Parameters Print_Parameters124,3743
+     Logical                   :: Do_Curve_Fitting Do_Curve_Fitting125,3807
+     Logical                   :: Testing Testing129,3959
+     Logical                   :: Debug Debug130,4045
+     Logical                   :: Gui_Mode Gui_Mode146,4890
+     Logical                   :: python_mode python_mode149,4982
+  Type :: Global_TypeGlobal_Type156,5134
+     Character(len=200)         :: TitleTitle158,5182
+     Character(len=1000)        :: SOPRA_ROOT SOPRA_ROOT159,5223
+  Type :: Geometry_TypeGeometry_Type166,5396
+     Real(wp),           dimension(:), allocatable  :: Radius Radius171,5587
+     Real(wp)                                       :: Truncation_Ratio Truncation_Ratio172,5721
+     Real(wp),           dimension(:), allocatable  :: Radius_Ratios Radius_Ratios173,5843
+     Character(len=100), dimension(:), allocatable  :: MediaMedia174,6004
+     Real(wp)                                       :: Broadening_ParBroadening_Par176,6072
+     Real(wp)                                       :: Broadening_PerpBroadening_Perp177,6142
+     Real(wp),           dimension(:), allocatable  :: Radius_Vector Radius_Vector180,6270
+     Real(wp),           dimension(:), allocatable  :: Distance Distance181,6401
+     Real(wp),           dimension(:), allocatable  :: Truncation_Ratio_Vector Truncation_Ratio_Vector182,6537
+     Logical        :: isOblate isOblate185,6778
+     Logical        :: isProlate isProlate186,6816
+     Real(wp)       :: Contact_Angle Contact_Angle188,6932
+     Real(wp)       :: Apparent_Radius Apparent_Radius189,7006
+     Real(wp)       :: Coverage Coverage190,7099
+  Type Media_TypeMedia_Type198,7214
+     Character(len=STR_SHORT)               :: Material Material202,7285
+     Character(len=STR_LONG)                :: Path Path203,7372
+     Real(wp)                               :: Epsilon_Scale(Epsilon_Scale204,7484
+     Logical                                :: Do_Temperature_CorrectionDo_Temperature_Correction205,7594
+     Logical                                :: Do_Size_CorrectionDo_Size_Correction206,7667
+     logical                                :: temp_corrtemp_corr208,7788
+     logical                                :: finitesize_corrfinitesize_corr209,7845
+     real(wp)                               :: temperature temperature210,7908
+     real(wp)                               :: Ep Ep211,7981
+     real(wp)                               :: d_Ep_dT d_Ep_dT212,8055
+     real(wp)                               :: hbar_fermi_velocity hbar_fermi_velocity213,8131
+     real(wp)                               :: hbar_inv_tau hbar_inv_tau214,8208
+     real(wp)                               :: B_plasmonshift B_plasmonshift215,8282
+     complex(wp), dimension(:), allocatable :: epsilonepsilon218,8418
+     complex(wp), dimension(:), allocatable :: mumu219,8473
+     Character(len=STR_SHORT)               :: Tag Tag221,8547
+  Type Source_TypeSource_Type228,8723
+     Real(wp)               :: Theta0Theta0230,8762
+     Real(wp)               :: Phi0Phi0231,8800
+     Character(len=2)       :: PolarizationPolarization232,8836
+     Real(wp), dimension(2) :: Energy_Range Energy_Range233,8880
+     Real(wp)               :: ThetaE ThetaE235,8986
+     Real(wp)               :: PhiE PhiE236,9048
+     Integer                :: iambient iambient239,9167
+     Integer                :: isubstrate isubstrate240,9237
+  Type Numerics_TypeNumerics_Type247,9381
+     Integer                             :: Multipole_Order Multipole_Order249,9424
+     Real(wp)                            :: Multipole_Position_Ratio Multipole_Position_Ratio250,9489
+     Integer                             :: No_Energy_Points No_Energy_Points251,9559
+     Integer                             :: Lattice_Sum_Level Lattice_Sum_Level252,9653
+     Logical                             :: All_MP_Coef_Needed All_MP_Coef_Needed253,9764
+     Integer                             :: MP_Expansion_Medium MP_Expansion_Medium255,9878
+     Logical                             :: Multipole_Above_SubstrateMultipole_Above_Substrate256,9998
+     Integer                             :: M_MAXM_MAX257,10068
+     Integer,  dimension(:),     allocatable :: MP_Storage_OffsetMP_Storage_Offset258,10118
+     Real(wp), dimension(:),     allocatable :: EnergyEnergy259,10184
+     Real(wp), dimension(:,:,:), allocatable :: ZetaZeta260,10239
+  Type Potential_TypePotential_Type268,10369
+     Logical                             :: Potential_CalculationPotential_Calculation270,10413
+     Character(len=1000)                 :: Points_FilePoints_File271,10479
+     Real(wp), dimension(:), allocatable :: EnergyEnergy272,10535
+  Type EELS_TypeEELS_Type279,10663
+     Logical                             :: EELS_CalculationEELS_Calculation281,10702
+     Real(wp)                            :: Impact_Energy Impact_Energy282,10763
+     Real(wp)                            :: Wavevector_Transfer Wavevector_Transfer283,10830
+  Type Interaction_TypeInteraction_Type289,10999
+     Character(len=STR_SHORT)   :: ArrangementArrangement291,11048
+     Character(len=STR_SHORT)   :: Lattice_TypeLattice_Type292,11095
+     Real(wp)                   :: Lattice_Constant Lattice_Constant293,11143
+     Character(len=STR_SHORT)   :: Island_Island_InteractionIsland_Island_Interaction295,11240
+     Real(wp)                   :: Density Density297,11351
+     Real(wp)                   :: Coverage Coverage298,11439
+  Type Curvefitting_TypeCurvefitting_Type306,11608
+     Real(wp), dimension(3)   ::  Lower_Constraint,Lower_Constraint308,11659
+     Real(wp), dimension(3)   ::  Lower_Constraint, Upper_ConstraintUpper_Constraint308,11659
+     Real(wp)                 ::  sigma,sigma309,11728
+     Real(wp)                 ::  sigma, broadening_zerobroadening_zero309,11728
+     Logical                   :: freeze_broadeningfreeze_broadening311,11865
+  Type Polarizability_TypePolarizability_Type324,12129
+     Real(wp)                   :: weights weights335,12518
+     Complex(wp), dimension(2)  :: Dipole Dipole336,12574
+     Complex(wp), dimension(2)  :: Quadrupole Quadrupole337,12628
+  Type Susceptibility_TypeSusceptibility_Type348,12993
+     Complex(wp)     :: gammagamma353,13118
+     Complex(wp)     :: betabeta354,13148
+     Complex(wp)     :: tautau355,13177
+     Complex(wp)     :: deltadelta356,13205
+  Type Ref_Trans_Amp_TypeRef_Trans_Amp_Type362,13329
+     Complp367,13463
+     Complex(wp)     :: s s368,13522
+     Complex(wp)     :: fresnel_p fresnel_p369,13573
+     Complex(wp)     :: fresnel_s fresnel_s370,13635
+  Type Physical_Quantities_TypePhysical_Quantities_Type376,13782
+     Real(wp),    dimension(:,:), allocatable :: ReflectivityReflectivity386,14080
+     Real(wp),    dimension(:,:), allocatable :: TransmissivityTransmissivity387,14142
+     Real(wp),    dimension(:,:), allocatable :: Delta_R_over_RDelta_R_over_R388,14206
+     Real(wp),    dimension(:),   allocatable ::  EELS EELS391,14412
+  Type Physical_Quantities_to_Calculate_TypePhysical_Quantities_to_Calculate_Type398,14664
+     Logical  :: reflectivity reflectivity405,14900
+     Logical  :: transmissivity transmissivity406,14933
+     Logical  :: Delta_R_over_R Delta_R_over_R407,14966
+  Type MultiPole_Coef_TypeMultiPole_Coef_Type420,15229
+     Complex(wp), dimension(:,:,:), allocatable :: CoefficientsCoefficients426,15416
+  Type GranFilm_Results_TypeGranFilm_Results_Type446,15778
+     Integer                                                 ::  par par452,15942
+     Integer                                                 ::  perp perp453,16050
+     Type(Polarizability_Type),  dimension(:,:), allocatable ::  PolarizabilitiesPolarizabilities456,16382
+     Type(Susceptibility_Type),  dimension(:),   allocatable ::  SusceptibilitiesSusceptibilities457,16464
+     Type(Ref_Trans_Amp_Type),   dimension(:),   allocatable ::  Reflection_Amplitudes Reflection_Amplitudes458,16546
+     Type(Ref_Trans_Amp_Type),   dimension(:),   allocatable ::  Transmission_AmplitudesTransmission_Amplitudes459,16634
+     Type(MultiPole_Coef_Type)                               ::  MultiPolesMultiPoles461,16730
+     Type(Physical_Quantities_Type)                          ::  Observables Observables462,16806
+  Type GranFilm_Integral_TypeGranFilm_Integral_Type470,16986
+     Integer    :: MultiPole MultiPole485,17444
+     Integer    :: ImageMultiPole ImageMultiPole486,17485
+     Integer    :: UpperLimit_trUpperLimit_tr487,17521
+     Integer    :: UpperLimit_One UpperLimit_One488,17554
+     Real(wp)                                    :: Radius_Ratio Radius_Ratio490,17605
+     Real(wp)                                    :: truncation_ratiotruncation_ratio491,17671
+     Real(wp), dimension(:,:,:,:,:), allocatable :: QQ492,17740
+     Real(wp), dimension(:,:,:,:,:), allocatable :: KK493,17794
+     Real(wp), dimension(:,:,:,:,:), allocatable :: LL494,17848
+     Real(wp), dimension(:,:,:,:,:), allocatable :: MM495,17902
+     Real(wp), dimension(:,:,:,:,:), allocatable :: NN496,17956
+  Type :: GranFilm_Parameter_TypeGranFilm_Parameter_Type505,18119
+     Type(Global_Global511,18298
+     Type(Geometry_Geometry512,18358
+     Type(Interaction_Interaction513,18420
+     Type(Curvefitting_Curvefitting514,18485
+     Type(Source_Source515,18551
+     Type(Numerics_Numerics516,18611
+     Type(Potential_Potential517,18673
+     Type(EELS_EELS518,18736
+     Type(Media_Media521,18807
+     Type(InOut_InOut523,18873
+     Type(Physical_Quantities_to_Calculate_Type)  :: Should_Calc Should_Calc525,18939
+
+eigenmodes_module.f90,762
+Module Eigenmodes_ModuleEigenmodes_Module20,498
+  Subroutine Calculate_Determinants(Calculate_Determinants44,1128
+    Function Determinant(Determinant120,3948
+  Subroutine Calculate_Eigenvalues(Calculate_Eigenvalues161,5202
+  Subroutine Get_Eigen(Get_Eigen290,11194
+  Subroutine Get_Potential_From_Eigenvector(Get_Potential_From_Eigenvector342,13422
+  Subroutine Get_closest_ienergy_eigenvector(Get_closest_ienergy_eigenvector472,20371
+  subroutine write_eigenmode_potential_to_file(write_eigenmode_potential_to_file502,21751
+  Subroutine write_determinants_to_file(write_determinants_to_file529,23113
+  Subroutine write_eigenvalues_to_file(write_eigenvalues_to_file554,24355
+  Subroutine write_matrix_to_file(write_matrix_to_file578,25566
+
+epsilon_corrections_module.f90,354
+Module Epsilon_Corrections_ModuleEpsilon_Corrections_Module28,554
+  Subroutine Epsilon_Scaling(Epsilon_Scaling56,1083
+  Subroutine Epsilon_Corrections(Epsilon_Corrections94,2355
+  Subroutine Epsilon_Temperature_Correction(Epsilon_Temperature_Correction131,3355
+  Subroutine Epsilon_Finite_Size_Correction(Epsilon_Finite_Size_Correction163,4315
+
+error_module.f90,303
+Module Error_ModuleError_Module19,398
+  Subroutine Error_Initialize(Error_Initialize46,962
+  Subroutine Error_Fatal(Error_Fatal62,1373
+  Subroutine Error_Failure(Error_Failure81,1964
+  Subroutine Error_Warning(Error_Warning101,2556
+  Function Common_Error_String(Common_Error_String120,3173
+
+f2003_wrapper_mod.f90,349
+Module F2003_Wrapper_ModF2003_Wrapper_Mod1,0
+  Integer, parameter :: NO_ERROR=NO_ERROR35,1028
+  Function Command_Argument_Count(Command_Argument_Count43,1079
+  Subroutine Get_Command(Get_Command58,1406
+  Subroutine  Get_Command_Argument(Get_Command_Argument90,2392
+  Subroutine  Get_Enviornment_Variable(Get_Enviornment_Variable116,3123
+
+finalize_module.f90,402
+Module Finalize_ModuleFinalize_Module18,356
+  Subroutine Finalize_GranFilm(Finalize_GranFilm47,855
+  Subroutine Write_Result_File_ASCII(Write_Result_File_ASCII104,2409
+  Subroutine Write_Result_File_ASCII_GUI_Mode(Write_Result_File_ASCII_GUI_Mode337,15095
+    Subroutine Copy_RefTrans_Amplitudes(Copy_RefTrans_Amplitudes405,17381
+  Subroutine Write_Epsilon_File(Write_Epsilon_File452,19088
+
+fit_experimental_data_module.f90,137
+Module Fit_Experimental_Data_ModuleFit_Experimental_Data_Module20,400
+  Subroutine Fit_Experimental_Data(Fit_Experimental_Data43,851
+
+GranFilm.f90,33
+Program GranFilmGranFilm22,354
+
+initialize_module.f90,111
+Module Initialize_ModuleInitialize_Module19,425
+  Subroutine Initialize_GranFilm(Initialize_GranFilm48,929
+
+integrals_module.f90,447
+Module Integrals_ModuleIntegrals_Module21,433
+  Subroutine Get_Integrals(Get_Integrals48,960
+  Subroutine Allocate_Integrals(Allocate_Integrals118,2812
+  Subroutine Set_Integral_Index_Defaults(Set_Integral_Index_Defaults190,4881
+  Subroutine Integral_Component_Allocation_and_Initialization(Integral_Component_Allocation_and_Initialization214,5628
+  Subroutine Integral_Component_Deallocateion(Integral_Component_Deallocateion259,7217
+
+integrals_sphere_module.f90,378
+Module Integrals_Sphere_ModuleIntegrals_Sphere_Module21,467
+  Subroutine Get_Integrals_Sphere(Get_Integrals_Sphere48,1024
+  Subroutine Calculate_Integrals_Sphere(Calculate_Integrals_Sphere218,6134
+  Subroutine Calculate_Integrals_Hidden_But_Working(Calculate_Integrals_Hidden_But_Working483,15756
+  Subroutine Write_Integrals_to_File(Write_Integrals_to_File1214,43427
+
+integrals_spheroid_module.f90,399
+Module Integrals_Spheroid_ModuleIntegrals_Spheroid_Module33,868
+  Subroutine Get_Integrals_Spheroid(Get_Integrals_Spheroid60,1391
+  Subroutine Calculate_Integrals_Spheroid_Oblate(Calculate_Integrals_Spheroid_Oblate146,4036
+  Subroutine Calculate_Integrals_Spheroid_Prolate(Calculate_Integrals_Spheroid_Prolate460,16379
+  Subroutine Write_Integrals_to_File(Write_Integrals_to_File669,26120
+
+integrand_module.f90,514
+Module Integrand_ModuleIntegrand_Module21,544
+  Integer  :: l1 l159,1484
+  Integer  :: l2 l260,1533
+  Integer  :: m m61,1582
+  Real(wp) :: PosMP PosMP62,1631
+  Function Q_Integrand(Q_Integrand73,1769
+  Function K_Integrand(K_Integrand90,2153
+  Function L_Integrand(L_Integrand115,2763
+  Function M_Integrand(M_Integrand150,3894
+  Function N_Integrand(N_Integrand177,4491
+  Subroutine Get_Internal_Parameters(Get_Internal_Parameters215,5769
+  Function Test_Integrand(Test_Integrand396,10928
+
+integrand_module_spheroid_oblate.f90,1103
+Module Integrand_Module_Spheroid_OblateIntegrand_Module_Spheroid_Oblate24,636
+  Integer  :: l1 l172,1909
+  Integer  :: l2 l273,1963
+  Integer  :: m m74,2017
+  Real(wp) :: delta_z_over_a delta_z_over_a75,2071
+  real(wp) :: xi_0 xi_077,2218
+  Subroutine Transformed_xi_eta(Transformed_xi_eta86,2397
+  Subroutine Deriv_transformed_xi_eta(Deriv_transformed_xi_eta120,3482
+Function Legendre_Plm_Aimag(Legendre_Plm_Aimag151,4719
+  Function Legendre_Plm_Aimag_Diff(Legendre_Plm_Aimag_Diff209,6486
+  Function Legendre_Qlm_Aimag(Legendre_Qlm_Aimag226,7085
+  Function Legendre_Qlm_Aimag_Diff(Legendre_Qlm_Aimag_Diff292,9093
+  Function X_Oblate(X_Oblate309,9676
+  Function Z_Oblate(Z_Oblate343,10432
+  Function X_Oblate_diff(X_Oblate_diff374,11078
+  Function Z_Oblate_diff(Z_Oblate_diff408,11856
+  Function Q_Integrand(Q_Integrand444,12583
+  Function V_Integrand(V_Integrand461,13083
+  Function W_Integrand(W_Integrand488,14030
+  Function dV_Integrand(dV_Integrand504,14607
+  Function dW_Integrand(dW_Integrand528,15618
+  Function Test_Integrand(Test_Integrand550,16489
+
+integrand_module_spheroid_prolate.f90,1047
+Module Integrand_Module_Spheroid_ProlateIntegrand_Module_Spheroid_Prolate30,1009
+  Integer  :: l1 l177,2369
+  Integer  :: l2 l278,2423
+  Integer  :: m m79,2477
+  Real(wp) :: delta_z_over_a delta_z_over_a80,2531
+  real(wp) :: xi_0 xi_082,2678
+  Subroutine Transformed_xi_eta(Transformed_xi_eta88,2861
+  Subroutine Deriv_transformed_xi_eta(Deriv_transformed_xi_eta129,4503
+  Function Legendre_Plm_xGrOne(Legendre_Plm_xGrOne168,6031
+  Function Legendre_Plm_xGrOne_Diff(Legendre_Plm_xGrOne_Diff243,8450
+  Function Legendre_Qlm(Legendre_Qlm291,10123
+  Function Legendre_Qlm_Diff(Legendre_Qlm_Diff368,12728
+  Function X_Prolate(X_Prolate408,14204
+  Function Z_Prolate(Z_Prolate451,15375
+  Function X_Prolate_Diff(X_Prolate_Diff494,16516
+  Function Z_Prolate_Diff(Z_Prolate_Diff535,17696
+  Function Q_Integrand(Q_Integrand579,18952
+  Function V_Integrand(V_Integrand595,19407
+  Function W_Integrand(W_Integrand614,20043
+  Function dV_Integrand(dV_Integrand633,20677
+  Function dW_Integrand(dW_Integrand656,21572
+
+interaction_module.f90,278
+Module Interaction_ModuleInteraction_Module19,412
+  Function Lattice_Sum(Lattice_Sum56,974
+    Function Lattice_Sum_square(Lattice_Sum_square121,3569
+    Function Lattice_Sum_hexagonal(Lattice_Sum_hexagonal183,6126
+    Function Arg_Lattice_Sum(Arg_Lattice_Sum236,8282
+
+legendre_module.f90,237
+Module Legendre_ModuleLegendre_Module23,521
+  Function Legendre_Plm(Legendre_Plm51,1073
+    Function arth(arth104,2813
+  Function Legendre_Plm_vec(Legendre_Plm_vec123,3242
+  Function Legendre_Plm_Diff(Legendre_Plm_Diff150,4055
+
+linear_algebra_module.f90,171
+Module Linear_Algebra_ModuleLinear_Algebra_Module22,492
+  Subroutine Solve_Linear_System(Solve_Linear_System57,1160
+  Subroutine Invert_Matrix(Invert_Matrix161,4555
+
+matrix_system_sphere_module.f90,477
+Module Matrix_System_Sphere_ModuleMatrix_System_Sphere_Module24,609
+  Subroutine Get_Matrix_System_Sphere(Get_Matrix_System_Sphere54,1261
+  Subroutine Matrix_System_MP_Above(Matrix_System_MP_Above106,2846
+    Subroutine get_I_and_J_factors(get_I_and_J_factors472,15788
+  Subroutine Right_Hand_Side_MP_Above(Right_Hand_Side_MP_Above502,16866
+  Subroutine Matrix_system_above(Matrix_system_above700,22635
+  Subroutine Right_Dipole_above(Right_Dipole_above801,26884
+
+matrix_system_spheroid_module.f90,387
+Module Matrix_System_Spheroid_ModuleMatrix_System_Spheroid_Module33,820
+  Subroutine Get_Matrix_System_Spheroid(Get_Matrix_System_Spheroid61,1396
+  Subroutine Matrix_System_MP_Above_Spheroid(Matrix_System_MP_Above_Spheroid115,3047
+    Subroutine get_eps_factors(get_eps_factors510,16556
+  Subroutine Right_Hand_Side_MP_Above_Spheroid(Right_Hand_Side_MP_Above_Spheroid536,17481
+
+minpack.f90,1510
+subroutine chkder chkder1,0
+subroutine dogleg dogleg171,4798
+function enorm enorm380,10069
+function enorm2 enorm2429,11167
+subroutine fdjac1 fdjac1559,14223
+subroutine fdjac2 fdjac2736,18816
+subroutine hybrd hybrd854,22111
+30 continue301096,29889
+180    continue1801181,31673
+  290   continue2901362,35874
+  300 continue3001367,35935
+subroutine hybrd1 hybrd11383,36148
+subroutine hybrj hybrj1512,39916
+   20 continue201708,46603
+30 continue301729,46971
+  180    continue1801813,48825
+290     continue2901996,53102
+  300 continue3002002,53164
+subroutine hybrj1 hybrj12018,53391
+subroutine lmder lmder2152,57517
+30   continue302392,65976
+200    continue2002497,68189
+  300 continue3002641,71506
+subroutine lmder1 lmder12657,71736
+subroutine lmdif lmdif2807,76640
+30 continue303057,85437
+200  continue2003166,87755
+300 continue3003309,91299
+subroutine lmdif1 lmdif13325,91513
+subroutine lmpar lmpar3459,95678
+  150 continue1503684,101924
+220  continue2203750,103388
+subroutine lmstr lmstr3760,103487
+   30 continue304008,112049
+240    continue2404129,114736
+  340 continue3404268,118197
+subroutine lmstr1 lmstr14284,118418
+subroutine qform qform4438,123380
+subroutine qrfac qrfac4539,125802
+subroutine qrsolv qrsolv4733,130931
+subroutine r1mpyq r1mpyq4951,136628
+subroutine r1updt r1updt5062,139340
+subroutine r8vec_print r8vec_print5295,144924
+subroutine rwupdt rwupdt5342,145795
+subroutine timestamp timestamp5468,149445
+
+multipole_coefficient_module.f90,148
+Module MultiPole_Coefficient_ModuleMultiPole_Coefficient_Module22,530
+  Subroutine Get_Multipole_Coefficients(Get_Multipole_Coefficients51,1074
+
+optics_module.f90,197
+Module Optics_ModuleOptics_Module19,415
+  Elemental Function Reflection_Coefficient(Reflection_Coefficient48,981
+  Elemental Function Transmission_Coefficient(Transmission_Coefficient79,2005
+
+physical_constants_module.f90,484
+Module Physical_Constants_Module Physical_Constants_Module3,35
+  Type :: Physical_Constant_TypePhysical_Constant_Type30,593
+     Real(wp)   ::  Planck_Const_over_2_pi Planck_Const_over_2_pi33,710
+     Real(wp)   ::  Speed_of_Light_in_vacuum Speed_of_Light_in_vacuum34,805
+     Real(wp)   ::  Electron_Mass Electron_Mass35,870
+  Type(Physical_Constant_Type) :: Physical_ConstantsPhysical_Constants41,1028
+  Subroutine Set_Physical_Constants(Set_Physical_Constants49,1114
+
+physical_observables_module.f90,605
+Module Physical_Observables_ModulePhysical_Observables_Module18,428
+  Subroutine Allocate_Results(Allocate_Results46,1009
+    Subroutine Error_Allocation(Error_Allocation123,3291
+  Subroutine Get_Physical_Observables(Get_Physical_Observables145,3772
+  Subroutine Observable_Not_Yey_Defined(Observable_Not_Yey_Defined226,6148
+  Subroutine Get_Reflectivity Get_Reflectivity242,6590
+  Subroutine Get_Transmissivity Get_Transmissivity328,9917
+  Subroutine Get_Delta_R_over_R(Get_Delta_R_over_R418,13589
+  Subroutine get_EELS_spectrum(get_EELS_spectrum481,15930
+    function Im(Im591,19378
+
+polarizabilities_module.f90,125
+Module Polarizabilities_ModulePolarizabilities_Module21,473
+  Subroutine Get_Polarizabilities(Get_Polarizabilities50,994
+
+post_process_parameters_module.f90,255
+Module Post_Process_Parameters_ModulePost_Process_Parameters_Module18,371
+  Subroutine Post_Process_Parameters(Post_Process_Parameters46,920
+  Subroutine Get_Zeta(Get_Zeta383,13234
+  Subroutine Write_Epsilon_to_File(Write_Epsilon_to_File442,15122
+
+potential_module.f90,1601
+Module Potential_ModulePotential_Module23,485
+  Subroutine Get_Potential(Get_Potential66,1619
+  Subroutine Get_Potential_Sphere(Get_Potential_Sphere139,3734
+  subroutine Get_Potential_Spheroid(Get_Potential_Spheroid237,8022
+  Subroutine Get_MP_coeff(Get_MP_coeff386,14819
+  Subroutine Get_closest_ienergy(Get_closest_ienergy422,16136
+  subroutine Get_multipole_pot_spheroid_oblate(Get_multipole_pot_spheroid_oblate457,17684
+    function X_func(X_func591,24205
+    function Z_func(Z_func615,24962
+    function spher_harm(spher_harm642,25739
+  subroutine Get_multipole_pot_spheroid_prolate(Get_multipole_pot_spheroid_prolate673,26837
+    function X_func_prolate(X_func_prolate818,34156
+    function Z_func_prolate(Z_func_prolate849,35153
+    function spher_harm(spher_harm880,36145
+  subroutine Get_multipole_pot_sphere(Get_multipole_pot_sphere914,37365
+    function spher_harm(spher_harm1047,43712
+  subroutine Get_const_pot_spheroid(Get_const_pot_spheroid1082,44854
+  subroutine Get_const_pot_sphere(Get_const_pot_sphere1230,51765
+  subroutine Get_inc_trans_pot(Get_inc_trans_pot1367,57771
+  subroutine Get_Medium_Spheroid(Get_Medium_Spheroid1413,59394
+  subroutine Get_Medium_Sphere(Get_Medium_Sphere1461,61296
+  subroutine Cartesian_to_Spheroidal_Oblate(Cartesian_to_Spheroidal_Oblate1498,62630
+  subroutine Cartesian_to_Spheroidal_Prolate(Cartesian_to_Spheroidal_Prolate1529,63973
+  subroutine Cartesian_to_Spherical(Cartesian_to_Spherical1558,65202
+  subroutine Get_Points(Get_Points1583,66101
+  subroutine write_to_file(write_to_file1636,67897
+
+potential_derivatives_module.f90,1388
+Module Potential_Derivatives_ModulePotential_Derivatives_Module17,551
+  Subroutine Get_potential_derivatives_prolate(Get_potential_derivatives_prolate46,1367
+    function X_func_prolate(X_func_prolate219,11179
+    function X_func_prolate_diff(X_func_prolate_diff250,12180
+    function Z_func_prolate(Z_func_prolate266,12754
+    function Z_func_prolate_diff(Z_func_prolate_diff297,13746
+  Subroutine Get_potential_derivatives_oblate(Get_potential_derivatives_oblate317,14547
+    function X_func_oblate(X_func_oblate496,24482
+    function X_func_oblate_diff(X_func_oblate_diff519,25292
+    function Z_func_oblate(Z_func_oblate535,25825
+    function Z_func_oblate_diff(Z_func_oblate_diff559,26649
+  Subroutine Get_potential_derivatives_sphere(Get_potential_derivatives_sphere578,27503
+    function r_mubar_func(r_mubar_func763,37759
+    function r_mubar_diff(r_mubar_diff775,38166
+    function cosTheta_mubar_diff(cosTheta_mubar_diff787,38574
+  subroutine Cartesian_to_Spheroidal_Prolate(Cartesian_to_Spheroidal_Prolate813,39576
+  subroutine Cartesian_to_Spheroidal_Oblate(Cartesian_to_Spheroidal_Oblate846,41000
+  subroutine Cartesian_to_Spherical(Cartesian_to_Spherical876,42342
+  function spher_harm(spher_harm900,43239
+  function spher_harm_diff(spher_harm_diff925,44068
+  subroutine write_derivatives_to_file(write_derivatives_to_file949,44974
+
+print_parameters_module.f90,1258
+Module Print_Parameters_ModulePrint_Parameters_Module21,482
+  Integer,          Parameter :: Field_Size Field_Size43,946
+  Integer,          Parameter :: Decimals Decimals44,1003
+  Integer,          Parameter :: Line_Limit Line_Limit45,1059
+  Character(len=1), Parameter :: String_Delimiter String_Delimiter46,1117
+  Character(len=1), Parameter :: String_Comma String_Comma47,1175
+  Character(len=1), Parameter :: Blank Blank48,1233
+  Character(len=1), Parameter :: Empty Empty49,1291
+  Character(len=1), Parameter :: Namelist_Delimiter Namelist_Delimiter50,1348
+  Character(len=1), Parameter :: Namelist_Starter Namelist_Starter51,1406
+  Character(len=6), Parameter :: True True52,1464
+  Character(len=7), Parameter :: False False53,1527
+  Character(len=15), parameter :: STD_FMT STD_FMT57,1617
+  Character(len=10), parameter :: F10_4 F10_458,1680
+  Character(len=10), parameter :: I10 I1059,1735
+  Subroutine Print_Parameters(Print_Parameters69,1880
+  Function Stringify_Int(Stringify_Int316,9457
+  Function Stringify_Real(Stringify_Real334,9910
+  Function Stringify_Real_Vector(Stringify_Real_Vector352,10400
+  Function Stringify_Char(Stringify_Char403,12210
+  Function Get_Media_String(Get_Media_String419,12659
+
+quadpack_wrapper_module.f90,364
+Module Quadpack_Wrapper_ModuleQuadpack_Wrapper_Module12,323
+  Real(wp), Parameter  :: zero_wp zero_wp38,935
+  Real(wp), Parameter  :: one_wp one_wp39,979
+  Real(wp), save   :: EpsAbs EpsAbs45,1336
+  Real(wp), save   :: EpsRel EpsRel46,1433
+  Subroutine Set_QuadPack_Error_Limits(Set_QuadPack_Error_Limits56,1624
+  Subroutine Quadpack(Quadpack84,2406
+
+read_input_file_module.f90,1319
+Module Read_Input_File_ModuleRead_Input_File_Module26,646
+  Integer, parameter :: STR_TINY STR_TINY50,1133
+  Integer, parameter :: STR_SHORT STR_SHORT51,1172
+  Integer, parameter :: STR_LONG STR_LONG52,1212
+  Subroutine Read_Input_Parameter_File(Read_Input_Parameter_File66,1526
+    Subroutine Read_Global_nml(Read_Global_nml172,4823
+      namelist /Global/Global186,5270
+    Subroutine Read_Geometry_nml(Read_Geometry_nml226,6347
+      namelist /Geometry/Geometry246,7138
+    Subroutine Read_Source_nml(Read_Source_nml331,10523
+      namelist /Source/Source345,11017
+    Subroutine Read_Interaction_nml(Read_Interaction_nml390,12349
+      namelist /Interaction/Interaction407,12997
+    Subroutine Read_Numerics_nml(Read_Numerics_nml457,14582
+      namelist /Numerics/Numerics471,15059
+    Subroutine Read_Media_nml(Read_Media_nml517,16406
+    Subroutine Read_Potential_nml(Read_Potential_nml778,25514
+      namelist /Potential/Potential797,26228
+    Subroutine Read_EELS_nml(Read_EELS_nml877,28633
+      namelist /EELS/EELS895,29286
+    Subroutine Read_Curvefitting_nml(Read_Curvefitting_nml964,31043
+      namelist /Curvefitting/Curvefitting982,31627
+    Subroutine Error_Required(Error_Required1033,33295
+  Function Get_Vector_Dimension(Get_Vector_Dimension1313,42156
+
+reflection_transmission_amplitudes_module.f90,459
+Module Ref_Trans_Amplitudes_ModuleRef_Trans_Amplitudes_Module22,515
+  Subroutine Get_Reflection_Transmission_Amplitudes(Get_Reflection_Transmission_Amplitudes54,1236
+  Subroutine Get_Reflection_Amplitudes(Get_Reflection_Amplitudes91,2195
+  Subroutine Get_Transmission_Amplitudes(Get_Transmission_Amplitudes272,9344
+  Elemental Function Get_Amplitude(Get_Amplitude439,15622
+  Elemental Function Get_Fresnel_Amplitude(Get_Fresnel_Amplitude488,17294
+
+shared.f90,359
+Module SharedShared20,434
+  Real(wp),    parameter :: pi pi73,2008
+  Complex(wp), Parameter :: imu imu74,2114
+  Type(Software_Info_Type)              :: Software_InformationSoftware_Information78,2166
+  Type(GranFilm_ParameParam81,2264
+          dimension(:), allocatable     :: Integrals Integrals86,2424
+  Type(GranFilm_Results_Results90,2546
+
+SFL_Error_Handling.f90,2542
+Module SFL_Error_HandlingSFL_Error_Handling31,984
+  Integer,            Parameter, Private :: DEFAULT_Halt_Level DEFAULT_Halt_Level81,2829
+  Integer,            Parameter, Private :: DEFAULT_Print_Level DEFAULT_Print_Level82,2901
+  Integer,            Parameter, Private :: DEFAULT_Level_Code DEFAULT_Level_Code83,2973
+  Logical,            Parameter, Private :: DEFAULT_Show_Call_Tree DEFAULT_Show_Call_Tree84,3045
+  Character(len=10),  Parameter, Private :: DEFAULT_Top_Tree DEFAULT_Top_Tree85,3122
+  Integer,            Private :: Current_Halt_Level Current_Halt_Level91,3381
+  Integer,            Private :: Current_Print_Level Current_Print_Level92,3461
+  Logical,            Private :: Current_Show_Call_Tree Current_Show_Call_Tree93,3542
+  Logical,            Private :: SFL_Error_Module_Initialized SFL_Error_Module_Initialized96,3742
+  Type SFL_Error_TypeSFL_Error_Type103,3953
+     Integer           :: halt_level halt_level106,4127
+     Integer           :: print_level print_level107,4205
+     integer           :: unit unit108,4284
+     integer           :: code code109,4338
+     integer           :: level level110,4412
+     character(len=31) :: generic_namegeneric_name111,4486
+     integer           :: message_length message_length113,4554
+     character(len=79) :: message(message114,4608
+     logical           :: show_call_tree show_call_tree116,4671
+     integer           :: call_tree_pos call_tree_pos117,4729
+     character(len=79) :: call_tree(call_tree118,4783
+     Logical           :: catch_error catch_error120,4877
+     Logical           :: local_copy local_copy121,4935
+     Logical           :: local_init local_init122,4993
+  Subroutine SFL_Error_Fatal(SFL_Error_Fatal138,5273
+  Subroutine SFL_Error_Failure(SFL_Error_Failure167,6236
+  Subroutine SFL_Error_Warning(SFL_Error_Warning197,7212
+  Subroutine SFL_Error_Init(SFL_Error_Init229,8217
+  Subroutine SFL_Error_Init_Local__(SFL_Error_Init_Local__305,10737
+  Subroutine SFL_Error_Set(SFL_Error_Set341,12059
+  Subroutine SFL_Error_Get(SFL_Error_Get418,14855
+  Function SFL_Error_Detected(SFL_Error_Detected474,17244
+  Subroutine SFL_Error_Monitor_On(SFL_Error_Monitor_On504,18144
+  Subroutine SFL_Error_Monitor_Off(SFL_Error_Monitor_Off531,19039
+  Subroutine SFL_Error_Report(SFL_Error_Report565,20184
+  Subroutine Error_Internal_vector(Error_Internal_vector659,23673
+  Subroutine Error_Internal_scalar(Error_Internal_scalar681,24622
+  function uppercase__(uppercase__694,25070
+
+SFL_Interpolation.f90,910
+Module SFL_InterpolationSFL_Interpolation13,374
+  Subroutine AkimaSpline_Vector_sp(AkimaSpline_Vector_sp94,3250
+  Subroutine AkimaSpline_Vector_Complex_sp(AkimaSpline_Vector_Complex_sp135,4573
+  Subroutine AkimaSpline_Scalar_sp(AkimaSpline_Scalar_sp171,5814
+  Subroutine AkimaSpline_Scalar_Complex_sp(AkimaSpline_Scalar_Complex_sp204,6860
+  Subroutine AkimaSpline_Vector_dp(AkimaSpline_Vector_dp243,7967
+  Subroutine AkimaSpline_Vector_Complex_dp(AkimaSpline_Vector_Complex_dp293,9527
+  Subroutine AkimaSpline_Scalar_dp(AkimaSpline_Scalar_dp332,10784
+  Subroutine AkimaSpline_Scalar_Complex_dp(AkimaSpline_Scalar_Complex_dp366,11828
+  subroutine akimamod_driver(akimamod_driver415,13231
+99     continue99510,16779
+  subroutine boundary_conditions(boundary_conditions537,17414
+  subroutine derivative_volatility(derivative_volatility593,19171
+  subroutine distance(distance639,20565
+
+SFL_ISO_Fortran_Env.f90,551
+module SFL_ISO_Fortran_EnvSFL_ISO_Fortran_Env1,0
+  integer, parameter :: Error_Unit Error_Unit34,1099
+  integer, parameter :: Input_Unit Input_Unit35,1169
+  integer, parameter :: Output_Unit Output_Unit36,1235
+  integer, parameter :: Numeric_Storage_Size Numeric_Storage_Size38,1304
+  integer, parameter :: Character_Storage_Size Character_Storage_Size39,1397
+  integer, parameter :: File_Storage_Size File_Storage_Size40,1492
+  integer, parameter :: IOSTAT_END IOSTAT_END42,1583
+  integer, parameter :: IOSTAT_EOR IOSTAT_EOR43,1679
+
+SFL_NR_Util.f90,4827
+Module SFL_NR_UtilSFL_NR_Util23,479
+  Integer(I4B), Parameter :: NPAR_ARTH=NPAR_ARTH54,1198
+  Integer(I4B), Parameter :: NPAR_ARTH=16,NPAR2_ARTH=NPAR2_ARTH54,1198
+  Integer(I4B), Parameter :: NPAR_GEOP=NPAR_GEOP55,1253
+  Integer(I4B), Parameter :: NPAR_GEOP=4,NPAR2_GEOP=NPAR2_GEOP55,1253
+  Integer(I4B), Parameter :: NPAR_CUMSUM=NPAR_CUMSUM56,1307
+  Integer(I4B), Parameter :: NPAR_CUMPROD=NPAR_CUMPROD57,1351
+  Integer(I4B), Parameter :: NPAR_POLY=NPAR_POLY58,1395
+  Integer(I4B), Parameter :: NPAR_POLYTERM=NPAR_POLYTERM59,1436
+  Type sprs2_spsprs2_sp66,1595
+     Intn67,1611
+     Integer(I4B) :: n,lenlen67,1611
+     Real(SP),     Dimension(:), Pointer :: val val68,1638
+     Integer(I4B), Dimension(:), Pointer :: irow irow69,1733
+     Integer(I4B), Dimension(:), Pointer :: jcol jcol70,1823
+  Type sprs2_dpsprs2_dp72,1909
+     Intn73,1925
+     Integer(I4B) :: n,lenlen73,1925
+     Real(DP),     Dimension(:), Pointer :: valval74,1952
+     Integer(I4B), Dimension(:), Pointer :: irowirow75,2000
+     Integer(I4B), Dimension(:), Pointer :: jcoljcol76,2049
+  Subroutine array_copy_r(array_copy_r154,4246
+  Subroutine array_copy_d(array_copy_d163,4602
+  Subroutine array_copy_i(array_copy_i172,4958
+  Subroutine swap_i(swap_i181,5322
+  Subroutine swap_r(swap_r189,5468
+  Subroutine swap_rv(swap_rv197,5606
+  Subroutine swap_c(swap_c205,5780
+  Subroutine swap_cv(swap_cv213,5926
+  Subroutine swap_cm(swap_cm221,6108
+  Subroutine swap_z(swap_z229,6304
+  Subroutine swap_zv(swap_zv237,6450
+  Subroutine swap_zm(swap_zm245,6632
+  Subroutine masked_swap_rs(masked_swap_rs253,6828
+  Subroutine masked_swap_rv(masked_swap_rv264,7063
+  Subroutine masked_swap_rm(masked_swap_rm275,7347
+  Function reallocate_rv(reallocate_rv287,7653
+  Function reallocate_iv(reallocate_iv300,8099
+  Function reallocate_hv(reallocate_hv313,8549
+  Function reallocate_rm(reallocate_rm326,8999
+  Function reallocate_im(reallocate_im341,9518
+  Function ifirstloc(ifirstloc356,10041
+  Function imaxloc_r(imaxloc_r365,10325
+  Function imaxloc_d(imaxloc_d373,10589
+  Function imaxloc_i(imaxloc_i381,10807
+  Function iminloc_r(iminloc_r390,11089
+  Function iminloc_d(iminloc_d398,11305
+  Function iminloc_i(iminloc_i406,11521
+  Subroutine assert1(assert1414,11746
+  Subroutine assert2(assert2424,12049
+  Subroutine assert3(assert3434,12369
+  Subroutine assert4(assert4444,12704
+  Subroutine assert_v(assert_v454,13054
+  Function assert_eq2(assert_eq2464,13376
+  Function assert_eq3(assert_eq3477,13746
+  Function assert_eq4(assert_eq4490,14137
+  Function assert_eqn(assert_eqn503,14549
+  Subroutine nrerror(nrerror516,14942
+  Function arth_r(arth_r522,15125
+  Function arth_d(arth_d549,15803
+  Function arth_i(arth_i576,16481
+  Function geop_r(geop_r602,17125
+  Function geop_d(geop_d629,17789
+  Function geop_i(geop_i656,18453
+  Function geop_c(geop_c681,19077
+  Function geop_dv(geop_dv708,19750
+  Recursive Function cumsum_r(cumsum_r737,20562
+  Recursive Function cumsum_d(cumsum_d758,21137
+  Recursive Function cumsum_i(cumsum_i779,21712
+  Recursive Function cumprod(cumprod800,22288
+  Function poly_rr(poly_rr822,22867
+  Function poly_dd(poly_dd854,23632
+  Function poly_rc(poly_rc886,24397
+  Function poly_cc(poly_cc918,25178
+  Function poly_rrv(poly_rrv950,25963
+  Function poly_ddv(poly_ddv970,26460
+  Function poly_msk_rrv(poly_msk_rrv990,26957
+  Function poly_msk_ddv(poly_msk_ddv997,27248
+  Recursive Function poly_term_rr(poly_term_rr1005,27545
+  Recursive Function poly_term_cc(poly_term_cc1023,28020
+  Function zroots_unity(zroots_unity1041,28507
+  Function outerprod_r(outerprod_r1058,28991
+  Function outerprod_d(outerprod_d1065,29249
+  Function outerdiv(outerdiv1072,29507
+  Function outersum(outersum1079,29753
+  Function outerdiff_r(outerdiff_r1086,29999
+  Function outerdiff_d(outerdiff_d1093,30257
+  Function outerdiff_i(outerdiff_i1100,30515
+  Function outerand(outerand1107,30781
+  Subroutine scatter_add_r(scatter_add_r1114,31039
+  Subroutine scatter_add_d(scatter_add_d1126,31488
+  Subroutine scatter_max_r(scatter_max_r1138,31937
+  Subroutine scatter_max_d(scatter_max_d1150,32391
+  Subroutine diagadd_rv(diagadd_rv1163,32851
+  Subroutine diagadd_r(diagadd_r1173,33171
+  Subroutine diagmult_rv(diagmult_rv1183,33436
+  Subroutine diagmult_r(diagmult_r1193,33759
+  Function get_diag_rv(get_diag_rv1203,34026
+  Function get_diag_dv(get_diag_dv1213,34330
+  Subroutine put_diag_rv(put_diag_rv1223,34634
+  Subroutine put_diag_r(put_diag_r1233,34950
+  Subroutine unit_matrix(unit_matrix1243,35208
+  Function upper_triangle(upper_triangle1253,35448
+  Function lower_triangle(lower_triangle1263,35782
+  Function vabs(vabs1273,36117
+
+SFL_Logical_Units.f90,743
+Module SFL_Logical_UnitsSFL_Logical_Units1,0
+  Integer, Parameter   :: DEFAULT_StdErr DEFAULT_StdErr56,1661
+  Integer, Parameter   :: DEFAULT_StdIn DEFAULT_StdIn57,1720
+  Integer, Parameter   :: DEFAULT_StdOut DEFAULT_StdOut58,1779
+  Integer, Private, Save   :: Std_Err Std_Err61,1868
+  Integer, Private, Save   :: Std_In Std_In62,1924
+  Integer, Private, Save   :: Std_Out Std_Out63,1979
+  Function SFL_StdErr(SFL_StdErr70,2050
+  Function SFL_StdIn(SFL_StdIn84,2336
+  Function SFL_StdOut(SFL_StdOut98,2619
+  Subroutine SFL_Set_StdErr(SFL_Set_StdErr117,3022
+  Subroutine SFL_Set_StdIn(SFL_Set_StdIn130,3236
+  Subroutine SFL_Set_StdOut(SFL_Set_StdOut142,3418
+  subroutine SFL_Get_Free_Unit SFL_Get_Free_Unit156,3606
+
+SFL_Precision.f90,486
+Module SFL_PrecisionSFL_Precision1,0
+  Integer, Parameter :: I4B I4B7,126
+  Integer, Parameter :: I2B I2B8,177
+  Integer, Parameter :: I1B I1B9,228
+  Integer, Parameter :: SP SP10,279
+  Integer, Parameter :: DP DP11,319
+  Integer, Parameter :: QP QP12,361
+  Integer, Parameter :: SPC SPC13,414
+  Integer, Parameter :: DPC DPC14,460
+  Integer, Parameter :: LGT LGT15,510
+  Integer, Parameter :: SP_KIND SP_KIND22,682
+  Integer, Parameter :: DP_KIND DP_KIND23,735
+
+SFL_Util.f90,1453
+Module SFL_UtilSFL_Util6,90
+  Integer,          parameter   :: NO_ERROR_FOUND NO_ERROR_FOUND39,1022
+  Character(len=*), parameter :: OS_SEPARATOR_DEFAULT=OS_SEPARATOR_DEFAULT114,3462
+  Character(len=*), parameter :: OS_DEFAULT=OS_DEFAULT115,3520
+  Function SFL_DirSep(SFL_DirSep122,3629
+  Function SFL_BaseName(SFL_BaseName160,4763
+  Function SFL_DirName(SFL_DirName213,6631
+  Function SFL_Join_Path(SFL_Join_Path255,7921
+  function LowerCase_Scalar(LowerCase_Scalar293,9163
+  function LowerCase_Vector(LowerCase_Vector330,10452
+  function UpperCase_Scalar(UpperCase_Scalar349,10887
+  function UpperCase_Vector(UpperCase_Vector386,12175
+  recursive Function SFL_Count_Substrings(SFL_Count_Substrings404,12608
+  Function LinSpace_sp(LinSpace_sp434,13405
+  Function LinSpace_dp(LinSpace_dp460,14079
+  subroutine SFL_String_Replace_All(SFL_String_Replace_All485,14755
+  subroutine SFL_TimeString SFL_TimeString521,15721
+    Subroutine AMPM_Format(AMPM_Format576,17446
+  Subroutine SFL_YearString(SFL_YearString610,18171
+  Subroutine SFL_TimeStamp(SFL_TimeStamp650,19197
+  function  seq_sp(seq_sp722,21169
+  function  seq_dp(seq_dp761,22128
+  function mirror_integer(mirror_integer828,24032
+  function mirror_real_sp(mirror_real_sp840,24352
+  function mirror_real_dp(mirror_real_dp853,24712
+  function mirror_complex_sp(mirror_complex_sp866,25075
+  function mirror_complex_dp(mirror_complex_dp879,25453
+
+software_info_mod.f90,1094
+Module Software_Info_ModSoftware_Info_Mod2,76
+  Integer, parameter :: STR_LEN STR_LEN40,1093
+  Integer, parameter :: STR_DATE_LEN STR_DATE_LEN41,1136
+  Type Software_Info_TypeSoftware_Info_Type44,1183
+     Character(len=STR_LEN)      ::  Name Name45,1209
+     Character(len=STR_LEN)      ::  Author(Author46,1275
+     Character(len=STR_LEN)      ::  Email(Email47,1343
+     Character(len=STR_LEN)      ::  CopyRight CopyRight48,1417
+     Character(len=STR_LEN)      ::  Version Version49,1468
+     Character(len=STR_LEN)      ::  Revision Revision50,1539
+     Character(len=STR_LEN)      ::  FromYear FromYear51,1609
+     Character(len=11)           ::  Compile_Date Compile_Date52,1691
+     Character(len=8)            ::  Compile_Time Compile_Time53,1773
+  Subroutine Software_Info_Set(Software_Info_Set65,1983
+    Function Get_Repos_Revision_Number(Get_Repos_Revision_Number103,3180
+    Function  Copyright_String(Copyright_String127,3888
+  Subroutine Software_Info_String(Software_Info_String155,4787
+  function date_time_string(date_time_string183,5760
+
+sopra_dielectric_function_module.f90,674
+Module SOPRA_Dielectric_Function_ModuleSOPRA_Dielectric_Function_Module1,0
+  Character(len=*), parameter  :: routine routine28,644
+  Character(len=*), parameter  :: Default_SOPRA_ext Default_SOPRA_ext29,717
+  Subroutine SOPRA_dielectric_function_vector(SOPRA_dielectric_function_vector37,875
+  Subroutine SOPRA_dielectric_function_scalar(SOPRA_dielectric_function_scalar89,2860
+  Subroutine SOPRA_dielectric_function_wavelength__(SOPRA_dielectric_function_wavelength__130,4206
+    FUNCTION locate(locate235,7667
+  Subroutine SOPRA_dielectric_function_energy__(SOPRA_dielectric_function_energy__274,8555
+  Elemental Function eV2micron__(eV2micron__301,9435
+
+special_functions_module.f90,212
+Module Special_Functions_ModuleSpecial_Functions_Module4,35
+  Function AssLegPoly(AssLegPoly17,252
+  Function AssLegPoly1(AssLegPoly141,1040
+  Function arth(arth88,2441
+  Function Locate(Locate103,2808
+
+supported_commandline_options_module.f90,488
+Module Supported_Commandline_Option_ModuleSupported_Commandline_Option_Module2,52
+  Integer, parameter :: GF_arg GF_arg39,941
+  Type GF_CommandLine_Option_TGF_CommandLine_Option_T42,1008
+     character(len=20), dimension(GF_arg)  :: optionoption43,1039
+     character(len=80), dimension(GF_arg)  :: texttext44,1092
+     integer,           dimension(GF_arg)  :: arguments arguments45,1143
+  Subroutine Set_Granfilm_Commandline_Options(Set_Granfilm_Commandline_Options58,1344
+
+supported_options_module.f90,801
+Module Supported_Options_ModuleSupported_Options_Module19,365
+  Character(len=10), dimension(3), parameter ::  ISLAND_ISLAND_INTERACTION_OPTION_TABEL ISLAND_ISLAND_INTERACTION_OPTION_TABEL70,1592
+  Character(len=7), dimension(1), parameter ::  ARRANGEMENT_OPTION_TABEL ARRANGEMENT_OPTION_TABEL77,1848
+  Character(len=9), dimension(2), parameter ::  LATTICE_TYPE_OPTION_TABEL LATTICE_TYPE_OPTION_TABEL83,2059
+  Character(len=2), dimension(4), parameter ::  POLARIZATION_OPTION_TABEL POLARIZATION_OPTION_TABEL90,2273
+  Subroutine List_Supported_Options(List_Supported_Options109,2630
+  Subroutine Not_A_Supported_Option(Not_A_Supported_Option142,3572
+  Function Is_Option_Supported(Is_Option_Supported173,4561
+  Subroutine Check_for_Supported_Option(Check_for_Supported_Option209,5523
+
+susceptibilities_module.f90,508
+Module Susceptibilities_ModuleSusceptibilities_Module19,373
+  Subroutine Get_Surface_Susceptabilities(Get_Surface_Susceptabilities49,915
+    Subroutine Get_Alpha(Get_Alpha190,5236
+    Subroutine Surface_Susceptabilities_Common(Surface_Susceptabilities_Common219,6366
+    Subroutine  Surface_Susceptabilities_Dipole_Interacton(Surface_Susceptabilities_Dipole_Interacton360,11859
+    Subroutine  Surface_Susceptabilities_Quadrupole_InteractonSurface_Susceptabilities_Quadrupole_Interacton527,18862
+
+tools_module.f90,337
+Module Tools_ModuleTools_Module19,355
+  Function Get_Amp_sq_Phase(Get_Amp_sq_Phase53,975
+  Elemental Function Get_Phase(Get_Phase80,1696
+  Elemental Function Get_Phase_in_Degrees(Get_Phase_in_Degrees103,2266
+  Pure Function Deg2Rad(Deg2Rad127,2874
+  Pure Function Rad2Deg(Rad2Deg149,3368
+  function tolower(tolower169,3851
+
+tools_read_input_file_module.f90,418
+Module Tools_Read_Input_File_ModuleTools_Read_Input_File_Module21,547
+  Integer, parameter :: String_Value_Length String_Value_Length47,1139
+  Integer, parameter :: Line_Length Line_Length48,1233
+  Function NameList_Exists(NameList_Exists57,1409
+  Function Field_in_NameList_Exists(Field_in_NameList_Exists106,2553
+  Subroutine Get_StringValue_for_NameList_Field(Get_StringValue_for_NameList_Field205,5382
+
+working_precision.f90,50
+Module Working_PrecisionWorking_Precision17,388
