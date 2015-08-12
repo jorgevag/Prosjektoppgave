@@ -1,0 +1,67 @@
+To give the correct optical response of the specified materials, \textsc{GranFilm} is connected 
+to a dielectric database, containing data for metals, semiconductors and dielectrics.
+The datafiles for the different materials contain the real and complex index of refraction, $n$ and $k$, 
+respectively, with the first line of the file containing 4 values, which specifies
+\begin{enumerate}
+   \item the unit, telling that it is a function of
+      \begin{itemize}
+         \item \texttt{unit = 1}: energy in electron volts, or
+         \item \texttt{unit = 2}: wavelength in micrometers;
+      \end{itemize}
+   \item starting value \texttt{x1} of the domain (in units corresponding to the previous point);
+   \item end value of domain \texttt{x2};
+   \item the number of datapoints \texttt{N}.
+\end{enumerate}
+So ''.nk-files'' will be on the form:
+%\begin{lstlisting}[style=FormattedNumber, language=python]
+%unit		x1			x2	   N	
+     %n(x1)          k(x1) 
+     %n(x2)          k(x2) 
+     %n(x3)          k(x3) 
+     %n(x4)          k(x4) 
+     %n(x5)          k(x5) 
+     %n(x6)          k(x6) 
+     %n(x7)          k(x7) 
+     %n(x8)          k(x8) 
+     %n(x9)          k(x9) 
+     %n(x10)         k(x10) 
+     %n(x11)         k(x11) 
+     %.              .
+     %.              .
+     %.              .
+%\end{lstlisting}
+An example is ''mgo.nk'' in electron volts, a start value of $0.65$eV, end value of $10$eV and containing
+400 data points:
+%\begin{lstlisting}[style=FormattedNumber, language=python]
+%1		0.65			10		400
+     %1.70969699     0.00000011
+     %1.71065583     0.00000011
+     %1.71155117     0.00000011
+     %1.71239613     0.00000011
+     %1.71313635     0.00000011
+     %.              .
+     %.              .
+     %.              .
+%\end{lstlisting}
+
+
+\begin{itemize}
+   \item Source: giving the characteristics of the incident plane wave.
+      \begin{itemize}
+         \item Theta0, Phi0: incident angles [$^{\circ}$]
+         \item Polarization: 's' (senkrecht-polarized) / 'p' (parallel-polarized)
+         \item Energy\_Range: the range of energies of the incident light. \textbf{Note: this range
+            must be within the range of [x1,x2] for the input values for the refractive index, given
+         in the '.nk' file!}
+      \end{itemize}
+
+   \item Geometry:
+      \begin{itemize}
+         \item Radius:
+      \end{itemize}
+
+   \item Interaction:
+      \begin{itemize}
+         \item coverage
+      \end{itemize}
+\end{itemize}

@@ -1,0 +1,158 @@
+\section{Additional Theory}
+
+\subsection{Complex permittivity and refractive index (From wikipedia) don't use, LACKING REFERENCES!}
+Complex electric permittivity:
+\begin{align}
+   \hat{\varepsilon}_r(\omega) = \frac{\hat{\varepsilon} (\omega)}{\varepsilon_0}
+\end{align}
+where 
+\begin{align}
+   \hat{\varepsilon}_r(\omega) &= \varepsilon_r (\omega) + i\tilde{\varepsilon}_r (\omega) \\
+                               &= \varepsilon_r (\omega) + i\frac{\sigma}{\omega\varepsilon_0} 
+\end{align}
+The complex refractive index $\hat{n}$ is given by 
+\begin{align}
+   \hat{n} = \sqrt{\hat{\varepsilon}_r},
+\end{align}
+when the magnetic properties are neglected ($\mu_r = 1$). 
+From this, an expression for the complex refractive index $\hat{n} = n - \boldsymbol{i}\kappa$ can be found:
+\begin{align}
+   \hat{\varepsilon}_r &= \hat{n}^2 \\
+   \varepsilon_r + \boldsymbol{i}\tilde{\varepsilon}_r &= (n + \boldsymbol{i} \kappa)^2 \\
+   \varepsilon_r + \boldsymbol{i}\tilde{\varepsilon}_r &= n^2 - \kappa^2 + \boldsymbol{i}2n\kappa
+\end{align}
+giving
+\begin{align}
+   \varepsilon_r &= n^2 - \kappa^2     &\tilde{\varepsilon}_r  &= 2n\kappa.
+\end{align}
+Taking the absolute value or modulus of the relative permettivity
+\begin{align}
+   |\hat{\varepsilon}_r| &= \sqrt{ \varepsilon_r^2 + \tilde{\varepsilon}_r^2} \\
+   |\hat{\varepsilon}_r| &= \sqrt{ (n^2 - \kappa^2)^2 + (2n\kappa)^2} \\
+   |\hat{\varepsilon}_r|^2 &= (n^4 - 2n^2\kappa^2 + \kappa^4) + 4n^2\kappa^2 \\
+   |\hat{\varepsilon}_r|^2 &= n^4 + 2n^2\kappa^2 + \kappa^4 \\
+   |\hat{\varepsilon}_r|^2 &= (n^2 + \kappa^2)^2 \\
+   |\hat{\varepsilon}_r| &= n^2 + \kappa^2 
+\end{align}
+and adding or substracting the real part of the permittivity, gives
+\begin{align}
+   |\hat{\varepsilon}_r| + \varepsilon_r &= (n^2 + \kappa^2) + (n^2 - \kappa^2) = 2n^2\\
+   |\hat{\varepsilon}_r| - \varepsilon_r &= (n^2 + \kappa^2) - (n^2 - \kappa^2) = 2\kappa^2.
+\end{align}
+Refomulating the expression gives the real and imaginary parts of $\hat{n}$
+\begin{align}
+   n      &= \sqrt{ \frac{|\hat{\varepsilon}_r| + \varepsilon_r}{2}} 
+           = \sqrt{ \frac{|\hat{\varepsilon}| + \varepsilon}{2\varepsilon_0}}\\
+   \kappa &= \sqrt{ \frac{|\hat{\varepsilon}_r| - \varepsilon_r}{2}} 
+           = \sqrt{ \frac{|\hat{\varepsilon}| - \varepsilon}{2\varepsilon_0}}
+\end{align}
+
+
+\subsection{Polarizability. Don't use, LACKING REFERENCES}
+When a neutral atom is placed in an electric field $\boldsymbol{E}$, the field tries to rip the
+atom apart by pushing the nucleus in the direction of the field and the electrons in the opposite direction.
+Because of the attraction between the positive and negative charge within the atom, an equilibrium displacement
+of the electrons compared to the nucleus is achieved, leaving the atom polarized and giving it a
+dipole moment. The dipole moment can be approximated by
+\begin{align}
+   \boldsymbol{p} = \alpha \boldsymbol{E},
+\end{align}
+where $\alpha$ is the atomic polarizability and may depend on the detailed structure of the atom.
+For more complicated situations, like an asymmetrical molecule, the gained dipole moment of the 
+molecule does not necessarily have to be in the same direction as the applied electric field.
+In such a case, the scalar polarizability in the expression above is replaced by a polarizability tensor
+\begin{align}
+   \boldsymbol{\alpha} = 
+\begin{bmatrix}
+   \alpha_{xx}   &   \alpha_{xy}  &  \alpha_{xz}  \\
+   \alpha_{yx}   &   \alpha_{yy}  &  \alpha_{yz}  \\
+   \alpha_{zx}   &   \alpha_{zy}  &  \alpha_{zz} 
+\end{bmatrix}
+.
+\end{align}
+In this way, an applied eletric field induces many dipole moments in a material. In addition,
+any polar molecules will be subject to a torque, aligning it to the direction of the field.
+These two mechanisms leads to the polarization $\boldsymbol{P}$ of the material
+\begin{align}
+   \boldsymbol{P} = \text{dipole moment per unit volume} = \varepsilon_0 \chi_e \boldsymbol{E}.
+\end{align}
+In the above expression, there has been assumed a linear dielectric media, where $\chi_e$ is the electric 
+susceptibility and depends on the microscopic structure of the material, in addition to the external 
+temperature (\cite{Griffiths},p.160-166, 179)
+
+\subsection{The electric potential, Laplace's equation and the Uniqueness Theorem}
+The usual task of electrostatics is to ompute the electric field $\boldsymbol{E}$ given a 
+stationary charge distribution $\rho{\boldsymbol{r}}$
+\begin{align}
+   \boldsymbol{E}(\boldsymbol{r}) 
+   &= \frac{1}{4 \pi \varepsilon_0} \int \frac{\boldsymbol{\hat{d}}(\boldsymbol{r'})}
+                                              {d(\boldsymbol{r'})^2} 
+                                                            \rho(\boldsymbol{r'}) d\!\boldsymbol{r'} 
+                                                            \\
+   &= \frac{1}{4 \pi \varepsilon_0} \int \frac{\boldsymbol{r} - \boldsymbol{r'}}
+                                              {\big|\boldsymbol{r} - \boldsymbol{r'}\big|^3} 
+                                                           \rho(\boldsymbol{r'}) d\!\boldsymbol{r'}.
+\end{align}
+However, it is usually simpler to calculate the potential
+\begin{align}
+   \label{electricPotential}
+   V(\boldsymbol{r}) 
+   &= \frac{1}{4 \pi \varepsilon_0} \int \frac{1}{\big|\boldsymbol{r} - \boldsymbol{r'}\big|} 
+                                                           \rho(\boldsymbol{r'}) d\!\boldsymbol{r'}
+\end{align}
+first and then calculate the electric field from
+\begin{align}
+   \boldsymbol{E} = - \nabla V.
+\end{align}
+This might in some situations, where do do not necessarily know $\rho$ but only the total amount of 
+charge, also be to tough to handle analytically. In situations like these it is better to use
+Poisson's equation
+\begin{align}
+   \label{poisson}
+   \nabla^2 V= - \frac{1}{\varepsilon_o} \rho,
+\end{align}
+which together with appropriate boundary conditions, is equivalent to Eq.\eqref{electricPotential}.
+Very often, we are interested in finding the potential containing no charge (because the charge is 
+located on the outside of our region of interest. In such cases Eq. \eqref{poisson} reduces to
+Laplace's equation (\cite{Griffiths}, p.110-111)
+\begin{align}
+   \label{laplace}
+   \nabla^2 V = 0.
+\end{align}
+According to the \textit{Uniqueness Theorems}, the solution to Laplace's equation is uniquely 
+determined in some volume if the potential is specified on the boundary of the volume. This
+easily extends to Poisson's equation by further requiring, in addition to the 
+potential on the boundary, that the charge distribution throughout the region is known.
+\\
+\\
+When considering conductors, charge are allowed to move freely and  might start to rearrange themselves,
+leading to the \textit{Second uniqueness theorem}, which states that the potential in a given volume,
+surrounded by conductors is uniquely determined if the total charge on each conductor is given.
+\\
+\\
+The uniqueness theorem grants an enlarged mathematical freedom in the approach of finding the potential
+of a region of space. This is because the boundary uniquely determines the potential in the region enclosed
+region and any approach giving the correct boundary conditions would give you the correct potential 
+function through Laplace's equation Eq. \eqref{laplace}. This allows the use of tricks, like for example
+the classical \textit{method of images} (\cite{Griffiths}, p.116-121).
+%SOME EXTRA STUFF:
+%\textbf{D'Alembert Operator $\square$}
+%\begin{align*}
+  %\square  &= \partial ^{\mu} \partial _{\mu}
+   %\\
+           %&= \frac{1}{c^2} \frac{\partial ^2}{\partial t^2} 
+               %- \frac{\partial ^2}{\partial x^2} 
+               %- \frac{\partial ^2}{\partial y^2} 
+               %- \frac{\partial ^2}{\partial z^2} 
+   %\\
+           %&= \frac{1}{c^2} \frac{\partial ^2}{\partial t^2} - \nabla ^2
+%\end{align*}
+
+%\textbf{Lorentz Gauge:} \\
+%For Lorentz invariance, convenient to choose the Lorenz gauge:
+%\begin{align*}
+   %\square \vec{A} = \Bigg[ \frac{1}{c^2} \frac{\partial ^2}{\partial t^2} - \nabla ^2 \Bigg] \vec{A} = \mu_0 \vec{J}
+%\end{align*}
+%\begin{align*}
+   %\square \phi = \Bigg[ \frac{1}{c^2} \frac{\partial ^2}{\partial t^2} - \nabla ^2 \Bigg] \phi = \frac{\rho}{\epsilon _0}
+%\end{align*}

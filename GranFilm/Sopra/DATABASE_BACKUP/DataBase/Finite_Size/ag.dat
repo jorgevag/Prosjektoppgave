@@ -1,0 +1,6 @@
+9.170086                   ! Plasma frequency times hbar (eV)
+0.01803                     ! Invers relaxation time times hbar (eV) 
+0.9149227                   ! Fermi velocity times hbar (eV nm)
+-1.126                     ! Surface corrections
+-8.9e-5			   ! Dependance of plasma frequency with temperature (ev/K)
+

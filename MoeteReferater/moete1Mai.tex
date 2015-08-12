@@ -1,0 +1,68 @@
+\section{Oppsummering Møte 1.Mai}
+
+\subsection{Mål med oppgaven}
+Ha termochromst materiale som coating, enten som granular layer eller som coating utenpå et metallisk 
+granular layer. Dette skal kunne ''smøres'' på en byggning/vinduer/el. slik at f.eks varmestrålingen 
+slippes inn om vinteren når det er kalt ute og reflekteres om sommeren når det er varmt ute.
+\\
+\\
+Om denne optiske endringen kan oppnår ved temperaturgradienten for sommer/vinter kan man unngå bruk av aktive
+løsninger (e.g. bruke spenning for å oppnå tilsvarende optiske egenskaper). Materialene burde også
+være billig, slik at dette er realiserbart for storskala-prosjekter som store byggninger.
+%
+\begin{table}[htbp]
+   \caption{oppbyggningen av ''.nk'' filene i Sopra-Databasen}
+\centering
+\begin{tabular}{ c c c c c }
+\hline
+ \multicolumn{2}{c}{unit}         &  startverdi  &  sluttverdi & antall datapunkter \\
+\hline
+1          & 2                    &                 &                  & \\
+energi[eV] & bølgelengde[$\mu$m]  &  x1[eV/$\mu$m]  &    x2[eV/$\mu$m] & N \\
+\hline
+\end{tabular}
+\label{tab:idealTCW}
+\end{table}
+%
+
+Så ''.nk-files'' vil være på følgende form:
+\begin{lstlisting}[style=FormattedNumber, language=python]
+unit		x1			x2	   N	
+     n(x1)          k(x1) 
+     n(x2)          k(x2) 
+     n(x3)          k(x3) 
+     n(x4)          k(x4) 
+     n(x5)          k(x5) 
+     n(x6)          k(x6) 
+     n(x7)          k(x7) 
+     n(x8)          k(x8) 
+     n(x9)          k(x9) 
+     n(x10)         k(x10) 
+     n(x11)         k(x11) 
+     .              .
+     .              .
+     .              .
+\end{lstlisting}
+Eksempel: ''mgo.nk'' i eV, startverdi: $0.65$eV, sluttverdi: $10$eV og består av totalt
+400 datapunkter:
+\begin{lstlisting}[style=FormattedNumber, language=python]
+1		0.65			10		400
+     1.70969699     0.00000011
+     1.71065583     0.00000011
+     1.71155117     0.00000011
+     1.71239613     0.00000011
+     1.71313635     0.00000011
+     .              .
+     .              .
+     .              .
+\end{lstlisting}
+
+
+\subsection{Videre arbeid med oppgaven}
+\begin{itemize}
+\item Jeg skal finne data på thermochrome dielectrisitetskonstanter og laga en database basert på dette.
+   Dette skal bli matet inn i \textsc{GranFilm}.
+\item Output burde kanskje være konturplot (for å lettere lese av verdiene, ihvertfall sammenlignet med 3D-plot)
+\item Les artikler og finn ''teori'' for å beskrive $\varepsilon(\omega, T)$, men hovedsakelig for å
+finne data for $\varepsilon(\omega, T)$.
+\end{itemize}

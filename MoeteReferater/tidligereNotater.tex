@@ -1,0 +1,35 @@
+\section{Tidligere Notater}
+To unzip a ''.tgz''-file in linux:
+\begin{lstlisting}[style=FormattedNumber, frame=none,language=bash]
+   tar xvfz path/file.tgz
+\end{lstlisting}
+%
+For å lese linux filer:
+\begin{lstlisting}[style=FormattedNumber, frame=none,language=bash]
+   less text.txt
+\end{lstlisting}
+(q for quit/å avslutte). 
+%
+For å lage en peker til en executable i en annen mappe (skapt til bruk i hvilken som helst annen mappe), skriv
+\begin{lstlisting}[style=FormattedNumber,frame=none, language=bash]
+   ln -s RelativePath/yourExecutable .
+\end{lstlisting}
+For eksempel med \textsc{GranFilm}:
+\begin{lstlisting}[style=FormattedNumber,frame=none, language=bash]
+   ln -s ../Src/GranFilm .
+\end{lstlisting}
+For å kjøre \textsc{GranFilm}:
+\begin{lstlisting}[style=FormattedNumber,frame=none, language=bash]
+   ./GranFilm -p inputParameters.sif -o outputFile.dat
+\end{lstlisting}
+%
+A simple easy plotting program is \textsc{xmgrace}. I think this assumes
+data with x-axis at column 1 and everything else on the other columns. Run by typing:
+\begin{lstlisting}[style=FormattedNumber,frame=none, language=bash]
+   xmgrace dataFile.dat
+\end{lstlisting}
+or (if you want to plot all the data in the file)
+\begin{lstlisting}[style=FormattedNumber,frame=none, language=bash]
+   xmgrace -nxy dataFile.dat
+\end{lstlisting}
+

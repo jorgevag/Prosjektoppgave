@@ -1,0 +1,282 @@
+\section{\textbf{Book Notes}}
+\section{Handbook of Optial Constants of Solids; Edward D. Palik}
+Institute for physical Science and Technology, University of Maryland\\
+Academic Press 1998, 1985.\\
+
+\subsection{Bulk and thin-film effects; effective-medium theory; p.104}
+\begin{itemize}
+\item p. 105:\\
+   In this discussion, we assume that the characteristic dimensions of the microstructure
+   are large enough ($>/\sim 10-20 $Å) so that the individual regions retain essentially their bulk dielectric
+   responses, but small ($>/\sim$ 0.1-0.2 $\lambda$) compared to the wavelength of light.
+   Then, the macroscopic $\boldsymbol E$ and $\boldsymbol H$ fields of Maxwell's equations will not vary
+   appreciably over any single region, and quasistatic theory can be used. This avoids complications
+   due to scattering and retardation effects that are dominant in macroscopiccally inhomogeneous 
+   systems \cite{Beckmann1968}.
+   \\
+   \\
+   The dielectric functions is obtained from the macroscopic average electric field $\boldsymbol E$ and 
+   polarization $\boldsymbol P$ according to
+   \begin{align}
+      \boldsymbol D &= \varepsilon \boldsymbol E = \boldsymbol E+ 4\pi \boldsymbol P \\
+      \boldsymbol P &= \frac{1}{V} \sum q_i \Delta\! \boldsymbol{x_i},
+   \end{align}
+   where $\Delta \! \boldsymbol{x_i}$ is the displacement of the charge $q_i$ under the action of the 
+   local field at $q_i$. It is the apperance of the volume normalizing factor in the latter equation
+   that is responsible for the sensitivity of $\varepsilon$ to density.
+   \item 
+\end{itemize}
+
+\begin{thebibliography}{9}
+      \bibitem{Beckmann1968}
+      Beckmann P.
+      The depolarization of electromagnetic waves.
+      Golem, Boulder, Colorado, 1968.
+
+\end{thebibliography}
+
+
+\subsection{Jensen B: The Quantum Extension of the Drude-Zener Theory in Polar Semiconductors; p.169-188}
+p.169-170:\\
+\textbf{Introduction}\\
+The classical Drude model for the complex dielectric constant of a semi-conductor can be used to
+extrct the mobility and the free-carrier density $n_e$ from an analysis of the reflectivity and transmittance
+data in the ar infrared (1-4)=
+      \cite{Palik1979, Holm1977,Perkowitz1971,Perkowitz1974,Fan1967}.
+The dielectric constant $\varepsilon$ is the square of the complex refractive
+index, which determines the optical properties of a given material. One has
+\begin{align}
+   \varepsilon = \varepsilon_1 - i \varepsilon_2 = N^2,
+   \label{compEps}
+\end{align}
+were the real and imaginary parts of the complex  parts of the complex dielectric constant $\varepsilon_1$ 
+and $\varepsilon_2$ are functions of the complex refractive index N as
+\begin{align}
+   N = n -i k
+\end{align}
+\begin{align}
+   \varepsilon = n^2 - k^2
+\end{align}
+\begin{align}
+   \varepsilon = 2nk = \frac{4\pi \sigma}{\omega}
+   \label{imEps}
+\end{align}
+The choice of $n-ik$ rather than $n+ik$ is determiend by the original use of 
+$\exp i(\omega t - \boldsymbol q \cdot \boldsymbol r)$ in the assumed plane-wave solution of
+Maxwell's equations.
+In Eqs \eqref{compEps}-\eqref{imEps}, $n$ is the real part of the complex refractive index, $k$
+the imaginary part or extinction coefficient, and $\sigma$ the optical conductivity. The
+absorption coefficient $\alpha$ is proportional to $\sigma$, to $\varepsilon_2$, and to $k$:
+\begin{align}
+   n\alpha = \frac{4 \pi \sigma}{c} = \frac{\omega}{c} \varepsilon_2
+\end{align}
+\begin{align}
+   n\alpha =  = \frac{\omega}{c}k = \frac{1}{\delta}
+\end{align}
+The extinction coefficient k is essentially the ratio of the free-space wavelength of light of 
+frequency $\omega$ to the skin depth $\delta$.\\
+%
+The Drude theory gives the free-carrier contribution to $\varepsilon_1$ and $\varepsilon_2$ in terms
+of the plasma frequency $\bar\omega_p$ and the electron scattering time $\tau$ as
+\begin{align}
+   \varepsilon_1 &= \varepsilon_{\infty} \frac{1 - \bar\omega_p^2}{\omega^2 \eta}\\
+   \label{eps1Drude}
+\end{align}
+\begin{align}
+   \varepsilon_2 &= \frac{\omega_p^2}{\omega^2 \eta} \frac{ 1 }{ \omega \tau}
+\end{align}
+where $\varepsilon_{\infty}$ is the high-frequencylattice dielectric constant The reail and imaginary
+parts of the complex refractive index are obtained from $\varepsilon_1$ and $\varepsilon_2$.
+One has
+\begin{align}
+   \varepsilon &= \sqrt{\varepsilon_1^2 + \varepsilon_2^2} = n^2 + k^2, \\
+   n = \sqrt{\frac{\varepsilon + \varepsilon_1}{2} },
+   k = \frac{\epsilon_2}{2n} = \sqrt{ \frac{\varepsilon - \varepsilon_1}{2}}.
+\end{align}
+Experimentally, $n$ and $k$ are found from measurements of the reflectivity R of a bulk, opaque sample
+and the transmittance T of a slab, which are given in terms of $n$ and $k$ as
+\begin{align}
+   R &= \frac{(n-1)^2 + k^2}{(n+1)^2 + k^2} \\
+   R &= \frac{ (1-R)^2 e^{-2\omega k d / c} }{ (1-R)^2 e^{-4\omega k d / c} },
+\end{align}
+where $d$ is the sample thickness. For the slab multiple-reflection effects are averaged,
+so that interface fringes are not resolved.
+\\
+\\
+p.171:\\ In the far infrared, for photon energues small compared with $k_0 T$ ($k_0$ boltzmans const.)
+and with the energy $\hbar \omega_Q$ of the phonon involved in the scatteering, the
+quantum result reduces to the $\lambda^2$ dependenve given by the Drude Theory, and the quasi classical
+Boltzmann transport equation (1-3). The departurs from the Drude theory
+at high frequencies are associated mainly with $k$ rather than $n$, and hence,
+the transmission is affected more than the reflectivity. The latter depends on
+$k$ in the region of the reflectivity minimum, where $n \simeq 1$, but is determined 
+essentially by $n$ over the region of the absorption spectrum for which $n > k$,
+which is the region where departures from the Drude theory would occur.
+\\
+(...)
+\\
+The response of electrons to a driving field may be followed from the wuasi-classical
+limit of small $\omega$ to the quantum limit that occurs when $\hbar \omega$ is no longer small
+compared with characteristic energies of the system. In this case, a generalized Boltzmann equation
+is obtained that reduces to the quasi-classical Boltzmann transmport equation when the electron wave 
+vector $q$ tends to zero and $\omega$ is small (14-17)=
+\cite{Jensen1975,Price1966,Argyres1961,Kohn1958}
+. When $\omega$ is appreciable, one obtaines,
+under certain conditions, a solution of the Boltzmann equation in terms of a frequency-dependent
+relaxation time. This relaxation rate, which has been tabulated as a function of frequency and 
+carrier concentration for various materials (18-20)=
+\cite{Jensen1977,Jensen1979,Jensen1981}
+, can be used in the usual expression of the 
+classical Drude theory to obtain the quantum result. In particular, the low-
+frequency $\hbar\omega \simeq k_0T$ limit gives a good estimate for the dc mobility as a function
+of carrier concentration. At high frequencies, in lightly doped materials in which
+polar scattering dominates, $n\alpha$ is proportional to $\lambda^3$ and $\varepsilon_2$ and $k$
+are proportional to $\lambda^4$ rather than $\lambda^3$. The real part of the dielectric constant
+is givn approximately by the Drude-theory expression and $n \simeq \sqrt{\varepsilon_{\infty}}$
+for $\bar\omega_p \ll \omega \ll G/\hbar$, where $G/\hbar$ is the frequency of the fundamental absorption
+edge and $G$ is the direct-band-gap energy of the semiconductor. As $\omega$ approaches $G/\hbar$ there
+is a small quantum-mechanical correction to $\varepsilon_1$ and hence to $n$.
+A summary of the results of the quantum theory is given in Section II.
+\\
+\\
+p.176:\\
+\textbf{Comparison with experimental data}\\
+A calculation of $\varepsilon_1$ appropriate to electrons in polar semiconductors with the
+band structure of the Kane theory and based on the quantum density-matrix equation of motion yields a 
+high frequency modification to Eq.\eqref{eps1Drude}. 
+For $\omega \tau \gg 1$ and $X < 0.1$, ($X = \hbar \omega/G$) one obtains (18,22)
+\begin{align}
+   \varepsilon_1 &= \Bigg[ \frac{\varepsilon_{\infty}}{1 - X} \Bigg]\big[ 1 - (X/\varepsilon_{\infty}) - \bar\omega_p^2/\omega^2 \big] \\
+                &= \Bigg[ \frac{\varepsilon_{\infty}}{1 - X} \Bigg]\big[ 1 - \bar\omega_p^2/\omega^2 \big] \\
+                &= \varepsilon_{\infty}(1 - \bar\omega_p^2/\omega^2), \:\:\:\:\: X \ll 1
+\end{align}
+We note that $1/\varepsilon_{\infty} <\sim$ 0.1 and hence $X/\varepsilon \ll 1$, for compounds we 
+consider, and this term can be neglected. In the limit $X \ll 1$, the quasi-classical high-frequency
+Drude result is recovered, as required. For $X \sim 0.1$, there is a high-frequency correction given by
+Eq.(some equation), which is used to calculate the numerical values of $\varepsilon_1 = n^2 - k^2$.
+The major modification of the classical result is dispersion in $n$ as one approaches the fundamental
+absorption edge \cite{Jensen1983}.
+
+
+\begin{thebibliography}{9}
+      \bibitem{Palik1979}
+       Palik ED, Hold RT.
+       Nondestructire evaluation of semiconductor materials and devices.
+       Plenum 1979 (Chap. 7) 
+      \bibitem{Holm1977}
+         Holm RT, Gibson, Palik ED, 
+         J. Appl.Phys. 48,212 (1977)
+      \bibitem{Perkowitz1971}
+         Perkowitz S. J.Phys.Chem.Solids 32, 2267 (1971)
+      \bibitem{Perkowitz1974}
+         Perkowitz S, Thorland RH, Phys.Rev. B9, 545 (1974)
+      \bibitem{Fan1967}
+         Fan HY.
+         Semiconductors and semimetals.
+         (R.K. Willardson and A.C. Beer eds.),
+         Vol.3, Academic Press, New York 1067
+
+      \bibitem{Jensen1975}
+         Jensen B. Ann. Phys. 95,229 (1975).
+      \bibitem{Price1966}
+         Price PJ. IBM J. Res. Dev. 10,395(1966)
+      \bibitem{Argyres1961}
+         Argyres PN, J. Phys.Chem.Solids 19, 66 (1961)
+      \bibitem{Kohn1958}
+         Kohn W, Luttinger JM.
+         Phys. Rev. 108, 590 (1957)
+         Kohn W, Luttinger JM.
+         Phys.Rev.109,1892(1958)
+
+      \bibitem{Jensen1977}
+         Jensen B. Phys. StatusSolidi. 86, 291 (1978);
+         Jensen B. SolidState commun. 24, 853 (1977)
+      \bibitem{Jensen1979}
+         Jensen B. J. Appl Phys. 50, 5800 (1979)
+      \bibitem{Jensen1981}
+         Jensen B.
+         Laser Induced damage in optical materials; 1980 (H.E. Bennet, A.J. Glass, A.H. Guenther,
+         and B.D.Newman, eds.), p.416, National bureau of standards special
+         publication 620, Boulder, Colorado, 1981.
+
+      \bibitem{Jensen1983}
+         Jensen B, IEEE J. 
+         Quantum Electron. QE-18, 1361 (1982); 
+         %
+         Jensen B, Torabi A, IEEE J.Quantum Electron. QE-19, 448-457,877-882,1362-1365 (1983);
+         %
+         Jensen N, Torabi A, J.Appl.Phys. 54,2030-2035,3623-3625,5945-5949 (1983).
+\end{thebibliography}
+
+
+
+
+
+\subsection{Shashanka S. Mitra \\
+Optical properties of nonmetallic solids for photon energies below the fundamental band gap}
+Department of electrical engineering, University of Rhode Island.
+\\
+\\
+p.263-267:\\
+\textbf{Infrared Dispersion by plasmons}\\
+In the preceeding discussion of absorption of infrared radiation by phonons in a solid, it was tacitly
+assumed that the solid was an insulator. This assumption does not hold well for a narrow--gap semiconductor at
+ordinary temperatures or for a doped semiconductor with a partially filled conduction or valence band.
+The collective excitation of this free-carrier electron gas(plasma) in such a crystal will modify the
+infrared absorption by phonons, as discussed earlier. The dispersion mechanism through which electromagnetic
+radiation interacts with a solid should include the contribution of free-charge carriers in solids for which
+their numbers are significant, in addition to contributions from bound electrons and phonons.
+The dielectric response function of such a solid can now be written as 
+\begin{align}
+   \varepsilon = 1 + 4\pi(\chi_{BE} + \chi_L + \chi_{FC}),
+\end{align}
+where $\chi_{BE}, \chi_L$ and $\chi_{FC}$, respectively represent the bound electron,lattice,and
+free-carrier contributions to the electrical susceptibility. For the spectral region of interest, we
+are not concerned with teh bound-electron dispersion; thus this term, as usual, will be 
+represented by a dispersion-free, high-frequency dielectric-constant term
+\begin{align}
+   \varepsilon_{\infty} = 1 + 4\pi \chi_{BE}.
+\end{align}
+An approximate expression for the dielectric response function for a free-electron gas in a solid can be
+obtained from the classical Drude model in which a free electron of effective mass $m*$ and charge $e$
+is displaced by an amound $\boldsymbol x$ as a result of interaction with the electric field 
+$\boldsymbol E$, with the equation of motion
+\begin{align}
+   m* \ddot{\boldsymbol x} + m* \gamma \dot{\boldsymbol x} = e \boldsymbol E_0 e^{-i\omega t}
+\end{align}
+The damping term proportional to the velocity obviously represents the electron-phonon scattering in 
+a phenomenological manner. Solving for $\boldsymbol x$, one obtains
+\begin{align}
+   \boldsymbol x = -e \boldsymbol E /m* \omega (\omega + i \gamma)
+\end{align}
+The polarization, defined as the electric-dipole moment per unit volume, is given by
+\begin{align}
+   \boldsymbol P = Ne \boldsymbol x,
+\end{align}
+where N is the carrier concentration. Recalling that 
+\begin{align}
+   \boldsymbol P =  \big[ (\varepsilon - 1)/ 4\pi \big] \boldsymbol E,
+\end{align}
+one readily obtains
+\begin{align}
+   \varepsilon_{FC} = \varepsilon_{\infty} - \frac{4 \pi N e^2}{m*\omega(\omega + i \gamma)}
+\end{align}
+for the dielectric response function due to a single-component plasma. In terms of the plasma frequency
+defined as 
+\begin{align}
+   \omega_p = \sqrt{\frac{4\pi N e^2}{\varepsilon_{\infty} m*}}
+\end{align}
+$\varepsilon_{FC}$ becomes
+\begin{align}
+   \varepsilon_{FC} = \varepsilon_{\infty} \big[ 1 - \big(\omega_p^2/\omega(\omega + i \gamma)\big)\big].
+\end{align}
+For a number of semiconductors there exists a region of the infrared spectrum in which the free-carrier 
+contributions dominates, and both the bound electron and lattice contributions to dielectric response
+function are negligible. For a semiconductor, such a situation prevails in a region of the infrared
+spectrum in which $\omega_g \ll \omega_p \ll \omega_{TO}$, where $\hbar \omega_g$ is the
+electronic band gap. The analysis of optical response is also smpler in a region in which the reflection
+
+
+\begin{thebibliography}{9}
+      \bibitem{yy}
+\end{thebibliography}

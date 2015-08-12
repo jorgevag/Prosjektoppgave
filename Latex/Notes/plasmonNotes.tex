@@ -1,0 +1,307 @@
+\section{Plasmons}
+Notes from Justin White 
+http://large.stanford.edu/courses/2007/ap272/white1/
+
+\textbf{Surface Plasmon Polaritons}
+\begin{itemize}
+\item
+Surface Plasmon polaritons are collective longitudinal oscillations
+of electrons near a material surface, strongly coupled to 
+an electromagnetic wave.
+
+\item 
+Both bulk and surface plasmons have associated EM-waves, and can
+consequently be described by Maxwell's equations. 
+
+\item 
+the coherent oscillations of electron motion can be encapsulated in
+the dielectric constant of the material. 
+
+\item
+The basic form of the bulk and surface plasmon solutions are shown
+below:
+\begin{align}
+E_{bulk} &= E_0 e^{k_x x - \omega t}\\
+E_{spp} &= E_0e^{-\kappa |z|} e^{k_x x - \omega t}
+\end{align}
+The bulk plasmons are associated with purely transverse EM waves
+($E\perp k$ and  $B \perp k$) and can only exist for 
+$\omega < \omega_p$. 
+For $\omega > \omega_p$: the wave-vector for bulk plasmons becomes
+imaginary, giving an exponentially decaying wave, instead of a 
+propagating wave. It is for this reason that most metals 
+are highly reflective for visible light ($\omega <\omega_p$),
+but transparent for ultraviolet light ($\omega > \omega_p$)
+
+\item
+Surface plasmons have an associated EM wave with both transverse 
+and longitudinal field components. Such waves can only be excited
+at the interface between a conductor and dielectric, and aretightly bound to the surface. The field reach their maximum at the interface 
+($z=0$), and exponentially decay away from the surface.
+
+\item 
+The wave-vector of the surface plasmon mode $k_{spp}$ always lies
+to the right of the free space wave-vector $k_0$ (in the dispersion 
+diagram/relation), such that $\lambda_{spp} < \lambda_0$. this makes
+ it impossible to directly launch a surface plasmon wave by
+illumination with free-space radiation, because the free-space photons
+simply do not have enough momentum to excite the surface plasmon.
+
+As $\omega$ increases, $k_{spp}$ gets larger and larger, moving
+further  away from $k_0$ (textit{??making it harder and harder 
+for light to excite the surface plasmons??})d. As $k_{spp}$ increases,
+the surface plasmon wave is more tightly bound to the surface.
+This process has an upper limit of $\omega_{sp}$, the surface 
+plasmon resonant frequency, which occurs when the dielectric 
+constant of the metal and the dielectric have the same 
+magnitude but opposite signs.
+
+\item
+\textbf{Excitation of Surface Plasmons}\\
+High energy electrons that bombard a thin metalic film can
+launch surface plasmons and a surface plasmons of a whole range
+of wavelengths can be excited. However, only plasmons
+far along the dispersion curve, where $k_{spp}$ is largest
+are generally excited.
+\\
+\\
+As mentioned previously, direct excitation of surface plasmons by 
+free-space photons is not achievable because $k_{spp}$ is 
+always greater than $k_0$; this can be seen from the dispersion
+relation, where the surface plasmon dispersion relation always
+lies to the right of the free space dispersion curve.\\
+This can be overcome by back-side illumination through a material
+with a higher index of refraction $n$, where the far field radiation
+has a larger wave-vector ($k=nk_0$) 
+(like done in a Kretschmann-Raether coupler) [5].
+A surface plasmon will be efficiently excited when 
+\begin{align}
+k_{\parallel} = n k_0 \sin \theta = k_{spp}
+\end{align}
+A mor egeneral approach to launch surface plasmons with light
+is the use of structured surfaces that are able to impart momentum
+on the photon, enabling it to couple to the surface plasmon mode.
+Anything from a single sub-wavelength disk or slit, to rectangular
+or sinusoidal diffraction gratings are used for this type of coupling.
+\textbf{A thorough overview of surface plasmon coupling 
+and patterned and rough surfaces is given by Raether[6]}
+
+
+\item Appendix: Derivation of Bulk and Surface Plasmons (see article).
+\end{itemize}
+
+Other Nice sources:
+\begin{itemize}
+\item Really nice article on Plasmons:\\
+http://nanocomposix.com/pages/plasmonics
+
+\item Article:\\
+http://cdn.intechopen.com/pdfs-wm/44351.pdf
+
+\item Surface Plasmon Theory(book?):\\
+https://www.physik.hu-berlin.de/de/nano/lehre/Gastvorlesung%20Wien/Plasmonics%20Pitarke
+
+\item Chemistry-blog:\\
+http://www.chemistry-blog.com/2007/03/19/plasmonics-part-ii/
+
+\item Mie theory: \\
+http://www.orc.soton.ac.uk/publications/theses/1460T\_lnn/1460T\_lnn\_03.pdf
+\end{itemize}
+
+
+
+
+\newpage
+\textbf{From Wikipedia}
+\begin{itemize}
+   \item \textbf{What are Plasmons?} \\
+A plasmon is a quantum of plasma oscillation (quasiparticle from the quantization of plasma oscillations).
+Plasmons are collective (a discrete number) oscillations of the free elctron gas density.
+Plasmons can also couple with a photon to create another quasiparticle called a plasma polariton
+(electromagnetic wave - electric/magnetic dipole-carrying exitation - coupling.
+\\
+\\
+Plasmons can be described as oscillations of free elctron density with respect to
+fixed positive ions in a metal. Imagine a cube of metal placed in an external 
+electric field pointing to the right. Electrons will move the the left side and uncover
+positive ions on the right side. The electrons will continue moving left until they
+cancel the field inside the metal. Removing the field will make the electrons move back by their
+mutual repulsion and attraction to the ions, leaving the electrons to oscillate back and forth,
+at the \textbf{plasma frequency}, in a so called plasma oscillation.
+
+\item \textbf{Plasma Oscillation, aka ''Langmuir waves''} \\
+Rapid oscillations of electron density in conducting media such as plasmas or metals.
+The oscillations can be described as an instability in the dielectric function of a free electron gas.
+The frequency depends weakly on the wavelength of the oscillation.
+\\
+\\
+'Cold' electrons (plasma oscillations)\\
+If the thermal motion of the electrons is ignored and assuming infinite ion mass,
+the charge density oscillates at the plasma frequency
+\begin{align}
+   \omega_{pe} &= \sqrt{\frac{n_e e^2}{m^* \varepsilon_0}}, \text{[rad/s] (SI-units)} \\
+   \omega_{pe} &= \sqrt{\frac{4 \pi n_e e^2}{m^*}}, \text{(cgs-units)},
+\end{align}
+where $n_e$ is the number density of electrons, $e$ is the electric charge, $m^*$ is the effective mass of
+the electron and $\varepsilon_0$ is the permittivity of free space. Since the frequency is independent of 
+the wavelength, these oscillations have an infinite phase velocity and zero group velocity.
+Note in addition that, if $m^*$ is the electron mass $m_e$, the plasma frequency $\omega_{pe}$
+depends only on the physical constants and concentration of electrons $n_e$. The numeric expression is:
+\begin{align}
+f_{pe} = \frac{\omega_{pe}}{2 \pi} \approx 8980 \sqrt{n_e}, \text{[Hz]}
+\end{align}
+with $n_e$ in [cm$^{-3}$]
+\\
+\\
+'Warm' electrons (plasma oscillations)\\
+When the effects of the electron thermal speed $v_{e,th} = \sqrt{\frac{k_B T_e}{m_e}}$ are taken into account,
+the electron pressure acts as an additional restoring force and the oscillations propagate with
+frequency and wavenumber related by the longitudinal Langmuir wave:
+\begin{align}
+\omega ^2 = \omega_{pe} ^2 + \frac{3 k_B T_e}{m_e} k^2 = \omega_{pe} ^2 + 3k^2 v_{e,th}^2
+\end{align}
+called the 'Bohm-Gross dispersion relation'. If the spatial scale is large compared to
+the Debye length (measure of a charge carrier's net electrostatic effect in solution, 
+and how far those electrostatic effects persist), the oscillations are only weakly modified
+by the pressure term, but at small scales the pressure term dominates and 
+the waves become dispersionless with a speed of $\sqrt{3}v_{e,th}$. For such waves, however, the
+electron thermal speed is comparable to the phase velocity, i.e.
+\begin{align}
+v \sim v_{p,th} \equiv \frac{\omega}{k},
+\end{align}
+so the plasma waves can accelerate electrons that are moving with speed nearly equal to the
+phase velocity of the wave. This process often leads to a form of collisionless damping
+called Landau damping. Consequently, the large-k portion in the dispersion relation is difficult to
+observe and seldom of consequence.
+\\
+\\
+In metal of semiconductor, the effect of the ions periodic potential must be taken into account. This is
+usually done by using the electrons effective mass in place of $m$.
+
+\item \textbf{Role of Plasmons} \\
+Plasmons play a large role in the optical properties of metals. Light of frequencies below the
+plasma frequency is reflected, because the electrons in the metal screen the electric field 
+of the light. Light of frequencies above the plasma frequency is transmitted, because the
+electrons cannot respond fast eneough to screen it. In mot metals, the plasma frequency is in the 
+unltraviolet, making them shiny (reflective) in the visible range. 
+In semiconductors, the valence electron plasma frquency is usually in the deep ultraviolet, which is why
+they are reflective.
+\\
+The plasmon energy can often be estimated in the free electron model as
+\begin{align}
+   E = \hbar \sqrt{\frac{n_e e^2}{m^* \varepsilon_0}} = \hbar \omega_p
+\end{align}
+
+
+
+
+\item \textbf{Surface Plasmons (SPs)} \\
+Surface plasmons (plasmons at the interface of two materials) interact strongly with light,
+resulting in a polariton (usually occurs at metal or doped dielectric interface, 
+which both have small Im($\varepsilon$) > 0 and big Re($\varepsilon$) < 0).
+These surface electron oscillations can exist at the interface between
+any two materials where the real part of the dielectric function changes sign across the interface
+(e.g. a metal-dielectric interface like metal sheet in air).
+\\
+SPs have lower energy than \textbf{bulk (or volume)} plasmons, which quantise the longitudinal
+electron oscillations about positive ion cores within the bulk of an electron gas (or plasma).
+\\
+\\
+The charge motion in a surface plasmon always create electromagnetic fields outside (as well as inside)
+the metal. The total excitation, including both the charge motion and associated electromagnetic field,
+is called either a \textbf{surface plasmon polariton} at a planar interface, or a \textbf{localized
+surface plasmon} for the closed surface of a small particle.
+\\
+\\
+Surface Plasmon polaritons can be excited by electrons or photons. In the case of photons, it
+cannot be done directly, but requires a prism, or a grating, or a defect on the metal surface.
+\textit{??? Or like trunctated spheres on granular films???}.
+\\
+\\
+At low frequency an SPP approaches the dispersionrelation in free space $\omega = ck$.
+At high frequency, the dispersion relation reaches an asymptotic limit called the ''sufrace plasma frequency''.
+\\
+\\
+As an SPP propagates along the surface, it loses energy to the metal
+due to absorption and due to scattering into free-space or into other directions. The electric field
+falls off evanescently perpendicular to the metal surface. At low frequencies, the SPP penetration depth into
+the metal is commonly approximated using the 'skin depth formula'. In the dielectric, the field 
+will fall off far more slowly. SPPs are very sensitive to slight perturbations within the skin depth and because of this, SPPs, are often sed to probe inhomogeneities of a surface
+\\
+\\
+Surface plasmons have been used to control colors of materials and is possible since controlling 
+the particle's shape and size determines the types of surface plasmons that can couple to it and 
+propagate across it. This in turn controls the interaction of light with the surface.
+These effects are illustrated by the historic \textit{stained glass} wich adorn medieval
+cathedrals. In this case, the color is given by metal nanoparticles of a fixed size which interact
+with the optical field to give the glass its vibrant color. To produce optical range surface plasmons
+effects involves producing surfaces wich have features < 400nm.
+\\
+\\
+Surface plasmons are very sensitive to the properties of the materials on which they propagate.
+
+
+\item \textbf{Surface Plasmons Resonance (SPR)} \\
+Surface plasmon resonance is the resonant oscillation of conduction electrons at the interface
+between a negative and positive permittivity meterial stimulated by incident light. The resonance
+condition is estalished when the frequency of incident photons matches the natural
+frequency of surface electrons oscillating against the restoring force of positive nuclei.
+\\
+\\
+Surface plasmon polaritons are surface electromegnetic waves that propagate in a direction parallel to
+the metal/dielectric (or metal/valcuum) interface. Since the wave is on the boundary of the metal
+and the external medium, these oscillations are very sensitive to any change of this boundary, such as
+adsoption of molecules to the metal surface.
+\\
+\\
+To describe the existence and properties of surface plasmon polaritons, one can choose from various models,
+e.g. the \textbf{Drude Model}. The simplest way to approach the problem is to treat each
+material as a homogeneous continuum, described by a frequency-dependent relative permittivity between 
+the external medium and the surface (this is a complex dielectric function). In order
+for the terms that describe the electronic surface plasmons to exist, the real part of the dielectric constant
+of the metal must be negative and its magnitude must be greater than that of the dielectric.
+This condition is met in the infrared-visible wavelength region for air/metal and water/metal interfaces (where
+the real dielectric constant of a metal is negative and that of air or water is possitive).
+\\
+\\
+Localized SPRs (LSPRs) are collective charge oscillations in metallic nanoparticles that
+are excited by light. They exhibit enhanced near-field amplitude at the resonance wavelength.
+This field is highly localiced at the nanoparticle and decays rapidly away from the nanoparticle/dielectric
+interface into the dielectric background, though far-field scattering by the particle is also 
+enhanced by the resonance. Light intensity enhancement is a very important aspect of LSPRs and
+and localization means the LSPR has very high spatial resolution (subwavelength), lmited
+only by the size of nanoparticles. Because of the enhanced field amplitude, effects that depend on the
+amplitude such as magneto-optical effect are also enhanced by LSPRs.
+\\
+\\
+In order to excite surface plasmoms in a resonant manner, one can use an electron or light beam
+(visible and infrared are typical). The incoming beam has to match its momentum to that of the plasmon.\\
+With p-polarization this is possible by assing the light through a block of glass to
+increase the wavenumber (and the momentum) and achieve the resonance at a given wavelength and angle.\\
+s-polarized light however cannot excite electronic surface plasmons.
+\\
+\\
+When the surface plasmon wave interacts with a local particle or irregularity, such as a rough surface,
+part of the energy can be re-emmited as light. This emitted light can be detected behind the metal film
+from various diretions.
+
+
+\item \textbf{The Drude Model}\\
+Treats the behavior of electrons in a solid like a pinball machine. 
+The electrons are small light balls in a sea of static, positively charged ions. The only 
+form of action instantaneous collisions.
+
+
+\item \textbf{Mie Scattering}\\
+Mie theory is sometimes used for the collection of methods and solutions to Maxwell's equations
+for scattering, by e.g. using geometries where one can write separate equations for the radial and angular
+dependence of solutions. More broadly, ''Mie scattering'' suggests situations where the size of the
+scattering particles is comparable to the wavelength of the light, rather than much smaller or much larger.
+\end{itemize}
+
+\begin{thebibliography}{9}
+
+      \bibitem{} 
+
+\end{thebibliography}
+
