@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.25)  10 AUG 2015 02:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.25)  25 AUG 2015 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -320,10 +320,36 @@ Package: amsthm 2004/08/06 v2.20
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen113
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@tempdima=\dimen117
+\caption@indent=\dimen118
+\caption@parindent=\dimen119
+\caption@hangindent=\dimen120
+)
+\c@ContinuedFloat=\count100
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count101
+\c@subtable=\count102
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks25
-\inpenc@posthook=\toks26
+\inpenc@prehook=\toks26
+\inpenc@posthook=\toks27
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -622,33 +648,6 @@ File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip49
 )
-(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks27
-)
-\captionmargin=\dimen114
-\captionmargin@=\dimen115
-\captionwidth=\dimen116
-\caption@tempdima=\dimen117
-\caption@indent=\dimen118
-\caption@parindent=\dimen119
-\caption@hangindent=\dimen120
-)
-\c@ContinuedFloat=\count100
-)
-\c@subfigure=\count101
-\c@subtable=\count102
-)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -804,10 +803,10 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 
 Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 47.
+(hyperref)                setting the option has no effect on input line 49.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 47.
-Package hyperref Info: Option `breaklinks' set `true' on input line 47.
+Package hyperref Info: Option `colorlinks' set `true' on input line 49.
+Package hyperref Info: Option `breaklinks' set `true' on input line 49.
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
 )
@@ -834,56 +833,119 @@ les
 LaTeX Warning: Label `Baetens2010' multiply defined.
 
 
+LaTeX Warning: Label `sec:vo2' multiply defined.
+
+
 LaTeX Warning: Label `multExpCoeffAt' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:five over x' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:five over x' multiply defined.
+
+
+LaTeX Warning: Label `Kang2012' multiply defined.
 
 )
 \openout1 = `utkast.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 91.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 93.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 93.
 
  (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 91.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 91.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 93.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 93.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 91.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 91.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 93.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 93.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 91.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -922,7 +984,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 91.
+Package hyperref Info: Link coloring ON on input line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -932,255 +994,636 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 91.
-LaTeX Info: Redefining \pageref on input line 91.
-LaTeX Info: Redefining \nameref on input line 91.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
 
 (./utkast.out) (./utkast.out)
 \@outlinefile=\write3
 \openout3 = `utkast.out'.
 
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 95
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 97
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 95.
+(Font)              scaled to size 11.03998pt on input line 97.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 95.
+(Font)              scaled to size 8.27998pt on input line 97.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 95.
+(Font)              scaled to size 6.43999pt on input line 97.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 95.
+(Font)              scaled to size 11.03998pt on input line 97.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 95.
+(Font)              scaled to size 8.27998pt on input line 97.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 95.
-LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+(Font)              scaled to size 6.43999pt on input line 97.
+LaTeX Font Info:    Try loading font information for U+msa on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+LaTeX Font Info:    Try loading font information for U+msb on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 102.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 104.
  (./introduction.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 24.
+(Font)              scaled to size 6.99199pt on input line 23.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 24.
+(Font)              scaled to size 5.51999pt on input line 23.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 24.
+(Font)              scaled to size 6.99199pt on input line 23.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 24.
+(Font)              scaled to size 5.51999pt on input line 23.
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--97
+Underfull \hbox (badness 10000) in paragraph at lines 2--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--97
+Underfull \hbox (badness 10000) in paragraph at lines 48--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--97
+Underfull \hbox (badness 10000) in paragraph at lines 48--108
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2] (./TCtheory.tex
-<Figures/chromicGlassComparison.pdf, id=140, 680.4688pt x 549.54474pt>
+<Figures/chromicGlassComparison.pdf, id=205, 680.4688pt x 549.54474pt>
 File: Figures/chromicGlassComparison.pdf Graphic file (type pdf)
 
 <use Figures/chromicGlassComparison.pdf>
 Package pdftex.def Info: Figures/chromicGlassComparison.pdf used on input line 
-29.
+43.
 (pdftex.def)             Requested size: 234.8775pt x 189.68538pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--120
+Underfull \hbox (badness 10000) in paragraph at lines 102--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--120
+Underfull \hbox (badness 10000) in paragraph at lines 102--163
 
  []
 
-[3 <./Figures/chromicGlassComparison.pdf>]
-<Figures/TCcoating2.pdf, id=223, 605.96039pt x 283.23064pt>
+
+Overfull \hbox (2.85703pt too wide) in paragraph at lines 102--163
+\T1/futs/m/n/9 ex-hibit ther-mochromic color changes re-versibly, while ther-mo
+chromic dyes, usu-ally based on or-ganic com-pounds,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--163
+
+ []
+
+[3 <./Figures/chromicGlassComparison.pdf>] [4]
+<Figures/TCcoating2.pdf, id=295, 605.96039pt x 283.23064pt>
 File: Figures/TCcoating2.pdf Graphic file (type pdf)
 
 <use Figures/TCcoating2.pdf>
-Package pdftex.def Info: Figures/TCcoating2.pdf used on input line 143.
+Package pdftex.def Info: Figures/TCcoating2.pdf used on input line 178.
 (pdftex.def)             Requested size: 422.77664pt x 197.61182pt.
 
-
-LaTeX Warning: Citation `Kiria2010' on page 4 undefined on input line 146.
-
-
-LaTeX Warning: Citation `Kiria2010' on page 4 undefined on input line 146.
-
-
-<Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf, id=224, 748.1103pt x 64
+<Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf, id=299, 748.1103pt x 64
 6.02077pt>
 File: Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf Graphic file (type 
 pdf)
  <use Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf>
 Package pdftex.def Info: Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf 
-used on input line 164.
+used on input line 203.
 (pdftex.def)             Requested size: 234.8775pt x 202.8273pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 190.
+(Font)              scaled to size 9.19998pt on input line 230.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 190.
+(Font)              scaled to size 9.19998pt on input line 230.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 192.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 232.
 
-
-LaTeX Warning: Reference `idealTCW' on page 4 undefined on input line 204.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--207
+Underfull \hbox (badness 10000) in paragraph at lines 171--249
 
  []
 
-[4 <./Figures/TCcoating2.pdf>]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 211.
- [5 <./Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf>]pdfTeX warning (e
-xt4): destination with the same identifier (name{cite.Baetens2010}) has been al
-ready used, duplicate ignored
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--249
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./Figures/TCcoating2.pdf>]pdfTeX warning (ext4): destination with the same 
+identifier (name{cite.Baetens2010}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.333       \bibitem{Baetens2010}
+l.367       \bibitem{Baetens2010}
                                  
-Underfull \hbox (badness 3815) in paragraph at lines 345--348
+Underfull \hbox (badness 3815) in paragraph at lines 379--382
 []\T1/futs/m/n/9 White MA, LeBlanc M. Ther-mochromism in com-mer-cial prod-ucts
 . Jour-nal of Chem-i-cal Ed-u-ca-tion
  []
 
-) [6] (./theory.tex
-<Figures/flatSurfaceScattering.pdf, id=310, 1029.64839pt x 471.93814pt>
+) (./vo2.tex
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--65
+
+ []
+
+[6 <./Figures/TCWtransmittanceMcCluney1996andKamali2013.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 66.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 66.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 66.
+
+) [7] (./basicTheory.tex
+<Figures/electricFieldcoord.pdf, id=397, 295.88937pt x 275.32706pt>
+File: Figures/electricFieldcoord.pdf Graphic file (type pdf)
+
+<use Figures/electricFieldcoord.pdf>
+Package pdftex.def Info: Figures/electricFieldcoord.pdf used on input line 22.
+(pdftex.def)             Requested size: 234.8775pt x 218.56467pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--72
+
+ []
+
+[8 <./Figures/electricFieldcoord.pdf>]
+LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <12> not available
+(Font)              Font shape `T1/futs/b/sc' tried instead on input line 113.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 113.
+
+<Figures/DrudeModel.pdf, id=478, 632.35202pt x 599.44301pt>
+File: Figures/DrudeModel.pdf Graphic file (type pdf)
+
+<use Figures/DrudeModel.pdf>
+Package pdftex.def Info: Figures/DrudeModel.pdf used on input line 132.
+(pdftex.def)             Requested size: 234.8775pt x 222.65024pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--144
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--158
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 172--178
+
+ []
+
+[10 <./Figures/DrudeModel.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 249--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--263
+
+ []
+
+[11]
+<Figures/polarizationContributionToPermittivity.pdf, id=602, 1086.8037pt x 671.
+30339pt>
+File: Figures/polarizationContributionToPermittivity.pdf Graphic file (type pdf
+)
+ <use Figures/polarizationContributionToPermittivity.pdf>
+Package pdftex.def Info: Figures/polarizationContributionToPermittivity.pdf use
+d on input line 310.
+(pdftex.def)             Requested size: 469.75502pt x 290.16058pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--335
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12] [13 <./Figures/polarizationContributionToPermittivity.pdf>]
+<Figures/dielectricResonance.pdf, id=1112, 1493.27882pt x 543.83174pt>
+File: Figures/dielectricResonance.pdf Graphic file (type pdf)
+
+<use Figures/dielectricResonance.pdf>
+Package pdftex.def Info: Figures/dielectricResonance.pdf used on input line 390
+.
+(pdftex.def)             Requested size: 469.75502pt x 171.07555pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--411
+
+ []
+
+[14 <./Figures/dielectricResonance.pdf>]
+<Figures/bandstructureVSdielectric.pdf, id=1160, 953.73845pt x 409.2133pt>
+File: Figures/bandstructureVSdielectric.pdf Graphic file (type pdf)
+
+<use Figures/bandstructureVSdielectric.pdf>
+Package pdftex.def Info: Figures/bandstructureVSdielectric.pdf used on input li
+ne 442.
+(pdftex.def)             Requested size: 469.75502pt x 201.55278pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--457
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 475.
+
+[15 <./Figures/bandstructureVSdielectric.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 542--545
+
+ []
+
+[16]) (./theory.tex
+<Figures/flatSurfaceScattering.pdf, id=1212, 1029.64839pt x 471.93814pt>
 File: Figures/flatSurfaceScattering.pdf Graphic file (type pdf)
 
 <use Figures/flatSurfaceScattering.pdf>
 Package pdftex.def Info: Figures/flatSurfaceScattering.pdf used on input line 1
 5.
 (pdftex.def)             Requested size: 469.75502pt x 215.31548pt.
- [7 <./Figures/flatSurfaceScattering.pdf>]
+ [17 <./Figures/flatSurfaceScattering.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 97--112
 
  []
 
-<Figures/excessFields.pdf, id=385, 803.24353pt x 433.82076pt>
+[18] <Figures/excessFields.pdf, id=1296, 803.24353pt x 433.82076pt>
 File: Figures/excessFields.pdf Graphic file (type pdf)
 
 <use Figures/excessFields.pdf>
 Package pdftex.def Info: Figures/excessFields.pdf used on input line 138.
 (pdftex.def)             Requested size: 469.75502pt x 253.7146pt.
+ [19 <./Figures/excessFields.pdf>]
 
+LaTeX Warning: Reference `Griffiths' on page 20 undefined on input line 273.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8] [9 <./Figures/excessFields.pdf>]
-
-LaTeX Warning: Reference `Griffiths' on page 10 undefined on input line 273.
-
-[10]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 306--339
 
  []
 
 
-LaTeX Warning: Citation `LieL2010' on page 11 undefined on input line 345.
+LaTeX Warning: Citation `LieL2010' on page 21 undefined on input line 345.
 
 
-LaTeX Warning: Citation `Lazzari' on page 11 undefined on input line 355.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 352--367
-
- []
+LaTeX Warning: Citation `Lazzari' on page 21 undefined on input line 355.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 352--367
 
  []
 
-<Figures/filmGeometry.pdf, id=496, 965.51768pt x 432.01399pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--367
+
+ []
+
+[21] <Figures/filmGeometry.pdf, id=1402, 965.51768pt x 432.01399pt>
 File: Figures/filmGeometry.pdf Graphic file (type pdf)
 
 <use Figures/filmGeometry.pdf>
 Package pdftex.def Info: Figures/filmGeometry.pdf used on input line 410.
 (pdftex.def)             Requested size: 469.75502pt x 210.18573pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[11]
+ [22 <./Figures/filmGeometry.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 454--476
 
  []
 
-[12 <./Figures/filmGeometry.pdf>]
 
-LaTeX Warning: Citation `Lie2010' on page 13 undefined on input line 521.
+LaTeX Warning: Citation `Lie2010' on page 23 undefined on input line 521.
 
 
-LaTeX Warning: Citation `Lie2010' on page 13 undefined on input line 527.
+LaTeX Warning: Citation `Lie2010' on page 23 undefined on input line 527.
 
-[13]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 617--624
 
  []
 
-) [14] (./method.tex) (./results.tex) (./discussion.tex) (./conclusion.tex)
-(./granfilmInstructions.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--19
+) [24] (./method.tex
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 34.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (9.67142pt too wide) in paragraph at lines 28--75
+\T1/futs/m/n/9 tions. \T1/futs/m/sc/9 En-gauge Dig-i-tizer \T1/futs/m/n/9 is a 
+open source dig-i-tiz-ing soft-ware and can be found on http://digitizer.source
+forge.net/.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 22.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-)
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 22.
+)) (./results.tex
+[25]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 8.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 8.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 8.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 8.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [15]
-(./additionalTheory.tex [16]
-Underfull \hbox (badness 10000) in paragraph at lines 121--150
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 8.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 8.
+
+<Results/Sim1/dR.pdf, id=1500, 728.7225pt x 584.1825pt>
+File: Results/Sim1/dR.pdf Graphic file (type pdf)
+
+<use Results/Sim1/dR.pdf>
+Package pdftex.def Info: Results/Sim1/dR.pdf used on input line 14.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/dRphase.pdf, id=1501, 728.7225pt x 584.1825pt>
+File: Results/Sim1/dRphase.pdf Graphic file (type pdf)
+
+<use Results/Sim1/dRphase.pdf>
+Package pdftex.def Info: Results/Sim1/dRphase.pdf used on input line 21.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/re_alpha_parallel.pdf, id=1502, 728.7225pt x 584.1825pt>
+File: Results/Sim1/re_alpha_parallel.pdf Graphic file (type pdf)
+
+<use Results/Sim1/re_alpha_parallel.pdf>
+Package pdftex.def Info: Results/Sim1/re_alpha_parallel.pdf used on input line 
+34.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/im_alpha_parallel.pdf, id=1503, 728.7225pt x 584.1825pt>
+File: Results/Sim1/im_alpha_parallel.pdf Graphic file (type pdf)
+
+<use Results/Sim1/im_alpha_parallel.pdf>
+Package pdftex.def Info: Results/Sim1/im_alpha_parallel.pdf used on input line 
+41.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/re_gamma.pdf, id=1504, 728.7225pt x 584.1825pt>
+File: Results/Sim1/re_gamma.pdf Graphic file (type pdf)
+
+<use Results/Sim1/re_gamma.pdf>
+Package pdftex.def Info: Results/Sim1/re_gamma.pdf used on input line 48.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/im_gamma.pdf, id=1505, 728.7225pt x 584.1825pt>
+File: Results/Sim1/im_gamma.pdf Graphic file (type pdf)
+
+<use Results/Sim1/im_gamma.pdf>
+Package pdftex.def Info: Results/Sim1/im_gamma.pdf used on input line 55.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/re_alpha_perp.pdf, id=1506, 728.7225pt x 584.1825pt>
+File: Results/Sim1/re_alpha_perp.pdf Graphic file (type pdf)
+
+<use Results/Sim1/re_alpha_perp.pdf>
+Package pdftex.def Info: Results/Sim1/re_alpha_perp.pdf used on input line 68.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/im_alpha_perp.pdf, id=1507, 728.7225pt x 584.1825pt>
+File: Results/Sim1/im_alpha_perp.pdf Graphic file (type pdf)
+
+<use Results/Sim1/im_alpha_perp.pdf>
+Package pdftex.def Info: Results/Sim1/im_alpha_perp.pdf used on input line 75.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/re_beta.pdf, id=1508, 728.7225pt x 584.1825pt>
+File: Results/Sim1/re_beta.pdf Graphic file (type pdf)
+
+<use Results/Sim1/re_beta.pdf>
+Package pdftex.def Info: Results/Sim1/re_beta.pdf used on input line 82.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim1/im_beta.pdf, id=1509, 728.7225pt x 584.1825pt>
+File: Results/Sim1/im_beta.pdf Graphic file (type pdf)
+
+<use Results/Sim1/im_beta.pdf>
+Package pdftex.def Info: Results/Sim1/im_beta.pdf used on input line 89.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 99.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 99.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 101.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 101.
+
+<Results/Sim1/dR_lowE.pdf, id=1510, 728.7225pt x 584.1825pt>
+File: Results/Sim1/dR_lowE.pdf Graphic file (type pdf)
+
+<use Results/Sim1/dR_lowE.pdf>
+Package pdftex.def Info: Results/Sim1/dR_lowE.pdf used on input line 106.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim2/dR_lowE.pdf, id=1511, 728.7225pt x 584.1825pt>
+File: Results/Sim2/dR_lowE.pdf Graphic file (type pdf)
+
+<use Results/Sim2/dR_lowE.pdf>
+Package pdftex.def Info: Results/Sim2/dR_lowE.pdf used on input line 113.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim3/dR_lowE.pdf, id=1512, 728.7225pt x 584.1825pt>
+File: Results/Sim3/dR_lowE.pdf Graphic file (type pdf)
+
+<use Results/Sim3/dR_lowE.pdf>
+Package pdftex.def Info: Results/Sim3/dR_lowE.pdf used on input line 120.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+
+<Results/Sim4/dR_lowE.pdf, id=1513, 728.7225pt x 584.1825pt>
+File: Results/Sim4/dR_lowE.pdf Graphic file (type pdf)
+
+<use Results/Sim4/dR_lowE.pdf>
+Package pdftex.def Info: Results/Sim4/dR_lowE.pdf used on input line 127.
+(pdftex.def)             Requested size: 230.18253pt x 184.52655pt.
+) (./discussion.tex) (./conclusion.tex)
+(./granfilmInstructions.tex) [26 <./Results/Sim1/dR.pdf> <./Results/Sim1/dRphas
+e.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/dRphase.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>] [27 <./Results/Sim1/re_alpha_parallel.pdf> <./Results/Sim1/im_alpha_parallel
+.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/im_alpha_parallel.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./Results/Sim1/re_gamma.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/re_gamma.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+> <./Results/Sim1/im_gamma.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/im_gamma.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>] [28 <./Results/Sim1/re_alpha_perp.pdf> <./Results/Sim1/im_alpha_perp.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/im_alpha_perp.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./Results/Sim1/re_beta.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/re_beta.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./Results/Sim1/im_beta.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim1/im_beta.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>] [29 <./Results/Sim1/dR_lowE.pdf> <./Results/Sim2/dR_lowE.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim2/dR_lowE.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./Results/Sim3/dR_lowE.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim3/dR_lowE.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./Results/Sim4/dR_lowE.pdf
+
+pdfTeX warning: pdflatex (file ./Results/Sim4/dR_lowE.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>] (./method.tex
+Overfull \hbox (9.67142pt too wide) in paragraph at lines 28--75
+\T1/futs/m/n/9 tions. \T1/futs/m/sc/9 En-gauge Dig-i-tizer \T1/futs/m/n/9 is a 
+open source dig-i-tiz-ing soft-ware and can be found on http://digitizer.source
+forge.net/.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--150
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
 
  []
 
-[17]) [18] (./references.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
- [19
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--75
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.Kang2012
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.91    \bibitem{Kang2012}
+                          ) [30] (./references.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+ [31
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
  (./utkast.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `utkast.out' has not changed.
-(rerunfilecheck)             Checksum: FC15BDA135BEB32A9A6A528DEFE20189;1634.
+(rerunfilecheck)             Checksum: 8183DC3DF0C95FFB598452535D13D7C6;2809.
 
 
 LaTeX Warning: There were undefined references.
@@ -1188,31 +1631,32 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 9408 strings out of 493304
- 136771 string characters out of 6139871
- 325376 words of memory out of 5000000
- 12436 multiletter control sequences out of 15000+600000
- 136184 words of font info for 135 fonts, out of 8000000 for 9000
+ 9654 strings out of 493304
+ 141657 string characters out of 6139871
+ 324789 words of memory out of 5000000
+ 12576 multiletter control sequences out of 15000+600000
+ 155751 words of font info for 161 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,14n,43p,791b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,14n,43p,865b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fou
 rier/fourier-mlitb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourie
-r/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sftt0900.pfb>
-Output written on utkast.pdf (19 pages, 359842 bytes).
+r/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sftt0900.pfb>
+Output written on utkast.pdf (31 pages, 902819 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 598 compressed objects within 6 object streams
- 178 named destinations out of 1000 (max. 500000)
- 207 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2249 PDF objects out of 2487 (max. 8388607)
+ 1547 compressed objects within 16 object streams
+ 249 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

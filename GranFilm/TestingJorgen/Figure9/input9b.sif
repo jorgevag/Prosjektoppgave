@@ -1,6 +1,7 @@
 &Global
   !Title          =  "Skal vi ha dette med... Strengt tatt ikke noedvendig...."
-  SOPRA_ROOT     =   '/home/jorgevag/Documents/Fordypningsoppgave/GranFilm/Sopra/DataBase/'
+  SOPRA_ROOT     =   '/home/jorgevag/Documents/Prosjektoppgave/GranFilm/TestingJorgen/Figure9/DataBase9/'
+  !SOPRA_ROOT     =   '/home/jorgevag/Documents/Prosjektoppgave/GranFilm/Sopra/DataBase/'
   !SOPRA_ROOT     =   '/home/gudrun/ingves/usr/local/SOPRA/DataBase/'	
 /
  

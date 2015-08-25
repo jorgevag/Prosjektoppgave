@@ -134,8 +134,8 @@ for flag, arg in flags:
                 pyplot.plot( data[:,int(subArgs[j])], data[:,int(subArgs[j+1])], label='y'+subArgs[j+1]+'(x'+subArgs[j]+'), '+ subArgs[i])
 
 # Set Axis Labels, Set Legend Labels, Show Plots: #
-pyplot.xlabel("x")
-pyplot.ylabel("y")
+pyplot.xlabel("x", fontsize=18)
+pyplot.ylabel("y", fontsize=18)
 pyplot.legend(loc='best')
 pyplot.show()
 

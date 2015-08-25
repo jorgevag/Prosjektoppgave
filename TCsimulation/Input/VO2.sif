@@ -10,7 +10,7 @@
   Theta0        =     45           !(deg)
   Phi0          =     0            !(deg) 
   Polarization  =    'p'           !(s,p)
-  Energy_Range =    0.084782691164, 0.482445831873        !(eV) 
+  Energy_Range =    0.76829387, 3.9468627        !(eV) 
 / 
 
   
@@ -50,7 +50,7 @@
 
 
 &VO2  
-  Material = "vo2_380K"
+  Material = "vo2_72C"
 /  
 
 &Air
@@ -63,5 +63,9 @@
 
 &Silver
   Material = "ag"
+/  
+
+&SiO2
+  Material = "sio2"
 /  
 

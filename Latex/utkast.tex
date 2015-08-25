@@ -28,6 +28,8 @@
 % Added by Joergen %---------------------------------------------------------------------
 \usepackage{multirow} %For using subrows in tables
 %\usepackage{cleveref}
+\usepackage{caption}
+\usepackage{subcaption}
 
 % Added by Haavard %---------------------------------------------------------------------
 \usepackage[utf8]{inputenc} % Norwegian letters
@@ -105,8 +107,12 @@
 \input{introduction.tex}
 \newpage
 \input{TCtheory.tex}
+\input{vo2.tex}
 
 \newpage
+
+%\input{additionalTheory.tex}
+\input{basicTheory.tex}
 \input{theory.tex}
 \newpage
 \input{method.tex}
@@ -117,7 +123,7 @@
 \input{granfilmInstructions.tex}
 
 \newpage
-\input{additionalTheory.tex}
+\input{method.tex}
 
 \newpage
 \input{references.tex}

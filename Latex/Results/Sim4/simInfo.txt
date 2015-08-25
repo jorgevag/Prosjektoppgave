@@ -1,0 +1,47 @@
+The figures in this folder are a result of a GranFilm simulation with the following input parameters:
+   &Global
+     SOPRA_ROOT     =   '/home/jorgevag/Documents/Prosjektoppgave/TCsimulation/DataBase/'
+   /
+   &Source  
+     Theta0        =    45                           !(deg)
+     Phi0          =     0                           !(deg) 
+     Polarization  =    's'                          !(s,p)
+     Energy_Range  =    0.76829387, 3.9468627        !(eV) 
+   / 
+   &Geometry
+     Radius            =    15.                            ! [nm]
+     Truncation_Ratio  =    0.
+     Radius_Ratios     =    "1"                            ! In units of Radius
+     Media             =    "Air, SiO2, VO2, SiO2" 
+   /    		      
+   &Interaction
+     Arrangement       =  'Lattice'           ! Default.....
+     Lattice_Type      =  'Square'            ! (square, hexagonal, MFT, RPT)
+     Lattice_Constant  =    45.	             ! (nm)
+     !Coverage          =   0.5              ! Island coverage
+     Island_Island_Interaction   = 'Dipole'   ! (None, Dipole, Quadropole, Size)
+   /
+   &Numerics
+     Multipole_Order             =  16   ! All these could have default values....
+     Multipole_Position_Ratio    = -0.0  ! so that they have not to be given....
+     No_Energy_Points            =  1024 !     
+   /
+   !&Potential
+   !  Points_File = "points_test.txt"
+   !  Energy      = 2.2	
+   !/
+
+   !-----------------
+
+   &VO2  
+     Material = "vo2"
+   /  
+   &Air
+     Material = "air"
+   /  
+   &MgO
+     Material = "mgo"
+   /  
+   &SiO2
+     Material = "sio2"
+   /  

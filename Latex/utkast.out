@@ -2,21 +2,37 @@
 \BOOKMARK [1][-]{section.2}{Smart/Intelligent Windows}{}% 2
 \BOOKMARK [1][-]{section.3}{Thermochromic Materials}{}% 3
 \BOOKMARK [1][-]{section.4}{Thermochromic Windows}{}% 4
-\BOOKMARK [1][-]{section.5}{Vanadium dioxide}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Doping of vanadium dioxide using tungsten}{section.5}% 6
-\BOOKMARK [1][-]{section.6}{Theory Behind The GranFilm Software}{}% 7
-\BOOKMARK [2][-]{subsection.6.1}{Theoretical Introduction; Flat Surface Scattering}{section.6}% 8
-\BOOKMARK [2][-]{subsection.6.2}{Scattering On Rough Surfaces: Excess Fields And Surface Susceptibilities}{section.6}% 9
-\BOOKMARK [2][-]{subsection.6.3}{The Fresnel coefficients}{section.6}% 10
-\BOOKMARK [2][-]{subsection.6.4}{Surface susceptibilities of island layer}{section.6}% 11
-\BOOKMARK [2][-]{subsection.6.5}{Inter-island coupling; collective contribution}{section.6}% 12
-\BOOKMARK [1][-]{section.7}{Method}{}% 13
-\BOOKMARK [1][-]{section.8}{Results}{}% 14
-\BOOKMARK [1][-]{section.9}{Discussion}{}% 15
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 16
-\BOOKMARK [1][-]{section.11}{Introduction to GranFilm}{}% 17
-\BOOKMARK [2][-]{subsection.11.1}{Software overview}{section.11}% 18
-\BOOKMARK [1][-]{section.12}{Additional Theory}{}% 19
-\BOOKMARK [2][-]{subsection.12.1}{Complex permittivity and refractive index \(From wikipedia\) don't use, LACKING REFERENCES!}{section.12}% 20
-\BOOKMARK [2][-]{subsection.12.2}{Polarizability. Don't use, LACKING REFERENCES}{section.12}% 21
-\BOOKMARK [2][-]{subsection.12.3}{The electric potential, Laplace's equation and the Uniqueness Theorem}{section.12}% 22
+\BOOKMARK [2][-]{subsection.4.1}{Vanadium dioxide VO2; A promising candidate}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Tungsten doping of VO2 coatings}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{Basic Theory}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{The electric potential, Laplace's equation and the Uniqueness Theorem}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Polarizability}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.3}{Plasmons}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.4}{The Drude model Hofmann }{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.5}{Conductivity; the Drude model}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.6}{Optical reflectivity of drude metals}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.7}{Shortcomings of the Drude model}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.8}{Dielectrics}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.9}{Microscopic polarization}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.10}{The local field}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.11}{Frequency dependence of the dielectric constant}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.12}{Complex permittivity and index of refraction [p. 169-170]Jensen1985}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Theory Behind The GranFilm Software}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Theoretical Introduction; Flat Surface Scattering}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Scattering On Rough Surfaces: Excess Fields And Surface Susceptibilities}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.3}{The Fresnel coefficients}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.4}{Surface susceptibilities of island layer}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.5}{Inter-island coupling; collective contribution}{section.6}% 25
+\BOOKMARK [1][-]{section.7}{Method}{}% 26
+\BOOKMARK [2][-]{subsection.7.1}{Choice of parameters}{section.7}% 27
+\BOOKMARK [1][-]{section.8}{Results}{}% 28
+\BOOKMARK [1][-]{section.9}{Simulation 1; R = 10nm, p-polarized incident light}{}% 29
+\BOOKMARK [1][-]{section.10}{Simulation 2; R = 10nm, s-polarized incident light}{}% 30
+\BOOKMARK [1][-]{section.11}{Simulation 3; R = 15nm, p-polarized incident light}{}% 31
+\BOOKMARK [1][-]{section.12}{Simulation 4; R = 15nm, s-polarized incident light}{}% 32
+\BOOKMARK [1][-]{section.13}{Discussion}{}% 33
+\BOOKMARK [1][-]{section.14}{Conclusion}{}% 34
+\BOOKMARK [1][-]{section.15}{Introduction to GranFilm}{}% 35
+\BOOKMARK [2][-]{subsection.15.1}{Software overview}{section.15}% 36
+\BOOKMARK [1][-]{section.16}{Method}{}% 37
+\BOOKMARK [2][-]{subsection.16.1}{Choice of parameters}{section.16}% 38
