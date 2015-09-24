@@ -6,13 +6,13 @@
 &Source  
   Theta0        =    45                           !(deg)
   Phi0          =     0                           !(deg) 
-  Polarization  =    's'                          !(s,p)
+  Polarization  =    'p'                          !(s,p)
   Energy_Range  =    0.76829387, 3.9468627        !(eV) 
 / 
 
   
 &Geometry
-  Radius            =    10.                            ! [nm]
+  Radius            =    15.                            ! [nm]
   Truncation_Ratio  =    0.
   Radius_Ratios     =    "1"                            ! In units of Radius
   Media             =    "Air, SiO2, VO2, SiO2" 

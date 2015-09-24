@@ -1,717 +1,557 @@
-\section{Theory Behind The GranFilm Software}
-%To understand the theoretical background behind GranFilm and scattering on diffuse surfaces, it is 
-%convenient to start with the simple case of scattering on a flat interface of two different half-infinite
-%media, see Figure !!FIGUREREF HERE!!.
-This section recapitulate the theoretical background behind GranFilm, a software used to calculate
-the optical properties of granular thin films. 
-\subsection{Theoretical Introduction; Flat Surface Scattering} \label{sectionFlatScattering}
-Starting from basic electromagnetic theory, the simplest case 
-of electromagnetic scattering is the transmission and reflection of light, hitting a flat,
-smooth interface between two different half-infinite media. 
-The electric permittivity $\varepsilon$ and magnetic permeability $\mu$ of the media are given 
-with subscript $+$ for the upper media, and $-$ for the lower media, see Figure \ref{fig:flatScattering}. 
-\begin{figure}[h!]
-  \centering
-   \includegraphics[width=1.0\textwidth]{Figures/flatSurfaceScattering.pdf}
-   \caption{The reflection and transmission of an incident electromagnetic plane wave on a flat interface
-      between two media. The dielectric functions for the upper and lower media are $\varepsilon_{+}(\omega)$
-      and  $\varepsilon_{-}(\omega)$, respectively. The polarization direction $\boldsymbol{p}$ is the
-      polarization parallel to or inside the place of incidence, while $\boldsymbol{s}$, which comes from the
-      german word \textit{senkrecht} meaning perpendicular, is the perpendicular polarization.
-      The figure is adopted from (\cite{Lazzari2002}, p.125).
-   }
-   \label{fig:flatScattering}
-\end{figure}
-Assuming that the incoming electromagnetic wave is a plane wave, the reflection and transmission
-of the wave can be calculated from Maxwell's equations,
-%
-\begin{subequations}
-\label{ME}
-\begin{align}
-   \nabla \cdot \boldsymbol{D} &= \rho \!_f           &\nabla\times\boldsymbol{E} &= - \frac{\partial \boldsymbol{B}}{\partial t} \label{ME1}\\
-   \nabla \cdot \boldsymbol{B} &= 0                &\nabla \times \boldsymbol{H}&= \boldsymbol{J}\!_f + \frac{\partial \boldsymbol{D}}{\partial t}, \label{ME2}
-\end{align}
-\end{subequations}
-%
-which describe the general behavior of electromagnetic waves.
-Here the electric field $\boldsymbol{E}$, the electric displacement $\boldsymbol{D}$,
-the magnetic field $\boldsymbol{H}$ and the magnetic induction $\boldsymbol{B}$
-are pairwise related through
-\begin{align}
-   \label{linearConstitutiveRelations}
-   &\boldsymbol{D} = \varepsilon \boldsymbol{E},         &\boldsymbol{H} = \frac{1}{\mu} \boldsymbol{B}
-\end{align}
-(assuming linear media) (\cite{Griffiths}, p.330). 
-Further assuming that there
-is no free charge or free current at the interface, Maxwell's equation provide the boundary conditions 
-(\cite{Griffiths}, p.333)
-%
-\begin{subequations}
-\label{BC}
-\begin{align}
-   D^+_{\perp} &= D^-_{\perp}      &\boldsymbol{E}^+_{\parallel} = \boldsymbol{E}^-_{\parallel} \label{BC1}\\
-   B^+_{\perp} &= B^-_{\perp}      &\boldsymbol{H}^+_{\parallel} = \boldsymbol{H}^-_{\parallel}. \label{BC2}
-\end{align}
-\end{subequations}
-%
-($\perp$ and $\parallel$ denotes the perpendicular and parallel komponent with respect to the 
-surface boundary. By enforcing these boundary conditions on the incident, reflected and transmitted 
-waves, on the entire boundary, the reflection and transmission coefficients may be calculated. The 
-coefficients are given by
-\begin{align}
-   R &\equiv \frac{I_r}{I_i}     &T &\equiv \frac{I_t}{I_i}, \label{refTransCoeffs1}\\
-\end{align}
-where $I_x, x \in [i,r,t]$ is the intensity or power per unit area stricking/leaving the interface
-for the incident, reflected and transmitted light, respectively (\cite{Griffiths},p.386-391).
-The calculation can be found in any standard optics textbook \textit{NEED OPTICS BOOK REFERENCE}
-and gives
-\begin{align}
-   R &= r^2       &T &= \frac{n\!_{_-} \cos \theta_t}{n\!_{_+} \cos \theta _i}. \label{refTransCoeffs2}\\
-\end{align}
-$n\!_{_+}$ and $n\!_{_-}$ are the indices of refraction for the media above (+) and belov (-) the interface,
-while $\theta_i$ and $\theta_t$ gives the incident and transmitted lights direction with respect to the 
-surface normal. 
-The coefficients $r$ and $t$ are called the Frensel coefficients and their values depend on the
-polarization of the incident light. For the flat interface the coefficients take the form
-\textit{NEED ANOTHER OPTICS BOOK REFERENCE}
-%
-\begin{subequations}
-\label{flatFresnelCoeff}
-\begin{align}
-   r_s &= \frac{n\!_{_+} \cos \theta_i - n\!_{_-} \cos \theta_t}
-   {n\!_{_+} \cos \theta_i + n\!_{_-} \cos \theta_t}     
-   &t_s &= \frac{2 n\!_{_+} \cos \theta_i}
-   {n\!_{_+} \cos \theta_i + n\!_{_-} \cos \theta_t}, \label{flatFresnelCoeffs} \\
-%
-   r_p &= \frac{n\!_{_-} \cos \theta_i - n\!_{_+} \cos \theta_t}
-   {n\!_{_+} \cos \theta_t + n\!_{_-} \cos \theta_i}     
-   &t_p &= \frac{2 n\!_{_+} \cos \theta_i}
-   {n\!_{_+} \cos \theta_t + n\!_{_-} \cos \theta_i}     \label{flatFresnelCoeffp}
-\end{align}
-\end{subequations}
-%
-so the reflection and transmission are different 
-for the two polarization directions, which can be seen in Figure \ref{fig:flatScattering}.
+%REWRITE THIS DOCUMENT (first edition saved in Notes
+\section{\textbf{Introductional theory}}
+In order to get a better understanding of the optical response of a material with a dielectric constant
+$\varepsilon(\omega)$, this section will briefly discuss the Drude model, the polarization contributions
+to the dielectric function and, last, the relation between the $\varepsilon(\omega)$ and the refractive
+index $N(\omega)$.
 
-\subsection{Scattering On Rough Surfaces: Excess Fields And Surface Susceptibilities}
-When moving away from a flat surface, looking at a more complicated geometry of the boundary 
-between the two media, the behavior of the dielectric function gets correspondingly diffucult.
-Situations like these might be encountered for rough surfaces or granular thin films, where the latter
-means that a foreign material is distributed as small island on top of a substrate. 
-In these situations the calculation of the Fresnel coefficients turns increasingly complex (\cite{Lazzari2002},p.125).
-\\
-\\
-However, in order to calculate such complicated surfaces, 
-Bedeaux and Vlieger (\cite{Lazzari2002}, (7-12)) developed an approach in which the exact knowledge
-of the electromagnetic fields close to the surface is not required. Their formalism is based on the notion 
-of excess quantities. 
-The excess fields are defined as the differene between the real fields and the bulk fields extrapolated
-to the surface, where the bulk field simply means the field given sufficiently far away from the
-scattering surface. E.g. for the electric field $E(r)$ the excess quantity is defined as
-%
-\begin{align}
-   \label{excessField1}
-   \boldsymbol{E}_{ex} (\boldsymbol{r}) \:=\: \boldsymbol{E}(\boldsymbol{r}) 
-   \:-\: \boldsymbol{E}^-(\boldsymbol{r})\theta(-z) \:-\: \boldsymbol{E}^+(\boldsymbol{r})\theta(z),
-\end{align}
-%
-where $\theta(z)$ is the Heaviside function and the superscript $\pm$ are used to indicate the region
-above (+) and below (-) the dividing interface at $z = 0$. In addition, the optical frequency $\omega$
-is implicitly included in the notation. Furthermore, the excess field is only significant close
-to the surface, since $\boldsymbol{E}(\boldsymbol{r},\omega) \rightarrow 
-\boldsymbol{E}^{\pm}(\boldsymbol{r},\omega)$ when $z \rightarrow \pm \infty$. \\
-\textit{???is this correct???}
-By integrating these excess fields along the z-axis, which is set normal to the surface,
-%
-\begin{subequations}
-\label{intExQuant} % integrated excess quantities
-\begin{align}
-   \boldsymbol{D}^s_{\parallel}(\boldsymbol{r}) &= \!\!\!\!\!\!\!\!\! \int\limits ^{\:\:\:\:\:\:\:\:\:\:+\infty}_{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!-\infty} \!\!\!\!\!\!\!\!\! d\!z\: \boldsymbol{D}\!_{ex,\parallel}(\boldsymbol{r}),
-   &E^s_{z}(\boldsymbol{r}) = \!\!\!\!\!\!\!\!\! \int\limits ^{\:\:\:\:\:\:\:\:\:\:+\infty}_{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!-\infty} \!\!\!\!\!\!\!\!\! d\!z\: E\!_{ex,z}(\boldsymbol{r}) \label{intExQuant1}\\
-   \boldsymbol{B}^s_{\parallel}(\boldsymbol{r}) &= \!\!\!\!\!\!\!\!\! \int\limits ^{\:\:\:\:\:\:\:\:\:\:+\infty}_{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!-\infty} \!\!\!\!\!\!\!\!\! d\!z\: \boldsymbol{B}\!_{ex,\parallel}(\boldsymbol{r}),
-   &H^s_{z}(\boldsymbol{r}) = \!\!\!\!\!\!\!\!\! \int\limits ^{\:\:\:\:\:\:\:\:\:\:+\infty}_{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!-\infty} \!\!\!\!\!\!\!\!\! d\!z\: H\!_{ex,z}(\boldsymbol{r}), \label{intExQuant2}
-\end{align}
-\end{subequations}
+\subsection{The Drude model}
+%Defining the differences between the electrical properties of metals, semiconductors and insulators
+%is not a trivial matter. To put it simple, metals are good conductors, while semiconductors and 
+%insulators are not. However, semiconductors such as silicon conduct electrisity relatively well,
+%so the picture is not quite that simple.
+%\\
+%\\
+%A simple model, with fundamental importance regarding electrical conductivity, was suggested by
+%P. Drude in an attempt to explain the observed properties of metals. 
+%It is assumed that the 
+P. Drude, in his attempt to explain the properties of metal, created a simple model where he assumed that the
+electrons in a solid behave like a classical gas. In his model, the electron-electron and Coloumb interactions
+are neclected. The only form of interaction in this model is the instantaneous collision between 
+the electrons and the positively charged ion cores which are assumed to be static;
+see Figure \ref{fig:DrudeModel}. 
+%and do not interact with each other whatsoever.
+%Coloumb interaction is also neglected. This is known as the \textit{independent electron approximation}. 
+%The electron gas can be viewed as negatively charged particles bouncing about
+%immobile immobile positively charged ion cores. The only form of interaction in this model
+%are instantaneous collision between the electrons and ions; see Figure \ref{fig:DrudeModel}. 
+%The simplification of removing the Coloumb ion-electron interaction is called the 
+%\textit{free electron approximation}
 %
 \begin{figure}[h!]
   \centering
-   \includegraphics[width=1.0\textwidth]{Figures/excessFields.pdf}
-   \caption{The excess fields are integrated over all values of z over the entire surface. Here this 
-      is vizualized for the eletric excess field, vizualized by the fog surrounding the surface, as
-      the excess field, is only significant close to the surface. Note however that the excess field
-      is complicated and not correctly represented by the fog.  (\cite{Lazzari2002}, p.126).
+   \includegraphics[width=0.4\textwidth]{Figures/DrudeModel.pdf}
+   \caption{ 
+      The Drude model: A non-interacting electron gas (blue) is swirling around and colliding with 
+      stationary positive ion cores (red). 
+      Since all Coloumb forces are neglected together with electron-electron
+      collsions, the ion-electron interaction is the only one being considered.
    }
-   \label{fig:excessFields}
+   \label{fig:DrudeModel}
 \end{figure}
 %
-and gathering them in a singular Dircac term, $\delta(z)$, located at the surface (z=0)
-(see Figure \ref{fig:excessFields},
-the fields may be rewritten on the form (here shown for just the electric field)
-%
+The electrons reach thermal equilibrium with the lattice through the collisions, giving them
+the kinetic energy:
 \begin{align}
-   \label{excessField2}
-   \boldsymbol{E}(\boldsymbol{r}) \:=\: \boldsymbol{E}^-(\boldsymbol{r})\theta(-z) 
-                                       \:+\: \boldsymbol{E}^s(\boldsymbol{r})\delta(z) 
-                                       \:+\: \boldsymbol{E}^+(\boldsymbol{r})\theta(z).
+   \frac{1}{2}m_e v_t = \frac{3}{2}k_B T.
 \end{align}
-%
-Demanding that the fields given by Eq. \eqref{excessField2} fulfill the Maxwell equations 
-(\cite{Lazzari2002}, (7-9)) one ends up with the following boundary conditions
-%
-\begin{subequations}
-   \label{exFieldBC} % Excess Field Boundary Conditions
-\begin{align}
-   \big[ \boldsymbol{E}^+_{\parallel} (\boldsymbol{r}) - \boldsymbol{E}^-_{\parallel} (\boldsymbol{r}) \big] \bigg\rvert _{z = 0} 
-       &= i \omega \hat{z} \times \! \boldsymbol{M}^s_{\parallel}(\boldsymbol{r}_{\parallel}) \:-\: \nabla\!_{\parallel} P^s_{z}(\boldsymbol{r}_{\parallel}) 
-       \label{exFieldBC1} \\ 
-   \big[ D^+_{z} (\boldsymbol{r}) - D^-_{z} (\boldsymbol{r}) \big] \bigg\rvert _{z = 0} 
-      &= - \nabla\!_{\parallel} \boldsymbol{P}^s_{\parallel}(\boldsymbol{r}_{\parallel}) 
-      \label{exFieldBC2} \\ 
-   \big[ \boldsymbol{H}^+_{\parallel} (\boldsymbol{r}) - \boldsymbol{H}^-_{\parallel} (\boldsymbol{r}) \big] \bigg\rvert _{z = 0} 
-      &= i \omega \hat{z} \times \! \boldsymbol{P}^s_{\parallel}(\boldsymbol{r}_{\parallel}) \:-\: \nabla\!_{\parallel} M^s_{z}(\boldsymbol{r}_{\parallel})  
-      \label{exFieldBC3} \\ 
-   \big[ B^+_{z} (\boldsymbol{r}) - B^-_{z} (\boldsymbol{r}) \big] \bigg\rvert _{z = 0} 
-      &= - \nabla\!_{\parallel} \boldsymbol{M}^s_{\parallel}(\boldsymbol{r}_{\parallel}), 
-      \label{exFieldBC4}  
-\end{align}
-\end{subequations}
-%
-which is derived in Vlieger and Bedaux's \textit{Optical Properties of Surfaces} (p.21). 
-Here $\nabla_{\parallel}$ is the nabla operator parallel to the surface, while $z$ denotes 
-the vector component in the direction normal to the surface at $z = 0$.
-In addition, the quantities with superscript $s$ are the so-called excess polarization 
-and magnetization densities
-\begin{subequations}
-\label{surfQuant} %Surface Quantities
-\begin{align}
-   \boldsymbol{P}^s(\boldsymbol{r}\!_{\parallel}) &= \big( \boldsymbol{D}^s_{\parallel}(\boldsymbol{r}\!_{\parallel}), \:\: - \varepsilon_0 E^s_{z}(\boldsymbol{r}\!_{\parallel}) \big) \label{surfQuant1}\\
-   \boldsymbol{M}^s(\boldsymbol{r}\!_{\parallel}) &= \big( \boldsymbol{B}^s_{\parallel}(\boldsymbol{r}\!_{\parallel}), \:\: - \mu_0 H^s_{z}(\boldsymbol{r}\!_{\parallel}) \big) , \label{surfQuant2}
-\end{align}
-\end{subequations}
-Here, in Eq.\eqref{surfQuant}, the quantities on the right hand side
-are the integrated excess fields.
-%
-%PROBLEMS WITH THE NEED FOR CONSTITUTIVE RELATIONS:
-%\textit{?? IS THE FOLLOWING CORRECT??} 
-%Now, as mentioned above, the excess quantities describe the 
-%discontinuitiy in the bulk fields, through the interfacial polarisation and magnetisation desnity,
-%$\boldsymbol{P}^s(\boldsymbol{r}_{parallel})$ $\boldsymbol{M}^s(\boldsymbol{r}_{parallel})$. This
-%gives the field relations above and below the interface. To explain 
-%
-%OWN INTERPRETATION: The simplest way to link the surface polarization and magnetization density to the extrapolated bulk fields(?Sigma indexed fields?)involves a
-Even though Maxwell's equations have been included, demanding that the fields follow the boundary 
-conditions of \eqref{exFieldBC}, they do not uniquely determine the physical situation. 
-Maxwell's equations in matter \eqref{ME}, given in Section \ref{sectionFlatScattering}, includes
-$\boldsymbol{E}$ and $\boldsymbol{D}$, together with $\boldsymbol{B}$ and $\boldsymbol{H}$, 
-, but does not state how they depend on eachother. In other words, Eq. \eqref{ME} does not contain
-more information than Maxwell's equations given in free space. So, to fully explain how 
-the fields interact with material and the interface, constitutive relations characteristic 
-to the surface must be given (like the relations in Eq.\eqref{linearConstitutiveRelations} 
-given for the flat interface example) (\cite{Griffiths}, p. 330).
-The constitutive relations link the interfacial polarisation and 
-magnetization density $\big(\boldsymbol{P}^s(\boldsymbol{r}_{\parallel})$ and 
-$\boldsymbol{M}^s(\boldsymbol{r}_{\parallel}) \big)$ and the bulk fields extrapolated to the surface.
-%To link the interfacial polarisation and 
-%magnetization density, $\boldsymbol{P}^s(\boldsymbol{r}_{parallel})$ and 
-%$\boldsymbol{M}^s(\boldsymbol{r}_{parallel})$, and the bulk fields extrapolated to the surface,
-%additional relations, which are characteristic to the interface, must be given.
-%
-If the pertubed surface layer thickness $d$ is negligible compared to the optical wavelength $\lambda$,
-the excess fields are only significant or non-negligible close to the surface, which followed
-from the notation for the excess fields assumed earlier in Eq. \eqref{excessField1}.
-Because of this, the constitutive relations are local and the extrapolated bulk fields may be written on the 
-form 
-$\boldsymbol{E}_{\parallel, \Sigma} = \big\{ \boldsymbol{E}^+_{\parallel} \!( \boldsymbol{r}\!_{\parallel} ) 
-+  \boldsymbol{E}^-_{\parallel} \! (\boldsymbol{r}\!_{\parallel}) \big\} \big/2 $.
-For simplisity we restrict our discussion to non-magnetic materials,
-i.e. that $\boldsymbol{M}^s(\boldsymbol{r}_{\parallel}) = 0$. The simplest constitutive relation
-can be written on the form
-\begin{align}
-   \boldsymbol{P}^s(\boldsymbol{r}\!_{\parallel}) = \xi ^s_e \: \big[ \boldsymbol{E}_{\parallel, \Sigma}(\boldsymbol{r}\!_{\parallel}), \:\: - D\!_{z, \Sigma}(\boldsymbol{r}\!_{\parallel}) \big].
-   \label{constitutiveRel}
-\end{align}
-By further assuming that the interface is homogeneous and isotropic, the interfacial tensor reduces
-to a diagonal matrix:
-\begin{align}
-  \xi ^s_e = 
-\begin{bmatrix}
-   \gamma   &   0       &  0      \\
-   0        &   \gamma  &  0      \\
-   0        &   0       &  \beta 
-\end{bmatrix}
-,
-\end{align}
-With the first order surface susceptibilities $\gamma$ and $\beta$. The reason why they are called 
-first order susceptibilities is because the discussion above limits the dependence between
-the integrated excess quantities and the extrapolated bulk fields to a local relation (second order
-would require a spatial relation).
-In fact, even though they are not included in this discussion, 
-GranFilm also takes account for the non-local dependence, described by the constitutive coefficients of
-second order $\delta$ and $\tau$ (\cite{Lazzari2002}, (7,15)). These quantities are of the order
-$d/\lambda$ smaller than the first order coefficients. 
-Linear combinations of $\delta$ and $\tau$ together with the first order susceptibilities 
-$\gamma$ and $\beta$ can construct invariants, which are independent of the choice of the separation surface. 
-%
-Furthermore, the Fresnel quantities, which all are measurable, are also independent of where we 
-choose to put the surface in our coordinate system and can be uniquely expressed as a 
-function of these constructed invariants.
-This discussion will continue to only consider the first order susceptibilities $\gamma$ and $\beta$,
-which are the dominating factors when considering granular layers consisting of metallic islands.
+The average time between two collisions is called the relaxation time $\tau$, with the 
+corresponding mean free path defined as $\lambda  = \tau v_t$. The probability for a 
+electron to collide per unit time is assumed to be $1/\tau$ \cite[p.~71-72]{Hofmann}. 
+%\\
+%\\
+%It is necessary to determine the conduction electron density $\rho_{c,e}$ in order to describe
+%properties such as electrical conductance. Assuming that every atom contributes 
+%every electron in its outermost shell $N_e$, e.g. that alkali metals contribute $N_e = 1$ and 
+%that earch alkaline earth metals contribute $N_e = 2$ etc. The number of atoms $N_a = \rho_m /m_a$, 
+%where $\rho_m$ is the density of the metal in [kg/m$^{-3}$] and $m_a$ is the atomic mass in [kg] 
+%(mass per atom).
 
-
-
-
-\subsection{The Fresnel coefficients}
-Using the same method as for the flat Fresnel surface, the Fresnel coefficients in terms of the surface
-susceptibilities can be derived. The derivation is tedious and will not be done here. It can however
-be found in Bedeaux and Vlieger's book (\cite{BedeauxVliegerBook}, p.45)  (\cite{LieMaster2010},p.10).
-In addition to the classical approach, the excess field boundary conditions \eqref{exFieldBC},
-together with the constitutive relation between the interface 
-and the extrapolated bulk fields \eqref{constitutiveRel}.
-A property of this approach, is that the complicated surface, approximated by the pertubed layer,
-does not change the fact of \textit{Snell's law}, which pops out of the boundary conditions
-when calculating the classical flat surface problem (\eqref{Griffiths}, p388). In other words, 
-\begin{subequations}
-\label{snellsLaw}
-\begin{align}
-   \theta_i &= \theta_r \label{snellsLaw1}\\
-   n_{_+} \sin \theta_i &= n_{_-} \sin \theta_t. \label{snellsLaw2}
-\end{align}
-\end{subequations}
-is still used to find the angle of incidence $\theta_i$, reflection $\theta_r$ and transmission $\theta_t$.
-They are, so to speak, unmodified by the pertubed layer. However, the Fresnel coefficients, which
-decide the reflection and transmission amplitudes, do depend on the pertubed layer through 
-the surface susceptibilities. For s-polarization, the resulting Fresnel coefficients are given by
-\begin{subequations}
-   \label{fresCoeffS}
-\begin{align}
-   r_s(\omega) &= \frac{n\!_{_-} \cos \theta_i - n\!_{_+} \cos \theta_t + i(\omega/c) \gamma}{n\!_{_-} \cos \theta_i + n\!_{_+} \cos \theta_t - i(\omega/c) \gamma} \label{fresCoeffS1} \\
-   t_s(\omega) &= \frac{2 n\!_{_-} \cos \theta_i}{n\!_{_-} \cos \theta_i + n\!_{_+} \cos \theta_t - i(\omega/c) \gamma}. \label{fresCoeffS2}
-\end{align}
-\end{subequations}
-%
-For p-polarization the expressions are more complicated
-%
-\begin{subequations}
-\label{fresCoeffP}
-\begin{align}
-   r_p(\omega) &= \frac{\kappa\!_{_-}(\omega) -i(\omega / c) \gamma \cos \theta_i \cos \theta_t + i(\omega/c)n\!_{_-} n\!_{_+} \varepsilon\!_{_-}\beta\sin^2 \theta_i }
-   {\kappa\!_{_+}(\omega) -i(\omega / c) \gamma \cos \theta_i \cos \theta_t - i(\omega/c) n\!_{_-} n\!_{_+} \varepsilon\!_{_-} \beta \sin^2 \theta_i }, \label{fresCoeffP1}\\
-   t_p(\omega) &= \frac{2n\!_{_-} \cos \theta_i \big[ 1 + (\omega/2c)^2 \varepsilon\!_{_-} \gamma \beta \sin ^2 \theta_i \big]}
-   {\kappa\!_{_+}(\omega) -i(\omega / c) \gamma \cos \theta_i \cos \theta_t - i(\omega/c) n\!_{_-} n\!_{_+} \varepsilon\!_{_-} \beta \sin^2 \theta_i }, \label{fresCoeffP2}
-\end{align}
-\text{where there has been introduced two quantites $\kappa\!_{_{\pm}}$ defined as}
-\begin{align}
-   \kappa\!_{_{\pm}} &= \big[ n\!_{_+} \cos \theta _i \pm n\!_{_-} \cos \theta_t  \big]\Bigg[ 1 - \frac{\omega^2}{4c^2} \varepsilon\!_{_-} \gamma \beta \sin ^2 \theta_i \Bigg]. \label{fresCoeffP3}
-\end{align}
-\end{subequations}
-%
-%\begin{subequations}
+%\subsection{Conductivity; the Drude model}
+%Subjecting the drude metal of an electric field $\boldsymbol E$ will lead to a drift of the electrons
 %\begin{align}
-   %r_p(\omega) &= \frac{\kappa _-(\omega) -i(\omega / c) \gamma \cos \theta_i \cos \theta_t + i(\omega/c)n_-n_+\varepsilon_-\beta\sin^2 \theta_i }
-               %{\kappa _+(\omega) -i(\omega / c) \gamma \cos \theta_i \cos \theta_t - i(\omega/c)n_-n_+\varepsilon_-\beta\sin^2 \theta_i } \\
-   %t_p(\omega) &= \frac{2n_- \cos \theta_i \big[ 1 + (\omega/2c)^2 \varepsilon_- \gamma \beta \sin ^2 \theta_i \big]}
-               %{\kappa _+(\omega) -i(\omega / c) \gamma \cos \theta_i \cos \theta_t - i(\omega/c)n_-n_+\varepsilon_-\beta\sin^2 \theta_i } \\
-   %\kappa_{\pm} &= \big[ n_+ \cos \theta _i \pm n_- \cos \theta_t  \big]\Bigg[ 1 - \frac{\omega^2}{4c^2} \varepsilon_- \gamma \beta \sin ^2 \theta_i \Bigg]
+   %\frac{d \boldsymbol v}{dt} m_e = -e \boldsymbol E ,
 %\end{align}
-%\end{subequations}
-The simplicity of the expressions for s-polarization \eqref{fresCoeffS} 
-compared to p-polarization \eqref{fresCoeffP},
-is due to the fact that s-polarized light only manages to excite modes parallel to the surface.
-This is reflected in the equations by the fact that $r_s(\omega)$ and $t_s(\omega)$ only depend on the
-parallel surface susceptibility $\gamma$.
-P-polarized light on the other hand, can excite modes both parallel and perpendicular to the 
-interface, and gives rise to the increased complexity of $r_p(\omega)$ and $t_p(\omega)$, with the
-dependency of both $\gamma$ and $\beta$. \\
-If the surface susceptibilities in the expressions above are set to zero ($\gamma = \beta = 0$),
-this means that the perturbation from the flat interface, caused by the granular layer, 
-disappears and
-the Fresnel coefficients, \eqref{fresCoeffS} and \eqref{fresCoeffP}, reduce to the flat Fresnel 
-coefficients, \eqref{flatFresnelCoeffs} and \eqref{flatFresnelCoeffp}, respectively.
-\\
-\\
-In addition to the source frequency $\omega$, the refractive indices $n_{_{\pm}}$ and the incident
-angle $\theta_i$ are input parameters. The three latter provide, through Snell's law \eqref{snellsLaw} 
-as mentioned above, the calculation of the angle of transmittance $\theta_t$.
-However, the surface susceptibilies $\gamma$ and $\beta$ are not known and, 
-in order to calculate the Fresnel coefficients for the pertubed surface layer, 
-these quantities must be found.
+%where $e$ is the elementary charge. The solution is given by
+%\begin{align}
+   %\boldsymbol v (t) = \frac{-e \boldsymbol E t}{m_e}.
+%\end{align}
+%Assuming that the drift montion is destroyed in a collision, the average drift speed 
+%of the electrons become
+%\begin{align}
+   %\bar{\boldsymbol v }(t) = \frac{-e \boldsymbol E \tau}{m_e},
+%\end{align}
+%which is very slow compared to the thermal movement of the electrons $v_t$.
+%\\
+%\\
+%Considering an area $A$ perpendicular to the electric field, the amount of charge passing through 
+%the area is $-e n_e | \bar{\boldsymbol v} | A $ and the resulting current density would be
+%\begin{align}
+   %\boldsymbol j = n  \bar{\boldsymbol v} (-e) = \frac{n_e e^2 \tau}{m_e} \boldsymbol E \equiv \sigma \boldsymbol E = \boldsymbol E / \rho.
+%\end{align}
+%This is the familiar Ohm's law, with the conductivity 
+%\begin{align}
+%\sigma = \frac{n_e e^2 \tau}{m_e}
+%\end{align}
+%and the resistivity $\rho$. The $e^2$ dependence comes from the size of the pulling force
+%due to the electric field, i.e. how fast the particles move, and the other is how the same
+%charge, now moving, defines the current. This also means that we would get the same 
+%result for carriers with charge $e$ instead of $-e$, which would be the case for semiconductors
+%with positive holes.
 
-\subsection{Surface susceptibilities of island layer}
-To this point, there has been no assumptions regarding the geometrical nature of the surface layer.
-The kind of layer to be considered is a discontinuous thin film of nm-sized island, constituting
-a granular layer. If the islands are much smaller than the optical wavelength, the 
-scattering from the granular film will be negligible and the resulting angular distribution 
-of light will be similar to that of a flat interface (\cite{LieL2010}.p.11, (2,p.99) 
-\textbf{<- fjern Lie, sjekk og bruk kilde?}).
-In this case, the density of islands, or the number of island per unit surface area $\rho$, together with 
-their ability to react to the applied field, ,
-decide the surface polarization density $\boldsymbol{P}^s(\boldsymbol{r}_{\parallel})$
+\subsubsection{Optical reflectivity of Drude metals}
+The optical properties of materials are described by the complex refractive index $N(\omega)$ or 
+the dielectric constant $\varepsilon(\omega)$. 
+To explain the reflectivity of metals we can concider an electron in an electromagnetic 
+field induced by an optical incident wave with wavenumber $q = 2\pi N/\lambda_0$, where 
+$\lambda_0$ is the wavelength of the wave in free space.\\
+If $\omega$ is low, we basically retain the DC behavior governed by Ohm's law.
+However, if $\omega$ is so high that $1/\omega \ll \tau$, 
+the electrons does not manage to react fast enough and the collisions with 
+the ions altogether can be ignored. This is fulfilled for optical frequencies when $\tau=10^{-14}$s). 
+The electrons can now be treated as completely free, and a single electron follows
 \begin{align}
-   \gamma &= \rho \alpha_{\parallel}         &\beta &= \rho \alpha_{\perp}
+   m_e \frac{d^2x(t)}{dt^2} = -e E(t) = -e E e^{-i \omega t}.
+   \label{freeElectronGas}
 \end{align}
-The surface's ability to react to the applied field is called the polarizability $\alpha$ of the surface,
-where $\alpha_{\parallel}$ is the polarizability parallel to the surface, while $\alpha_{\perp}$
-is perpendicular to the surface. (\cite{Lazzari}, (7,11,12,24))
-\\
-\\
-In other words, the optical properties in this situation is essentially driven by the polarizability
-of the island. The \textit{GranFilm} software, supports the caulculation of both truncated spheres 
-and truncated oblate or prolate spheroids. These two particle shapes can represent a great 
-number of experimental situations, with the latter including shapes ranging from discs to needles.
-(\cite{Lazzari2002}, p.128)
-\\
-\\
-To calculate the surface polarizabilities, the first step is to solve Laplace's equation for the
-electrostatic potential
+A good ansatz for the solution is setting $x(t) = Ae^{-i \omega t}$, which mean that 
+the electron is oscillating along with the electric field. This gives an amplitude of
 \begin{align}
-   \nabla^2 \Psi(\boldsymbol{r}) = 0
-   \label{laplaceEq}
+   A = \frac{eR}{m_e \omega^2}.
 \end{align}
-in the quasi-static limit. An easy way to understand the quasistatic limit of Maxwell's equations is,
-as stated in (\cite{Larsson2007},p.238), to let $c \rightarrow \infty$, which would neglect all 
-effects due to time retardation. This means that any charge or current distribution at any instant in time, 
-would decide the resulting fields at the same instant, in all of space. In other words: the effect of 
-the sources will be instantaneous. 
-The validity of the result depends on the distance to the source
-and how fast the fields are fluctuating, making the approximation valid if the distances are
-sufficiently short or if the fluctuations of the fields are sufficiently slow
-(\cite{Griffiths}, p.308-309).
-%\textbf{quasi-static approximation:} In situations where the electric or magnetic fields 
-%are changing but electrostatic or magnetoscatic equations are used, the derived results are
-%quasi-static and only approximately correct. The validity of the result depends on the 
-%distance from the region to the source
-%(\textbf{?retardation effects?}) and how fast the fields are fluctuating. If the distances are
-%sufficiently short and the fluctuations of the fields are sufficiently slow, the situation is static 
-%enough and for a quasi-static approach.
-%(\cite{Griffiths}, p.308-309) 
-%An easy way to understand the quasistatic limit of Maxwell's equations is, as stated
-%in (\cite{Larsson2007},p.238), to let $c \rightarrow \infty$, which would neglect all effects due to time retardation.
-%This means that any charge or current distribution at any instant in time, 
-%would decide the resulting fields at the same instant, in all of space. In other words: the effect of 
-%the sources will be instantaneous.
+The corresponding polarization due to the dipole moment of $-eA$ for a solid with conduction electron
+density $n_e$ is
+\begin{align}
+   P = -n_e eA = -\frac{n_e e^2E}{m_e \omega^2}.
+\end{align}
+From the constitutive relation
+\begin{align}
+   D = \varepsilon \varepsilon_0 E = \varepsilon_0 E + P,
+\end{align}
+we get that 
+\begin{align}
+   \varepsilon = 1 + \frac{P}{\varepsilon_0 E} = 1 - \frac{n_e e^2}{\varepsilon m_e \omega^2}
+   \equiv 1 - \frac{\omega_p^2}{\omega^2},
+\end{align}
+with the plasma frequency $\omega_p$ defined as
+\begin{align}
+   \omega_p = \frac{n_e e^2}{m_e\varepsilon_0}.
+\end{align}
+We can distinguish between two different cases and the resulting outcome can
+be seen from the the electromagnetic plane wave
+\begin{align}
+   \boldsymbol E (z,t) = \boldsymbol E_0 e^{i(2\pi N z/ \lambda_0 - \omega t)}.
+\end{align}
+In the first case, $\omega < \omega_p$ 
+and $\varepsilon$ is a real and negative, $\varepsilon = \varepsilon\!_{_{\Re\! e}} < 0$.
+Therefore, $N = \sqrt{\varepsilon}$ is purely imaginary, and the wave penetrating the solid
+is exponentially damped. Because Eq.\eqref{freeElectronGas} contain no inelastic properties, nothing
+is absorbed. The light that is not transmitted into the medium must therefore, due to energy conservation, be
+reflected back. \\
+For the second case, $\omega > \omega_p$, the dielectric constant is real and positive,
+meaning that $\varepsilon = \varepsilon\!_{_{\Re\! e}} > 0$.
+Followingly, the index of refraction is real and positive, i.e. $N = n > 0$. 
+The result is a plane wave that propagates 
+into the metal. This explains why metals are so reflective, or shiny. They are reflective for 
+low-frequency light, but transparent for high-frequency light. The transition happens
+at the plasma frequeny, which can be calculated solely from the conduction electron density of 
+the metal. For most metals, the plasma frequency is in the far UV region, making them reflective 
+in the visible range. Frequently, the plasma energy $\hbar \omega_p$ is used instead of the plasma frequency
+$\omega_p$ \cite[p.~76-79]{Hofmann}.
+
+\subsubsection{Shortcomings of the Drude model}
+The quenstionable assumptions of the Drude model is the removal of the electron-electron interaction
+together with all the Coloumb forces. In addition, the assumption of treating the electrons as 
+particles is not justified due to the fact that their de Broglie wavelength, in the case of thermal
+electrons, is in the order of nanometers. The assumption would however only satisfy electrons moving
+in structures much larger than the de Broglie wavelength.
+\\
+\\
+The resulting conductivity of the model is not high enough at low temperatures, and is due to the
+assumption of a fixed mean free path, given by the atomic spacing. Apparantly, at low temperature,
+the electrons manage to sneak past the other electrons and ions. 
+\\
+\\
+Also, the conductivity of alloys, in which impurities drastically reduce the conductivity, finds no
+justification in the Drude model \cite[p.~80-81]{Hofmann}. 
+
+
+
+
+
+\subsection{Complex permittivity and index of refraction}
+%Jensen B: The Quantum Extension of the Drude-Zener Theory in Polar Semiconductors; p.169-188
+The complex dielectric constant or relative permittivity 
+$\varepsilon(\omega) = \varepsilon\!_{_{\Re\! e}} \!\!(\omega) + i \varepsilon\!_{_{\Im\! m}} \!\!(\omega)$ of a material, is a measure of 
+the material's response subject to an electromagnetic field. Here $\varepsilon_r$ and $\tilde\varepsilon_r$ 
+denotes the real and imaginary components, respectively.
+The relative permittivity is related to
+the square of the refractive index $N(\omega) = n(\omega)  + i k(\omega) $ 
+\begin{align}
+   \varepsilon (\omega) = N(\omega)^2
+   \label{compEps}
+\end{align}
+which determines the optical properties of a given material.
+The real and imaginary refractive indicies are denotes by $n$ and $k$, respectively
+The choice of sign convention, i.e. using $n+ik$ rather than $n-ik$, is determiend by 
+the choice of the sign in the in the plane wave solution,
+$\exp i(\boldsymbol q \cdot \boldsymbol r - \omega t )$, of
+Maxwell's equations, where $q$ is the wave vector.
+%The refractive index is also related to the conductivity $\sigma$
+%\begin{align}
+   %2nk = \frac{4\pi \sigma}{\omega}.
+%\end{align}
 %
-In the case of the granular film, the approximation is valid for sub-wavelength-sized island,
-in correspondence to the assumption of the layer thickness compared to the wavelength of the incident
-light. \\
-Assuming spherical island geometry, the potential can be expanded in a multipolar basis of
-seperable solutions to \eqref{laplaceEq}
+Expanding Eq.\eqref{compEps} one gets
 \begin{align}
-   \label{multipoleSolution}
-   &\Psi(\boldsymbol{r}) = \sum\limits_{lm} A_{lm} r^{-l-1} Y_l^m(\theta,\phi)
-   + \sum\limits_{lm} B_{lm} r^{l} Y_l^m(\theta,\phi)
+   \varepsilon\!_{_{\Re\! e}} + i \varepsilon\!_{_{\Im\! m}} = n^2 - k^2 + i2nk,
 \end{align}
-Here ($r$, $\theta$, $\phi$) are the spherical coordinates centered at the expansion point, 
-$A_{lm}$ and $B_{lm}$ are the multipole expansion coefficients and $Y_l^m(\theta,\phi)$ are the
-spherical harmonics.
+which through simple comparison, gives
+\begin{align}
+   \varepsilon\!_{_{\Re\! e}} &= n^2 - k^2     &\varepsilon\!_{_{\Im\! m}}  &= 2nk.
+\end{align}
+Taking the absolute value or modulus
+\begin{align}
+   |\varepsilon|   = \sqrt{ (\varepsilon\!_{_{\Re\! e}})^2 + (\varepsilon\!_{_{\Im\! m}})^2 } 
+   = \sqrt{ (n^2 - k^2)^2 + (2nk)^2} 
+   = n^2 + k^2,
+\end{align}
+and putting it all together, gives the real and imaginary parts of $N$ expressed through the 
+relative permettivity
+\begin{align}
+   n      &= \Bigg( \frac{|\varepsilon| + \varepsilon\!_{_{\Re\! e}}}{2} \Bigg)^{\frac{1}{2}} 
+  &k &=      \Bigg( \frac{|\varepsilon| - \varepsilon\!_{_{\Re\! e}}}{2} \Bigg)^{\frac{1}{2}} 
+\end{align}
+Considering a plane wave with a complex wave vector $q = q\!_{_{\Re\! e}} + iq\!_{_{\Im\! m}}$ moving in the material
+\cite[p.~402]{Griffiths}
+\begin{align}
+  e^{i(q z - \omega t )} 
+  %= e^{-q\!_{_{\Im\! m}} z} e^{i q\!_{_{\Re\! e}} z - \omega t )} ,
+  = \exp\big\{-q\!_{_{\Im\! m}} z\big\} \cdot \exp\big\{i( q\!_{_{\Re\! e}} z - \omega t ) \big\},
+\end{align}
+one sees that the wave is attenuated. 
+The quantity $\alpha \equiv 2 q\!_{_{\Im\! m}}$ is called the absorption coeffiecient
+and is proportional to the optical conductivity $\sigma$, to $q\!_{_{\Im\! m}}$, and to $k$:
+\begin{align}
+   n\alpha = &\frac{4 \pi \sigma}{c} = \frac{\omega}{c} \varepsilon\!_{_{\Im\! m}}\\
+                     &\Downarrow \\
+   \frac{\alpha}{2} = &\frac{\omega}{c}k = \frac{1}{\delta}
+\end{align}
+$k$ is usually called the extinction coefficient and is essentially the ratio of the
+free-space wave frequency $\omega$ to the skin depth $\delta$.\\
+%Experimentally, $n$ and $k$ are found from measurements of the reflectivity R of a bulk, opaque sample
+%and the transmittance T of a slab, which are given in terms of $n$ and $k$ as
+Just to mention it, $n$ and $k$ can be found experimentally by measuring the reflectivity R of a bulk, opaque sample,
+in addition to the transmittance T of a slab, which are given in terms of $n$ and $k$ as
+\begin{align}
+   R &= \frac{(n-1)^2 + k^2}{(n+1)^2 + k^2} \\
+   T &= \frac{ (1-R)^2 e^{-2\omega k d / c} }{ 1-R^2 e^{-4\omega k d / c} },
+\end{align}
+where $d$ is the sample thickness. The slab multiple-reflection effects are averaged,
+so that interface fringes are not resolved \cite[p.~169-170]{Jensen1985}.
+
+
+
+
+\subsection{Microscopic polarization and the dielectric function}
+There are several mechanismc causing microscopic electric dipole moments that lead to macroscopic 
+polarization. E.g. displacement of the electronic cloud to the core in an atom, 
+opposite displacement of the ions in a solid or
+orientation of permanent dipoles, such as water molecules, called orientational polarization.
+
+\subsubsection{The local field}
+To calculate the microscopic polarizability $\alpha$ of the atoms making up the solid, start with
+the constitutive relation and assume that $\boldsymbol P$ can be written as the total dipole moment 
+per unit volume
+\begin{align}
+   \boldsymbol P = (\varepsilon - 1 ) \varepsilon_0 \boldsymbol E = \frac{N}{V} \boldsymbol p = \frac{N}{V}\alpha \boldsymbol E.
+   \label{nonLocalP}
+\end{align}
+Because a microscopic dipole within the solid does not simply feel the average electric field 
+$\boldsymbol E$ but a microscopic local and stronger electric field $\boldsymbol E_{loc}$, the polarizability
+can bot be correctly calculated from the above expression.
+Without derivation, the approximate local field can be given by
+\begin{align}
+   \boldsymbol E_{loc} = \frac{1}{3}(\varepsilon + 2) \boldsymbol E.
+\end{align}
+So, with
+\begin{align}
+   \boldsymbol P = \frac{N}{V}\alpha \boldsymbol E_{loc}
+\end{align}
+and approximating the polarization $\boldsymbol P$ with Eq.\eqref{nonLocalP}, 
+we get the so-called Clausius-Mossotti relation
+\begin{align}
+   \alpha = \frac{\varepsilon - 1}{\varepsilon + 2} \frac{3 \varepsilon_0 V}{N},
+\end{align}
+relating the atomic polarizabiliy to the dielectric constant \cite[p.~165-166]{Hofmann}.
+
+\subsubsection{Approximated ionic vibration; driven oscillator with damping} \ref{sec:freqDepEpsilon}
+The frequency dependent permittivity  $\varepsilon (\omega)$ is usually called the dielectric function.
+For insulators, $\varepsilon(\omega)$ is complex and energy can be resonantly transferred to the solid
+for certain frequencies. $\varepsilon(\omega)$ implies a frequency dependence of the refractive
+index $N(\omega)$. Most of the frequency dependence can be explained by a simple idea 
+combined with knowledge about the polarization mechanisms and how the different polarization mechanisms
+manages to keep up with the oscillating electric field. E.g. orientation polarization and ionic polarization
+does not manage to oscillate fast enough at higher frequencies, while the atomic polarization will, see
+Figure \ref{fig:polarizationContribution}.
 %
 \begin{figure}[h!]
   \centering
-   \includegraphics[width=1.0\textwidth]{Figures/filmGeometry.pdf}
-   \caption{To the left: the transmission and reflection of a pertubed surface layer with thickness $d$, 
-      which is assumed to be much smaller than the optical wavelength $\lambda$ of the incoming wave.
-      The reflection and transmission amplitudes depend on the surface 
-      susceptibilities. The first order surface susceptibilities, $\gamma$ and $\beta$, describe
-      the ability of the surface to polarise in the parallel or perpendicular direction. These
-      coefficients can be calculated from evaluating the geometry of the trunctated spheres
-      (shown to the right), making up
-      the granular thin film (\cite{Lazzari2002}, p.126). Adopted from (\cite{Lazzari2002}, p.125)
+   \includegraphics[width=1.0\textwidth]{Figures/polarizationContributionToPermittivity.pdf}
+   \caption{ 
+      The contribution of orientation, ionic and electronic polarization. As the frequency
+      of the applied electric field increases, the different polarization mechanisms fail to remain in 
+      step with the field when above a characteristic frequency. At sufficiently high 
+      frequencies the material no longer manages to polarize and the dielectric constant drops 
+      to 1, corresponding to the permittivity of free space. Note that in the discussion only
+      the ionic and electronic contribution have been considered. The Figure is adapted from 
+      \cite{cambdridgePermittivityPage}.
    }
-   \label{fig:filmGeometry}
+   \label{fig:polarizationContribution}
 \end{figure}
 %
-The coordinate system for the expansion is given in Figure \ref{fig:filmGeometry}, with $\mu$ denoting 
-the center of expansion, which may be centered at the truncated sphere or varied along the vertical
-symmetry axis. To deal with the boundary truncating the sphere, the classical image technique is used 
-(\cite{Lazzari2002},(13)). This is done by having a image expansion center located at 
-the opposite side of the surface, compared to $\mu$, inside the substrate.
-The image expansion point is denoted by $\bar{\mu}$. 
-%
-\textbf{Should I also mention $t_r$ and the difference between $t_r > 0$ and $t_r < 0$?}
-%
-As shown in Figure \ref{fig:filmGeometry}, mathematical approach assumes 4 different media,
-even though region 4 is part of the substrate. When specifying the material in the software
-region 2 and 4, which constitute the substrate, are usually set to be the same.
-Using Eq.\eqref{multipoleSolution} to expand the potential around the expansion center and 
-the image, the potential in the different regions take the form:
-%
-\begin{subequations}
-\label{multExp}
-\begin{align}
-   &\Psi_1(\boldsymbol{r}) = \Psi_i(\boldsymbol{r}) + \sum\limits_{lm}^{l \neq 0} A_{lm} r_{\mu}^{-l-1} Y_l^m(\theta_{\mu},\phi_{\mu})
-   + \sum\limits_{lm}^{l \neq 0} A^r_{lm} r_{\bar{\mu}}^{-l-1} Y_l^m(\theta_{\bar{\mu}},\phi_{\bar{\mu}})
-   \label{multExp1}\\
-%
-   &\Psi_2(\boldsymbol{r}) = \Psi_t(\boldsymbol{r}) + \sum\limits_{lm}^{l \neq 0} A_{lm}^t r_{\mu}^{-l-1} Y_l^m(\theta_{\mu},\phi_{\mu})
-   \label{multExp2}\\
-%
-   &\Psi_3(\boldsymbol{r}) = \psi_0(\boldsymbol{r}) + \sum\limits_{lm}^{l \neq 0} B_{lm} r_{\mu}^l Y_l^m(\theta_{\mu},\phi_{\mu})
-   + \sum\limits_{lm}^{l \neq 0} B^r_{lm} r_{\bar{\mu}}^l Y_l^m(\theta_{\bar{\mu}},\phi_{\bar{\mu}})
-   \label{multExp3}\\
-%
-   &\Psi_4(\boldsymbol{r}) = \psi_0(\boldsymbol{r}) + \sum\limits_{lm}^{l \neq 0} B_{lm}^t r_{\mu}^l Y_l^m(\theta_{\mu},\phi_{\mu})
-   \label{multExp4}
-\end{align}
-\end{subequations}
-%
-Here, the $r^l\big|_{l=0}$ terms of the expansion are constant and have been extracted, 
-giving the value $\psi_0(\boldsymbol{r})$ inside the sphere (region 3 and 4, see Fig.\ref{fig:filmGeometry}).
-The negative terms $r^{-1-l}\big|_{l=0} = r^{-1}$ represents free charge, wich has been assumed to be
-zero, and are removed. 
-Outside the sphere (region 1 and 2) the potential is set to zero, 
-simply because the potential reference point can be chosen freely. 
-In addition to the $l=0$-terms, the incident field gives rise to the potential $\Psi_i(\boldsymbol{r})$. 
-Some of the incident light is transmitted directly into the substrate and the resulting scalar field
-is given by $\Psi_t(\boldsymbol{r})$.
-%
-\textbf{Burde kanskje ta med at $\Psi_i(\boldsymbol{r})$, $\Psi_t(\boldsymbol{r}) \sim -\boldsymbol{r}\cdot\
-\boldsymbol{E}_0$. Men forstår det ikke...(se evt. M.thesis Leif Amind Lie)}
-%
-Comparing Eqs. \eqref{multExp} to Eq. \eqref{multipoleSolution}, note that all the
-$r^l$-terms in region 1 and 2, $r^{-l-1}$-terms in region 3 and 4 are removed due to the divergence
-of the potential as $r \rightarrow \infty$ and $r \rightarrow 0$, respectively.
 \\
 \\
-The boundary conditions for the electric potential is given by (\cite{Griffiths}, p.89-90)
+For a quntitative description of the frequencydependence of $\varepsilon$ we can consider a simplified
+version of ionic vibration.
+Light can couple to optical phonons, e.g in ionic crystals where the phonons correspond to
+an out-of-phase virbation of the positive and negative ions in the unit cell. 
+These vibrations can be approximated by independent harmonic oscillators driven by an electric field
+$E ^{-i\omega t}$, with one such oscillator per unit cell of the crystal. Each oscillator have a 
+resonant frequency of $\omega_o = (2\gamma/M)^{1/2}$, where $\gamma$ is the force constant and
+$M$ is the reduced mass of the two ions. The motion is damped by a term proportional to the velocity
+$\eta d\!x\!/\!d\!t$ and represents the excitation of other vibrations in the material,
+due to the large displacement. 
+The resulting equation of motion is that of a driven harmonic oscillator with damping
 \begin{align}
-   \varepsilon\!_i\!(\omega) \:\: \partial_n \Psi_i(\boldsymbol{r}) &= \varepsilon\!_j\!(\omega) \:\:\partial_n \Psi\!_j(\boldsymbol{r})
-   &\Psi_i(\boldsymbol{r}) &=\Psi\!_j(\boldsymbol{r})
+   \frac{d^2x}{dt^2} + \eta \frac{dx}{dt} + \omega_0^2 x = \frac{eE}{M}e^{-i\omega t}.
 \end{align}
-where $\partial_n = \hat{n} \cdot \nabla$ is the derivative with respect to the 
-normal direction $\hat{n}$ to the boundary surface, and the indicies $i,j \in \{1,2,3,4\}$, $i \neq j$
-denotes the different media included at the different boundaries.
-%
-From the boundary conditions the relation between the multipole coefficients are found
-%
-\begin{subequations}
-\label{multExpCoeff1}
+A good ansatz for the solution is 
 \begin{align}
-   A^r_{lm} & = (-1)^{l+m} \frac{\varepsilon_1 - \varepsilon_2}{\varepsilon_1 + \varepsilon_2} A_{lm}
-   \label{multExpCoeffAr}\\
-%
-   A^t_{lm} & = \frac{2\varepsilon_1}{\varepsilon_1 + \varepsilon_2} A_{lm}
-   \label{multExpCoeffAt}
+   x(t) = Ae^{-i \omega t},
 \end{align}
-\label{multExpCoeff2}
+resulting in the amplitude
 \begin{align}
-   B^r_{lm} & = (-1)^{l+m} \frac{\varepsilon_3 - \varepsilon_4}{\varepsilon_3 + \varepsilon_4} B_{lm}
-   \label{multExpCoeffBr}\\
-%
-   B^t_{lm} & = \frac{2\varepsilon_3}{\varepsilon_3 + \varepsilon_4} B_{lm}.
-   \label{multExpCoeffAt}
+   A &= \frac{eE}{M} \frac{1}{\omega_0^2 - \omega^2 - i \eta \omega}  \\
+     &=  \frac{eE}{M} \Bigg[ \frac{\omega_0^2 - \omega^2}{(\omega_0^2 - \omega^2)^2 +\eta^2 \omega^2} 
++ \frac{i\eta \omega}{(\omega_0^2 - \omega^2)^2 + \eta^2 \omega^2} \Bigg]
 \end{align}
-\end{subequations}
-%
-However, there are still 4 unknowns for each multipole order (every configuration of $l$ and $m$).
-By using the orthogonality of the spherical harmonics $Y_l^m(\theta,\phi)$ to treat the boundary
-of the sphere, called the weak formulation of the boundary conditions, give two infinite linear 
-systems for the multipolar coefficients $A_{lm}$ and $B_{lm}$ for $l = 1$, $m = 0, \pm 1$.
-To solve this system in practive, some cut-off value $l = M$ for the expansion is set. 
-Based on investigations by Simonsen and Lazzari \cite{Simonsen2000}
-a truncation at $M = 16$ appeared to be sufficient in most cases. This result is based on 
-post-checking the boundary condition for the potential and the normal displacement at the surface;
-and convergence tests of the first term of the multipolar expansion. Keep in mind, that for 
-cases like spherical caps (truncated at the upper hemisphere) or entire spheres on top of a substrate
-the convergence could be slower, requiring a truncation $M>16$.
-Finally, knowing the first multipolar coefficients the polarizability of the islands can be found
+Using this as the ionic vibration, we can calculate the total polarization for a crystal with
+$N$ unit cells and volume V. Considering only one type of ions with a density $N/V$ and effective
+atomic polarizability $\alpha$, assuming both ionic and atomic polarization, $P_i(\omega)$, $P_a(\omega)$,
+the result reads
 \begin{align}
-   \alpha_{\perp} &\simeq A_{10}          &\alpha_{\parallel} &\simeq A_{11}.
+   P(\omega) = P_i(\omega) + P_a(\omega) = \frac{N}{V}eA(\omega)e^{-i \omega t} + \frac{N}{V}\alpha E e^{-i \omega t}.
 \end{align}
-The first $l=0$ terms of region 1 $A_{lm}$ are representing the dipole contribution, which dominates
-in the far-field limit (\cite{Lie2010}: Bedeaux and Vlieger->(2), \textbf{Må sjekkes!}). 
-
-\subsection{Inter-island coupling; collective contribution}
-So far, the discussion has only included the response of a single island and would perhaps 
-give resonable result in the low coverage limit. However, this would lead to 
-an increase in error for larger covarages and create the need for a correction
-due to the increasing island-island interaction (\cite{Lie2010}, p. 20). 
-By assuming that the island are sufficiently close to one another such that their mutual separation is 
-negligible compared to the optical wavelength, a correction to the low-coverage result can be obtained. 
-In this limit, the islands would be excited by the same incident field and have similar responses
-to the field. Assuming a dipole response, the islands would be affected by the dipole
-fields excited in the neighboring particles. If the spheres are truncated by the substrate through their
-lower hemisphere, the modified polarizabilities compared to the isolated polarizatilities, $\alpha_{\perp},
-\alpha_{\parallel}$, become
+When dealing with two types of ions like in a NaCl crystal, the different polarizabilities can be
+taken care of by a suitable definition of $\alpha$. The resulting dielectric function can be calculated
+from
 \begin{align}
-   \alpha^{\text{mod}}_{\perp} &= \frac{\alpha_{\perp}}{ 1 - 2 \alpha_{\perp} I_{\perp}^{20} }
-   &\alpha^{\text{mod}}_{\parallel} &= \frac{\alpha_{\parallel}}{ 1 + 2 \alpha_{\parallel} I_{\parallel}^{20}}.
+   \varepsilon_0 \varepsilon (\omega) E(\omega) = P(\omega) + \varepsilon_0 E(\omega),
 \end{align}
-%
-The defined functions in the correction are called the interaction functions
-%
-\begin{subequations}
-\label{couplingPolarizability}
+giving
 \begin{align}
-I_{\perp}^{20} = \frac{1}{\sqrt{20\pi} L^3 \varepsilon_{_-} } 
-   \Bigg[
-   S_{20} - \Bigg( \frac{\varepsilon_{_-}-\varepsilon_{_+}}{\varepsilon_{_-}+\varepsilon_{_+}} \Bigg) 
-   \tilde{S}_{20}^r
-   \Bigg]
-   \label{couplingPolarizability1}\\
-%
-   I_{\parallel}^{20} = \frac{1}{\sqrt{20\pi} L^3 \varepsilon_{_-} } 
-   \Bigg[
-   S_{20} + \Bigg( \frac{\varepsilon_{_-}-\varepsilon_{_+}}{\varepsilon_{_-}+\varepsilon_{_+}} \Bigg) 
-   \tilde{S}_{20}^r
-   \Bigg],
-   \label{couplingPolarizability2}
+   \varepsilon (\omega) &= \frac{P(\omega)}{\varepsilon_0 E e^{-i \omega t}} + 1  \\
+                        &= \frac{NeA(\omega)}{V\varepsilon_0} + \frac{N \alpha}{V \varepsilon_0} + 1 \\
+                        &= \frac{NeA(\omega)}{V\varepsilon_0} + \varepsilon\!_{_{opt}}.
 \end{align}
-\end{subequations}
-%
-where
-%
-\begin{subequations}
-\label{latticeSums}
+Here, $\varepsilon_{opt}$ is the high frequency or optical limit, where the fields move to quickly for the 
+ions to respond and $P_i(\omega) = 0$, i.e.
 \begin{align}
-   S_{20} = \sum\limits_{i \neq 0} \Bigg( \frac{L}{r}\Bigg)^3 Y_2^0 (\theta,\phi) \Biggr|_{r=R_i}
-   \label{latticeSums1} \\
-%
-   S_{20}^r = \sum\limits_{i \neq 0} \Bigg( \frac{L}{r}\Bigg)^3 Y_2^0 (\theta,\phi) \Biggr|_{r=R_i^r}
-   \label{latticeSums2}
+   \varepsilon\!_{_{opt}} = \lim_{\omega\to\infty}\varepsilon (\omega)  
+   = \frac{N \alpha}{V \varepsilon_0} + 1.
 \end{align}
-\end{subequations}
+Plugging in the expression for $A(\omega)$ the real and complex values of the dielectric function 
+$\varepsilon (\omega) = \varepsilon\!_{_{\Re\! e}} \!\! (\omega) + i \varepsilon\!_{_{\Im\! m}} \!\! (\omega)$ may be
+written as
+\begin{align}
+   %\Re\! e [ \varepsilon (\omega) ]  &= \frac{Ne^2}{V\varepsilon_0 M} 
+   &\varepsilon\!_{_{\Re\! e}} \!\! (\omega)  = \frac{Ne^2}{V\varepsilon_0 M} 
+   \frac{\omega_0^2 - \omega^2}{(\omega_0^2-\omega^2)^2 + \eta^2 \omega^2} + \varepsilon\!_{_{opt}}
+   \text{,}
+   %
+   %\Im \! m[ \varepsilon (\omega) ] &= \frac{Ne^2}{V\varepsilon_0 M} 
+   &\varepsilon\!_{_{\Im \! m }} \!\! (\omega)  &= \frac{Ne^2}{V\varepsilon_0 M} 
+   \frac{\eta \omega}{(\omega_0^2-\omega^2)^2 + \eta^2 \omega^2} 
+\end{align}
+The behaviour of the result is shown in Figure \ref{fig:dielectricResonance}
 %
-are the direct and image lattice sums, describing the interaction with the other direct and 
-image dipoles, respectively. $L$ stands for the lattice constant. The $i=0$ term in the summation
-gives the contribution from the interaction with the corresponding image of an island. This 
-is taken into account when calculating the isolated response and is therefore not needed in
-Eq.\eqref{latticeSums}. 
-The validity of the dipolar approximation was tested by Lazzari and Simonsen
-for hemispherical silver islands layed out in a hexagonal pattern on a MgO substrate
-(\cite{Lazzari2002}, p.129-130). The polarizabilities were computed for $M = 16$ 
-and showed that the relative error of the dipole approximation compared quadrupole approximation is
-$sim 1\%$ up to 40\% coverage, which is higher than the interesting limits encountered in 
-experiments.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{figure}[h!]
+  \centering
+   \includegraphics[width=1.0\textwidth]{Figures/dielectricResonance.pdf}
+   \caption{
+      The dielectric function of a ionic crystal approximated by
+      a driven harmonic oscillator with damping. The left and right figures show the behavior
+      of the real and imaginary dielectric function close to
+      the resonance frequency $\omega_0$.
+   }
+   \label{fig:dielectricResonance}
+\end{figure}
 %
-
-
-
-
-
-
-
-
-
-
-
-the fields above $\boldsymbol{E}^+(\boldsymbol{r})$ and below $\boldsymbol{E}^-(\boldsymbol{r})$ the interface can be calculated for a incident place wave 
-(same goes for $\boldsymbol{B}$, $\boldsymbol{D}$ and $\boldsymbol{H}$).
-So far, the boundary between the two half-infinite media has been considered to be a sharp, flat discontinuity in $\varepsilon(z)$ and $\mu (z)$. 
-As soon as the surface roughness, thickness and/or impurities are taken into acount, the complexity of the problem increases.
+The real part $\varepsilon\!_{_{\Re\! e}} \!\! (\omega)$ is almost constant away from the resonance
+frequency, but its value is higher at lower frequencies due to the loss of the contribution from the
+ionic polarization. The imaginary part $\varepsilon\!_{_{\Im\! m}} \!\! (\omega)$ is however zero 
+everywhere except at the vicinity of the resonant frequency, where it shows a peak with a width
+given by the damping coefficient $\eta$. 
 \\
 \\
-\textit{Føler jeg burde ha referance til masteroppgaven jeg har sett på også... er dette en grei ting å gjøre?}
+To understand the meaning of $\varepsilon\!_{_{\Im\! m}} \!\! (\omega)$ and that the width
+if its resonance peak is connected to the damping coefficient $\eta$, one can consider the
+energy dissipation in the system. The instantaneous electrical power dissipated per unit 
+volume is given by
+\begin{align}
+   P(t) = j(t)E(t) = j(t)Ee^{- i \omega t}
+\end{align}
+where j(t) is the curent density. In an insulator, there are no free currents, only polarization currents
+\begin{align}
+   j(t) = - \frac{\partial D}{\partial t} 
+   = - \frac{\partial}{\partial t} \varepsilon \varepsilon_0 Ee^{- i \omega t}
+   = i \omega \varepsilon \varepsilon_0 Ee^{- i \omega t}
+\end{align}
+The average dissipated power is found by averaging over one cycle $T = 2 \pi/\omega$
+\begin{align}
+   P = \frac{1}{T} \int_0^T E(t)j(t).
+\end{align}
+If $\varepsilon$ is purely imaginary, $j(t)$ is out of phase with $E(t)$ and their product will always
+give a nonzero negative value,$-\varepsilon_0 \varepsilon\!_{_{\Im\! m}} \!\! (\omega) E^2$. On the other
+hand, if $\varepsilon$ is purely real, the phase shift will be $\pi/2$ and the integral will give $P = 0$.
+$\varepsilon\!_{_{\Im\! m}} \!\! (\omega)$ is therefore a measure of the energy dissipation of the
+electric field due to the solid, and is obviously highest at the resonance.
+\\
+\\
+The discussion explains some of the optical behaviour of the material. This is however not the
+entire picture. E.g. the frequency dependence in the visible and UV region is not explained here.
+These effects are due to the valence electrons, which would need a quantum mechanical description
+of the electronic structure of the solid. From the band structure of solids, a qualitative
+undestanding is obtainable. Figure \ref{fig:transitionResonance} shows regions of high photon absorbtion
+due to the excitation of electrons, and how this affects the imaginary dielectric function 
+$\varepsilon\!_{_{\Im\! m}} \!\! (\omega) = \varepsilon_i(\omega)$. Note that the photons do not have
+enough energy to change the electrons wave vector \cite[p.~166-171]{Hofmann}.
+%
+\begin{figure}[h!]
+  \centering
+   \includegraphics[width=1.0\textwidth]{Figures/bandstructureVSdielectric.pdf}
+   \caption{
+      The left figure shows the photon-induced transitions between occupied and unoccupied states in the band 
+      structure of a solid. $E_F$ is the fermi energy. 
+      In the regions where the valence band and conduction bads are parallel,
+      a certain photon energy can excite several states. Here, the parallel regions are located at
+      $\boldsymbol k = 0$ and $\boldsymbol k = \boldsymbol k'$ and result in higher transitions density.
+      These transitions correspond to absorbtion of the electromagnetic wave given by the imaginary part of
+      the dielectric function $\varepsilon_i$. The resulting resonances in $\varepsilon_i$ due to 
+      the absorbtion of the $\hbar \omega_1$ and $\hbar \omega_2$ transitions are depicted in the right
+      figure. The figure is adapted from \cite[p.~170]{Hofmann}
+   }
+   \label{fig:transitionResonance}
+\end{figure}
+%
 
 
 
 
 
 
+\subsection{The electric potential, Laplace's equation and the Uniqueness Theorem}
+Before the following section, it might be beneficial to quickly recapitulate the basic relations
+for the electric potential from electrostatics.
+%
+\begin{figure}[h!]
+  \centering
+   \includegraphics[width=0.5\textwidth]{Figures/electricFieldcoord.pdf}
+   \caption{
+      The electric field $\boldsymbol E (\boldsymbol r)$ (at position $\boldsymbol r$)
+      due to the charge distribution $\rho_E$ located at $\boldsymbol{r'}$.
+   }
+   \label{fig:electricField}
+\end{figure}
+%
+Instead of calculating the electric field directly from a given charge distribution, 
+it is usually simpler to calculate the electric potential 
+\begin{align}
+   \label{electricPotential}
+   \Psi(\boldsymbol{r}) 
+   &= \frac{1}{4 \pi \varepsilon_0} \int \frac{1}{\big|\boldsymbol{r} - \boldsymbol{r'}\big|} 
+                                                           \rho(\boldsymbol{r'}) d\!\boldsymbol{r'}
+\end{align}
+first and then calculate the electric field from
+\begin{align}
+   \boldsymbol{E} = - \nabla \Psi.
+\end{align}
+Here, $\varepsilon_0$ is the permittivity of vacuum and
+the other symbols can be understood from Figure \ref{fig:electricField}.
+Often, this might also be too tough to handle analytically.
+In these situations it is better to solve Poisson's equation
+\begin{align}
+   \label{poisson}
+   \nabla^2 \Psi= - \frac{1}{\varepsilon_o} \rho,
+\end{align}
+which together with appropriate boundary conditions, is equivalent to Eq.\eqref{electricPotential}.
+Very often, we are interested in finding the potential containing no charge, because the charge is 
+located on the outside of our region of interest. In such cases Eq. \eqref{poisson} reduces to
+Laplace's equation \cite[p.~110-111]{Griffiths} 
+\begin{align}
+   \label{laplace}
+   \nabla^2 \Psi = 0.
+\end{align}
+According to the \textit{Uniqueness Theorems}, the solution to Laplace's equation is uniquely 
+determined in some volume if the potential is specified on the boundary of the volume. This
+easily extends to Poisson's equation by further requiring that the charge distribution throughout 
+the region is known.
+%\\
+%\\
+%When considering conductors, charge are allowed to move freely and might start to rearrange themselves,
+%leading to the \textit{Second uniqueness theorem}, which states that the potential in a given volume,
+%surrounded by conductors is uniquely determined if the total charge on each conductor is given.
+\\
+\\
+The uniqueness theorem grants an enlarged mathematical freedom in the approach of finding the potential
+of a region of space. This is because the boundary uniquely determines the potential in the enclosed
+region and any approach giving the correct boundary conditions would give you the correct potential 
+function through Laplace's equation Eq. \eqref{laplace}. This allows the use of tricks, like for example
+the classical \textit{method of images} \cite[p.~116-121]{Griffiths}.
 
-%\textbf{From ''GranFilm-Software-Article''}: \\
-%Information on the dieletric behavior of surfaes can often be obtained by measuring the Fresnel coefficients,
-%such as reflection, transmission and absorption. \\
-%?p.2?: for a layer with thickness negligible compared to wavelength, we introduce surface susceptibilities 
-%which interconnect the  fresnel coeff. and characterise the optical response of the surface. ?? DID I UNDERSTAND THIS CORRECTLY? ?? \\
-%Since all the Fresnel coeff. can be expressed in terms of these surface susceptibilities, the main task consist of calculating these coefficients for the appropriate geometry. \\
-%\textbf{Goal of GranFilm:} to calculate ?surface-susceptibility-/fresnel-coefficients? and the associated measurableFresnel quantities for various surface layer geometries. 
-%\begin{itemize}
-%\item GranFilm is free open-source software
-%\end{itemize}
-%\subsection{Mie resonances/ plasmon absorption modes}
-%\textbf{From ''GranFilm-Software-Article''}: \\
-%when small metallic particles, the resonances can be absorbed by visible light and strongly affect the fresnel 
-%coefficients depending on the particle morphology.
-%%
-%\subsection{Quasistatic Approximation}
-%%
-%\subsection{Electromagnetic excess fields }
-%%
-%\textbf{From ''GranFilm-Software-Article''}: \\
-%(Bedeaux and Vlieger) \\
-%Difference between the bulk extrapolated fields and the real fields. The BC at the dividing surface
-%(which drive all fresnel coeff.) are given in terms of the integrated excess fields perpendicular to
-%the surface. \\
-%Bedeaux and Vlieger $\rightarrow$ formalism of excess quantities (does not require exact knowledge of the near suface EM-field behaviour). \\
-%Excess fields are defined as the differene between the real fields and the bulk fields extrapolated to the surface. E.g. for the electric field $E(r)$ the excess quantity is defined as
+%\subsection{Polarizability}
+%When a neutral atom is placed in an electric field $\boldsymbol{E}$, the field tries to rip the
+%atom apart by pushing the nucleus in the direction of the field and the electrons in the opposite direction.
+%Because of the attraction between the positive and negative charge within the atom, an equilibrium displacement
+%of the electrons compared to the nucleus is achieved, leaving the atom polarized and giving it a
+%dipole moment. The dipole moment can be approximated by
 %\begin{align}
-   %E_{ex} (r) = E(r) - E^-(r) \theta(-z) - E^+(r)\theta(z),
+   %\boldsymbol{p} = \alpha \boldsymbol{E},
 %\end{align}
-%where $\theta(z)$ is the Heaviside function and the superscript $\pm$ are used to indicate the region above (+) and below (-) the dividing interface at $z = 0$. 
-%The excess field is only significant close to the surface, since $E(r, \omega) \rightarrow \rightarrow E^{\pm}(r,\omega)$  for $z \rightarrow \pm \infty$. \\
-%\textit{QUESTION: \@ Is the $E^{\pm}$ field solved for a infinite homogeneous medium of type (+) and (-) respectively  OR the field in simple two media interface scattering?} \\
-%\textbf{From Leif Amund Lies Msc Thesis}: \\
-%Since the excess fields will only be significant close to the surface, they may be thought of as perturbations to the simple case of flat interface. 
-%\textit{OWN INTERPRETATION: \@ This meas that the bulk fields are the fields created from scattering in the interface between two half-infinite media.} \\
-%Instead of tediously using the quasi-static-"no source"-BC, the excess fields defined as for the electric field above are inserted into the full Maxwell equations to derive new non-sharp boundary conditions.
-%The result reads
-%%
-%\textbf{From Leif Amund Lies Msc Thesis AND GranFilm-Article}: \\
-
-
-
-
-
-
-
-
+%where $\alpha$ is the atomic polarizability and may depend on the detailed structure of the atom.
+%For more complicated situations, like an asymmetrical molecule, the gained dipole moment of the 
+%molecule does not necessarily have to be in the same direction as the applied electric field.
+%In such a case, the scalar polarizability in the expression above is replaced by a polarizability tensor
+%\begin{align}
+   %\boldsymbol{\alpha} = 
+%\begin{bmatrix}
+   %\alpha_{xx}   &   \alpha_{xy}  &  \alpha_{xz}  \\
+   %\alpha_{yx}   &   \alpha_{yy}  &  \alpha_{yz}  \\
+   %\alpha_{zx}   &   \alpha_{zy}  &  \alpha_{zz} 
+%\end{bmatrix}
+%.
+%\end{align}
+%In this way, an applied eletric field induces many dipole moments in a material. In addition,
+%any polar molecules will be subject to a torque, aligning it to the direction of the field.
+%These two mechanisms leads to the polarization $\boldsymbol{P}$ of the material
+%\begin{align}
+   %\boldsymbol{P} = \text{dipole moment per unit volume} = \varepsilon_0 \chi_e \boldsymbol{E}.
+%\end{align}
+%In the above expression, there has been assumed a linear dielectric media, where $\chi_e$ is the electric 
+%susceptibility and depends on the microscopic structure of the material, in addition to the external 
+%temperature \cite[p.~160-166, 179]{Griffiths}.
 
 
 \begin{thebibliography}{9}
 
-      \bibitem{Lazzari2002}
-      Lazzari R, Simonsen I. 
-      GranFilm: a software for calculating thin-layer 
-      dielectric properties and Fresnel coefficients.
-      Thin Solid Films 
-      2002;419:124-136
-      \textit{ER DETTE RIKTIG?}
+      \bibitem{Hofmann}
+         Hofmann P.
+         Solid State Physics, An Introduction.
+         Wiley-VCH 2008; p.71-74,76-81
 
-      \bibitem{Griffiths}
-      Griffiths DJ.
-      Introduction to electrodynamics, third edition.
-      Pearson, international edition 2008.
-      
-      \bibitem{BedeauxVliegerBook}
-      Bedeaux D, Vlieger J. 
-      Optical properties of surfaces. 
-      Imperial College Press, second edition 2004.
+      %Main article for dielectric function vs refractive index:
+      \bibitem{Jensen1985}
+       Jensen B.
+       The quantum extension of the Drude-Zener theory in polar Semiconductors.
+       Handbook of optical constants of Solids, Five-Volume 1997 (1985??)(9)<-it's chapter 9;169-170
 
-      \bibitem{Larsson2007}
-      Larsson J.
-      Electromagnetics from a quasistatic perspective.
-      American Association of Physics Teachers, 2007.
-      \textbf{??Er denne riktig???}
-
-      \bibitem{Simonsen2000}
-      Simonsen I, Lazzari R. Jupille J, Roux S.
-      Numerical modeling of the optical response of supported metallic particles.
-      Physical Review B, 61(11):7722-7733, 2000.
-
-
-      \bibitem{LieMaster2010}
-      Lie LA, Simonsen I.
-      Optical properties of a thin film of coated, truncated spheres.
-      NTNU 2010.
-      Imperial College Press, second edition 2004.
+      \bibitem{cambdridgePermittivityPage}.
+         Dissemination of IT for the promotion of Materials Science (2000)
+         Variation of the dielectric constant in alternating fields.
+         University of Cambridge 2004:
+         http://www.doitpoms.ac.uk/tlplib/dielectrics/variation.php
+         (24. August 2015).
+         %My interp. of webpage source: 
+         %Authors, title, stuff behind(like university?) year ,link (date of site access)
 \end{thebibliography}

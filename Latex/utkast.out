@@ -1,38 +1,29 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Smart/Intelligent Windows}{}% 2
-\BOOKMARK [1][-]{section.3}{Thermochromic Materials}{}% 3
-\BOOKMARK [1][-]{section.4}{Thermochromic Windows}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Vanadium dioxide VO2; A promising candidate}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{Tungsten doping of VO2 coatings}{section.4}% 6
-\BOOKMARK [1][-]{section.5}{Basic Theory}{}% 7
-\BOOKMARK [2][-]{subsection.5.1}{The electric potential, Laplace's equation and the Uniqueness Theorem}{section.5}% 8
-\BOOKMARK [2][-]{subsection.5.2}{Polarizability}{section.5}% 9
-\BOOKMARK [2][-]{subsection.5.3}{Plasmons}{section.5}% 10
-\BOOKMARK [2][-]{subsection.5.4}{The Drude model Hofmann }{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.5}{Conductivity; the Drude model}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.6}{Optical reflectivity of drude metals}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.7}{Shortcomings of the Drude model}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.8}{Dielectrics}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.9}{Microscopic polarization}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.10}{The local field}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.11}{Frequency dependence of the dielectric constant}{section.5}% 18
-\BOOKMARK [2][-]{subsection.5.12}{Complex permittivity and index of refraction [p. 169-170]Jensen1985}{section.5}% 19
-\BOOKMARK [1][-]{section.6}{Theory Behind The GranFilm Software}{}% 20
-\BOOKMARK [2][-]{subsection.6.1}{Theoretical Introduction; Flat Surface Scattering}{section.6}% 21
-\BOOKMARK [2][-]{subsection.6.2}{Scattering On Rough Surfaces: Excess Fields And Surface Susceptibilities}{section.6}% 22
-\BOOKMARK [2][-]{subsection.6.3}{The Fresnel coefficients}{section.6}% 23
-\BOOKMARK [2][-]{subsection.6.4}{Surface susceptibilities of island layer}{section.6}% 24
-\BOOKMARK [2][-]{subsection.6.5}{Inter-island coupling; collective contribution}{section.6}% 25
-\BOOKMARK [1][-]{section.7}{Method}{}% 26
-\BOOKMARK [2][-]{subsection.7.1}{Choice of parameters}{section.7}% 27
-\BOOKMARK [1][-]{section.8}{Results}{}% 28
-\BOOKMARK [1][-]{section.9}{Simulation 1; R = 10nm, p-polarized incident light}{}% 29
-\BOOKMARK [1][-]{section.10}{Simulation 2; R = 10nm, s-polarized incident light}{}% 30
-\BOOKMARK [1][-]{section.11}{Simulation 3; R = 15nm, p-polarized incident light}{}% 31
-\BOOKMARK [1][-]{section.12}{Simulation 4; R = 15nm, s-polarized incident light}{}% 32
-\BOOKMARK [1][-]{section.13}{Discussion}{}% 33
-\BOOKMARK [1][-]{section.14}{Conclusion}{}% 34
-\BOOKMARK [1][-]{section.15}{Introduction to GranFilm}{}% 35
-\BOOKMARK [2][-]{subsection.15.1}{Software overview}{section.15}% 36
-\BOOKMARK [1][-]{section.16}{Method}{}% 37
-\BOOKMARK [2][-]{subsection.16.1}{Choice of parameters}{section.16}% 38
+\BOOKMARK [1][-]{section.2}{Smart windows and thermochromism}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Smart/intelligent windows}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Thermochromic materials}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Thermochromic windows}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Vanadium dioxide VO2; a promising candidate}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Tungsten doping of VO2 coatings}{subsection.2.4}% 7
+\BOOKMARK [1][-]{section.3}{Introductional theory}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{The Drude model}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Optical reflectivity of Drude metals}{subsection.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Shortcomings of the Drude model}{subsection.3.1}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Complex permittivity and index of refraction}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Microscopic polarization and the dielectric function}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.1}{The local field}{subsection.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Approximated ionic vibration; driven oscillator with damping}{subsection.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{The electric potential, Laplace's equation and the Uniqueness Theorem}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{The theory behind GranFilm}{}% 17
+\BOOKMARK [2][-]{subsection.4.1}{Theoretical Introduction; Flat Surface Scattering}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Scattering on rough surfaces: excess fields and surface susceptibilities}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{The Fresnel coefficients}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.4}{Surface susceptibilities of island layer}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.5}{Inter-island coupling; collective contribution}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{Method}{}% 23
+\BOOKMARK [2][-]{subsection.5.1}{Choice of parameters}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.2}{Simulation}{section.5}% 25
+\BOOKMARK [1][-]{section.6}{Results}{}% 26
+\BOOKMARK [2][-]{subsection.6.1}{Simulation 3; R = 15nm, p-polarized incident light}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.2}{Color}{section.6}% 28
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 29

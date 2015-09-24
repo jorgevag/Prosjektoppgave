@@ -13,13 +13,13 @@ from matplotlib import cm
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # #  The temperatures, found by interpolation, to be simulated  #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#simulationTemperatures = numpy.array([ #Nice for phase and alpha,gamma,beta
-                                      #25, 
-                                      #43,46,
-                                      #50,54,57,
-                                      #60,61.5,63,65,67,
-                                      #80
-                                      #])   
+simulationTemperatures = numpy.array([ #Nice for phase and alpha,gamma,beta
+                                      25, 
+                                      43,46,
+                                      50,54,57,
+                                      60,61.5,63,65,67,
+                                      80
+                                      ])   
 #simulationTemperatures = numpy.array([ #nice for dR, R
                                       #25, 
                                       #45,48,
@@ -28,14 +28,14 @@ from matplotlib import cm
                                       #70,
                                       #80
                                       #])   
-simulationTemperatures = numpy.array([  #Nice for dR's low E peak
-                                      25, 
-                                      45,
-                                      50,57,
-                                      60,62,  63,64,  65,67,
-                                      70,
-                                      80
-                                      ])   
+#simulationTemperatures = numpy.array([  #Nice for dR's low E peak
+                                      #25, 
+                                      #45,
+                                      #50,57,
+                                      #60,62,  63,64,  65,67,
+                                      #70,
+                                      #80
+                                      #])   
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -199,18 +199,19 @@ for t in simulationTemperatures:
         #linewidth = 1.5)
 
 
-    #   Real \alpha_{\parallel}
-    pyplot.figure(num=5, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
-    pyplot.plot(data[:,0],data[:,3], label=str(t)+"$^{\circ}$C",
-        color=cmap(float(i)/(NT-1)), 
-        #dashes = dashes[i],
-        linewidth = 1.5)
-    #   Imaginary \alpha_{\parallel}
-    pyplot.figure(num=6, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
-    pyplot.plot(data[:,0],data[:,4], label=str(t)+"$^{\circ}$C",
-        color=cmap(float(i)/(NT-1)), 
-        #dashes = dashes[i],
-        linewidth = 1.5)
+    ##   Real \alpha_{\parallel}
+    #pyplot.figure(num=5, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
+    #pyplot.plot(data[:,0],data[:,3], label=str(t)+"$^{\circ}$c",
+        #color=cmap(float(i)/(NT-1)), 
+        ##dashes = dashes[i],
+        #linewidth = 1.5)
+    ##   Imaginary \alpha_{\parallel}
+    #pyplot.figure(num=6, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
+    #pyplot.plot(data[:,0],data[:,4], label=str(t)+"$^{\circ}$C",
+        #color=cmap(float(i)/(NT-1)), 
+        ##dashes = dashes[i],
+        #linewidth = 1.5)
+
 
     ##   Real \alpha_{\perp}
     #pyplot.figure(num=7, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
@@ -251,6 +252,42 @@ for t in simulationTemperatures:
         ##dashes = dashes[i],
         #linewidth = 1.5)
 
+
+
+
+
+    # Comparing polarizabilities with surface susceptibilities:
+    #import scipy.constants as sc
+    #cov = 0.3*( sc.pi*(15.0)**2 )/(45.0**2)
+    ##cov = 0.15514037795505151
+    pyplot.figure(num=13, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
+    #   Real \alpha_{\parallel}
+    pyplot.plot(data[:,0],data[:,11]/data[:,3], label=str(t)+r"$^{\circ}$C",
+        color=cmap(float(i)/(NT-1)), 
+        linewidth = 1.5)
+
+    pyplot.figure(num=14, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
+    #   Imaginary \alpha_{\parallel}
+    pyplot.plot(data[:,0],data[:,12]/data[:,4], label=str(t)+r"$^{\circ}$C",
+        color=cmap(float(i)/(NT-1)), 
+        linewidth = 1.5)
+
+
+    pyplot.figure(num=15, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
+    #   Real \alpha_{\perp}
+    pyplot.plot(data[:,0],data[:,13]/data[:,5], label=str(t)+r"$^{\circ}$C",
+        color=cmap(float(i)/(NT-1)),
+        linewidth = 1.5)
+
+    pyplot.figure(num=16, figsize=(10, 8), dpi=120, facecolor='w', edgecolor='k')
+    #   Imaginary \alpha_{\perp} X rho
+    pyplot.plot(data[:,0], data[:,14]/data[:,6], label=str(t)+r"$^{\circ}$C",
+        color=cmap(float(i)/(NT-1)),
+        linewidth = 1.5)
+
+
+
+
     i=i+1
 
 
@@ -261,87 +298,114 @@ for t in simulationTemperatures:
 # # # # # # # #  Figure Details #
 # # # # # # # # # # # # # # # # #
 #pyplot.figure(1)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel('$R_p$', fontsize=20)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel('$R_p$', fontsize=26)
 #pyplot.legend(loc='best', fontsize=14)
 
 #pyplot.figure(2)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel('$R_s$', fontsize=20)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel('$R_s$', fontsize=26)
 #pyplot.legend(loc='best', fontsize=14)
 
 
 #pyplot.figure(3)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
 #pyplot.ylabel('$\Delta R / R$', fontsize=20)
 #pyplot.legend(loc='best', fontsize=14)
 
 #pyplot.figure(4)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
 #pyplot.ylabel('Phase of $\Delta R / R$', fontsize=16)
 #pyplot.legend(loc='best', fontsize=14)
 
 
-pyplot.figure(5)
-pyplot.tick_params(axis='x', labelsize=16)
-pyplot.tick_params(axis='y', labelsize=16)
-pyplot.xlabel('Energy [eV]', fontsize=16)
-pyplot.ylabel(r'Re($\alpha_{\parallel}$)', fontsize=16)
-pyplot.legend(loc='best', fontsize=14)
-pyplot.figure(6)
-pyplot.tick_params(axis='x', labelsize=16)
-pyplot.tick_params(axis='y', labelsize=16)
-pyplot.xlabel('Energy [eV]', fontsize=16)
-pyplot.ylabel(r'Im($\alpha_{\parallel}$)', fontsize=16)
-pyplot.legend(loc='best', fontsize=14)
+#pyplot.figure(5)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel(r'Re($\alpha_{\parallel}$)', fontsize=20)
+#pyplot.legend(loc='best', fontsize=14)
+#pyplot.figure(6)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel(r'Im($\alpha_{\parallel}$)', fontsize=20)
+#pyplot.legend(loc='best', fontsize=14)
 
 #pyplot.figure(7)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel(r'Re($\alpha_{\perp}$)', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel(r'Re($\alpha_{\perp}$)', fontsize=20)
 #pyplot.legend(loc='best', fontsize=14)
 #pyplot.figure(8)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel(r'Im($\alpha_{\perp}$)', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel(r'Im($\alpha_{\perp}$)', fontsize=20)
 #pyplot.legend(loc='best', fontsize=14)
 
 
 #pyplot.figure(9)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel('Re($\gamma$)', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel('Re($\gamma$)', fontsize=20)
 #pyplot.legend(loc='best', fontsize=14)
 #pyplot.figure(10)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel('Im($\gamma$)', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel('Im($\gamma$)', fontsize=20)
 #pyplot.legend(loc='best', fontsize=14)
 
 #pyplot.figure(11)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
-#pyplot.ylabel(r'Re($\beta$)', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
+#pyplot.ylabel(r'Re($\beta$)', fontsize=20)
 #pyplot.legend(loc='best', fontsize=14)
 #pyplot.figure(12)
-#pyplot.tick_params(axis='x', labelsize=16)
-#pyplot.tick_params(axis='y', labelsize=16)
-#pyplot.xlabel('Energy [eV]', fontsize=16)
+#pyplot.tick_params(axis='x', labelsize=20)
+#pyplot.tick_params(axis='y', labelsize=20)
+#pyplot.xlabel('Energy [eV]', fontsize=20)
 #pyplot.ylabel(r'Im($\beta$)', fontsize=16)
 #pyplot.legend(loc='best', fontsize=14)
 
-pyplot.show()
 
+
+#Plotting alpha's vs gamma and beta:
+pyplot.figure(13)
+pyplot.tick_params(axis='x', labelsize=20)
+pyplot.tick_params(axis='y', labelsize=20)
+pyplot.xlabel('Energy [eV]', fontsize=20)
+pyplot.ylabel(r'Re($\gamma$) / Re($\alpha_{\parallel}$)', fontsize=20)
+pyplot.legend(loc='best', fontsize=14)
+pyplot.figure(14)
+pyplot.tick_params(axis='x', labelsize=20)
+pyplot.tick_params(axis='y', labelsize=20)
+pyplot.xlabel('Energy [eV]', fontsize=20)
+pyplot.ylabel(r'Im($\gamma$) / Im($\alpha_{\parallel}$)', fontsize=20)
+pyplot.legend(loc='best', fontsize=14)
+pyplot.figure(15)
+pyplot.tick_params(axis='x', labelsize=20)
+pyplot.tick_params(axis='y', labelsize=20)
+pyplot.xlabel('Energy [eV]', fontsize=20)
+pyplot.ylabel(r'Re($\beta$) / Re($\alpha_{\perp}$)', fontsize=20)
+pyplot.legend(loc='best', fontsize=12)
+pyplot.figure(16)
+pyplot.tick_params(axis='x', labelsize=20)
+pyplot.tick_params(axis='y', labelsize=20)
+pyplot.xlabel('Energy [eV]', fontsize=20)
+pyplot.ylabel(r'Im($\beta$) / Im($\alpha_{\perp}$)', fontsize=20)
+pyplot.legend(loc='best', fontsize=14)
+
+pyplot.show()

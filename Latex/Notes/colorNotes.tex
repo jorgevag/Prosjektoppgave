@@ -1,0 +1,206 @@
+\section{Color notes from wikipedia}
+\begin{itemize}
+\item Humans tend to percieve light within the green parts of the spectrum as brighter than
+red or blue light of equal power. The luminosity function that describes the percieved brightnesses
+of different wavelengths is thus roughly anagagous to the spectral sensity of M cones.
+\item \textbf{With three color apperance parameters- colorfulness(or chroma or saturation), lightness 
+   (or brightness), and hue, any color can be described.}
+\item \textbf{Hue} is one of the main properties of a color. There are six (unique) hues: 
+   red, orange, yellow, green, blue and purple. ?Hue is described as the degree to which
+   a stimulus can be described as similar to or different from stimuli that are described by the unique
+   hues?
+\item \textbf{Colorfulness} is the visual sensation according to which the percieved color of an area appears
+   to be more or less chromatic. A highly colorful stimulus is vivid and intense, while a less colorful
+   stimulus appears more muted, closer to gray. With no colorfulness at all, a color is a
+   "neutral" gray (an image with no colorfulness in any of its color is called grayscale).
+\item \textbf{Chroma} is the colorfulness relative to the brightness of a similarly illuminated area that 
+   appears to be white or highly transmitting. (therefore) Chroma should not be confused with colorfulness!
+\item Saturation is the colorfulness of a color relative to its own brightness.
+\item \textbf{Lightness} (aka value or tone) is a representation of variation in the perception of
+   a color or color space's brightness. Lightness is a relative term. Lightness means Brightness
+   of an area judged relative to the brightness of a similarly illuminated area that appears to be white 
+   or highly transmitting. Lightness should not be confused with brightness.
+\item \textbf{Brightness} is an attribute of visual perception in which a source appears
+   to be radiating or reflecting light. Brightness is the perception elicited y the luminance 
+   (how much luminous power will be detected by an eye looking at e.g. a surface from a particluar angle
+   of view) of a visual target. This is a sibjective property of an object being observed and 
+   one of the color apperance parameters of color apperance models. Brightness refers to an
+   absolute term and should not be confused with Lightness.
+   \\
+   \\
+   In RGB color space, brightness can be thought of as the arithmetic mean $\mu$ of the red, green and blue
+   color coordinates (although some of the three components make the light seem brighter than others).
+   \begin{align}
+      \mu = \frac{R + G + B}{3}
+   \end{align}
+   Brightness is also a color coordinate in the HSB or HSV color space (Hue, Saturation, and Brightness/Value).
+\end{itemize}
+
+\newpage
+\section{Color notes regarding \textsc{ColorPy}}
+source: http://markkness.net/colorpy/ColorPy.html
+\\
+\\
+How I installed it:
+\begin{itemize}
+   \item download zipped folder and unzip it using:\\
+      gunzip -c colorpy-0.1.0.tar.gz | tar xf
+      \\
+      \\
+      The unzipped folder can be put anywhere (doesn't matter). Go to it (cd path/colorpy-0.1.0).
+      Personally, I ran the following command (don't know if you need administrator privileges, 
+      but it seemed like it was required: \\
+      sudo python setup.py install 
+      \\
+      \\
+      After than I made a folder ''TEST'', went into it, started python and ran the following commands to
+      test that the program/module worked correctly:\\
+      \# running test cases: \\
+      import colorpy.test\\
+      colorpy.test.test()\\
+      \\
+      \# generate sample figures: \\
+      import colopy.figures\\
+      colorpy.figures.figures()\\
+      \\
+\end{itemize}
+Fundamentals:
+\begin{itemize}
+   \item \textsc{ColorPy} generally uses wavelengths measured in nanometers, otherwise typical metric
+      units are used.
+   \item The description of the spectra, \textsc{ColorPy} uses two-dimensional NumPy arrays:
+      column 1: wavelength[nm], column 2: light intensity at the wavelength.
+   \item Color values are represented as three-component NumPy vectors (1D-arrays). Typically, these are 
+      vectors of floats, except for irgb colors, which are arrays of integers in the range 0-255.
+   \item \textsc{ColorPy} can provide a blank spectrum array, via colorpy.ciexyx.empty\_spectrum(),
+      which have rows for each wavelength from 360nm to 830nm, at 1nm increments.
+   \item To go from the light spectra to a color (a 3D quantity), we use a set of three matching functions
+      \begin{align}
+         X = \int I(\lambda) \cdot C\!I\!E\!-\!\!X(\lambda) d\!\lambda\\
+         Y = \int I(\lambda) \cdot C\!I\!E\!-\!\!Y(\lambda) d\!\lambda\\
+         Z = \int I(\lambda) \cdot C\!I\!E\!-\!\!Z(\lambda) d\!\lambda
+      \end{align}
+   \item The Y-matching function corresponds exactly to the luminous efficiency of the eye - the eye's
+      response to light of constant luminance (these facts are some of the reasons that make this 
+      particular ser of matching functions so useful).
+   \item Rescaling XYZ so that their sum is 1.0, we get the values xyz (i.e. $x + y + z = 1$).
+      The chromaticity is given by x and y (z can be recontructed as $z = 1.0 - x - y$). 
+      It is also common to specify colors with the chromaticity (x,y) , as well as the total
+      brightness (Y). Occasionally, one also wants to scale XYZ colors so that the resulting Y value is 1.0.
+
+   \item Here are some 'constructor'-like functions for creating the colors (e.g.XYZ), which are 
+      three-compontent vectors.
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.colormodels.xyz_color(x,y,z=None)
+   colorpy.colormodels.xyz_normalize(xyz)
+   colorpy.colormodels.xyz_color_from_xyY(x,y,Y)
+   colorpy.colormodels.xyz_normalize_Y1(xyz)
+\end{lstlisting}
+   Note that color types are generally specified in ColorPy with lower case letters, as this is more 
+   readable. The user must keep track of the particular normalization that applies in each situation.
+\end{itemize}
+Fundamentals - converting XYZ colors to RGB colors which we can draw on the computer:
+\begin{itemize}
+   \item To convert we can use
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   # Here, xyz is the XYZ color vector:
+   colorpy.colormodels.irgb_from_xyz(xyz) # Returns [int,int,int] (int in [0,255])
+   colorpy.colormodels.irgb_string_from_xyz(xyz) # Returns hex string, e.g. '#FF0000' for red.
+\end{lstlisting}
+
+\item 
+Note that there are several subtleties and approximations which are important to understand
+what is happening in the code above.
+   \begin{itemize}
+      \item the XYZ color is converted to a linear RGB color(represented as floats in the range 0.0-1.0),
+         meaning that the light intensity is 
+         proportional to the numerical color values, and is done by a 3x3 element array. The values
+         of the array depends on physical display in question, so the conversion matric cannot apply to 
+         all displays/monitors. Fortunately, we can assume a specification of monitor chromaticities
+         (which are a part of the sRGB standard) which are likely to be close to most displays. 
+         \textsc{ColorPy}
+         uses this assumption by default, although you can change the assumed monitor chromaticities to nearly
+         anything you like.
+      \item The RGB colors can be out of range: 
+         \begin{enumerate}
+            \item greater than 1.0, meaning the color is too bright for the display. 
+            \item negative value, meaning that the color is too saturated and vivid for the display.
+         \end{enumerate}
+         To put these values between 0.0-1.0 that can actually be displayed is known as color clipping:
+         The first is solved by rescaling such that the maximum value is 1.0, making the 
+         color less bright without changing the chromaticity. The second change required some change in
+         chromaticity. By default,  \textsc{ColorPy} adds just enough white to the color to make all the
+         components non-negative. (There is also the potential to develop better clipping functions.)
+      \item The next subtlety is that the intensity of colors on the display is not simply
+         proportional to the color values given to the hardware. This situation is known as 
+         the 'gamma corretion'. We rely on the sRGB standard what to do. The standard assumes a 
+         physical 'gamma' exponent of about 2.2., and \textsc{ColorPy} applies this correction by default
+         (can be changed if you like).
+      \item The final step is to convert the RGB components from 0.0-1.0 to 0-255 (done with simple scaling
+         and rounding).
+   \end{itemize}
+\item Summarizing these conversions:
+   \begin{itemize}
+      \item The function
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.colormodels.rgb_from_xyz(xyz)
+\end{lstlisting}
+      converts an XYZ color to linear RGB color in range 0.0-1.0. Can be out of range or negative, and
+      can not be directly passed to drawing functions.
+   \item The function
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.colormodels.irgb_from_rgb(rgb)
+\end{lstlisting}
+      converts a linear RGB in the range 0.0-1.0 to a displayable irgb color, definitely in the range 
+      0-255. Color clipping may be applied (intensity and chromaticity), and gamma correction is 
+      accounted for. This result can be passed to drawing functions.
+   \end{itemize}
+
+\item To plot the visible spectrum:
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.plots.visible_spectrum_plot()
+\end{lstlisting}
+To plot the RGB values for the pure spectral lines (?or visible spectrum?), use:
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.plots.color_vs_param_plot(param_list, rgb_colors, title, 
+      filename, tight=False, plotfunc=pylab.plot, xlabel='param', ylabel='RGB Color')
+\end{lstlisting}
+In this case, the parameter list is wavelength and we also include a list of RGB colors. These must be of
+the same size. This is a very handy function, useful for many other plots besides this one.
+
+\item CIE chromaticity diagram of the visible gamut:
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.plots.shark_fin_plot()
+\end{lstlisting}
+
+\item 'Patch' plot:
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.plots.xyz_patch_plot(xyz_colors, color_names, 
+      title, filename, patch_gap=0.05, num_across=6)
+\end{lstlisting}
+\texttt{xyz\_colors} and \texttt{color\_names} are two lists (which must be of same size).
+You can pass 'None' for the second list to skip the labels. (There are also optional arguments to fine-tune
+the size and arrangement of the patches.) \\
+There is also a similar function:
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colorpy.plots.rgb_patch_plot()
+\end{lstlisting}
+when you have known RGB values that you want to draw.
+
+\item To plot spectrums like black body spectrums, use
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colopy.plots.spectrum_plot(spectrum,title,filename,xlabel,ylabel)
+\end{lstlisting}
+Here, \texttt{spectrum} is a numpy array.
+\\
+\\
+\textsc{ColorPy} allows us to plot the resulting color vs. temperature, while also showing a plot
+of the rgb color values:
+\begin{lstlisting}[style=FormattedNumber, language=python, frame=none]
+   colopy.plots.color_vs_param_plot(param_list, rgb_colors, 
+      title, filename, tight, plotfunc, xlabel, ylabel)
+\end{lstlisting}
+The arguments \texttt{tight, plotfunc, xlabel, ylabel} are optional. (In the example, he used
+tight=True, plotfunc=pylab.semilogy to obtain the semilog plot, which is needed for the very large range
+of color values covered).
+\end{itemize}
